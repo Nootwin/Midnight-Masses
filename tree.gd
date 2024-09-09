@@ -1,4 +1,4 @@
-extends StaticBody2D
+class_name Provider extends StaticBody2D
 
 var health = 24
 var dispenseEvery = 6
@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func on_hit(item : Item):
-	var damage = item.damage
+	var damage = randi_range(item.damagelow, item.damagehigh)
 	if (item.isAxe):
 		damage *= 3
 	take_damage(damage)

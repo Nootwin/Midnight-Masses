@@ -18,17 +18,18 @@ func _process(delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
-	$Arm.rotation = $Arm.global_position.angle_to(get_global_mouse_position())
+	$Arm.look_at(get_global_mouse_position())
+	$Arm.rotation -= PI/2
 	if (swinging):
-		$Hand.rotation_degrees -= 6
-		if ($Hand.rotation_degrees < -180):
+		$Arm/Hand.rotation_degrees -= 6
+		if ($Arm/Hand.rotation_degrees < -270):
 			swinging = false
 			
 	elif (Input.is_mouse_button_pressed(1)):
-		$Hand.rotation_degrees = -90
+		$Arm/Hand.rotation_degrees = -90
 		swinging = true
 	else:
-		$Hand.rotation = 0
+		$Arm/Hand.rotation_degrees = 180
 			
 	if (global_position == wantedpos):
 		var dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
@@ -56,7 +57,7 @@ func _physics_process(delta: float) -> void:
 				lastdir = newdir
 			wantedpos = global_position + (size * newdir)
 			lastpos = global_position
-			rotation = newdir.angle() - PI/2
+			$Sprite2D.rotation = newdir.angle() - PI/2
 			posinMap += Vector2i(newdir)
 			
 		
