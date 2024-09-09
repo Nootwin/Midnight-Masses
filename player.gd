@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
+	$Arm.rotation = $Arm.global_position.angle_to(get_global_mouse_position())
 	if (swinging):
 		$Hand.rotation_degrees -= 6
 		if ($Hand.rotation_degrees < -180):

@@ -22,5 +22,7 @@ process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="Hand" type="Node2D" parent="."]
+[node name="Arm" type="Node2D" parent="."]
+
+[node name="Hand" type="Node2D" parent="Arm"]
 position = Vector2(24, 12)

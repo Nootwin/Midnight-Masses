@@ -12,13 +12,12 @@
 z_index = 1
 position = Vector2(608, 352)
 
-[node name="Item" parent="Player/Hand" index="0" instance=ExtResource("2_mldlx")]
-position = Vector2(-7, -24)
+[node name="Item" parent="Player/Arm/Hand" index="0" instance=ExtResource("2_mldlx")]
+isAxe = true
 damagelow = 1
 damagehigh = 3
-metadata/_edit_group_ = true
 
-[node name="Sprite2D" parent="Player/Hand/Item" index="1"]
+[node name="Sprite2D" parent="Player/Arm/Hand/Item" index="1"]
 texture = ExtResource("3_7i3vf")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
@@ -31,4 +30,4 @@ tile_set = ExtResource("2_5ah5l")
 position = Vector2(448, 320)
 
 [editable path="Player"]
-[editable path="Player/Hand/Item"]
+[editable path="Player/Arm/Hand/Item"]
