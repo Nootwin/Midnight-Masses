@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmdjudmdd2f7v"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_ffed8"]
+[ext_resource type="Texture2D" uid="uid://kji2akf2a0k6" path="res://art/playertest16.png" id="2_p86ui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6i2t"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_ffed8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_p86ui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e6i2t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="Hand" type="Node2D" parent="."]
+position = Vector2(24, 12)
