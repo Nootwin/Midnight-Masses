@@ -1,6 +1,7 @@
 class_name Item extends Area2D
 
 @export var isAxe : bool = false
+@export var isPickAxe : bool = false
 @export var damagelow : int
 @export var damagehigh : int
 

@@ -1,8 +1,6 @@
 extends Provider
 
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -15,9 +13,9 @@ func _process(delta: float) -> void:
 func on_hit(item : Item):
 	print("here")
 	var damage = randi_range(item.damagelow, item.damagehigh)
-	if (item.isAxe):
+	if (item.isPickAxe):
 		damage *= 3
 	take_damage(damage)
 	
 func dispense(amount):
-	$"/root/Inventory".wood += amount
+	$"/root/Inventory".rock += amount

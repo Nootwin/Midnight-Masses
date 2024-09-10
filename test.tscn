@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://d1avjir6n2pct"]
+[gd_scene load_steps=8 format=4 uid="uid://d1avjir6n2pct"]
 
 [ext_resource type="PackedScene" uid="uid://cmdjudmdd2f7v" path="res://player.tscn" id="1_iq874"]
 [ext_resource type="TileSet" uid="uid://dvxdv52oqo73c" path="res://grounds.tres" id="2_5ah5l"]
 [ext_resource type="PackedScene" uid="uid://b4hg0ihhx0kr1" path="res://item.tscn" id="2_mldlx"]
 [ext_resource type="Texture2D" uid="uid://dmqqpc6ots04i" path="res://art/woodaxe.png" id="3_7i3vf"]
 [ext_resource type="PackedScene" uid="uid://b0xf234jbemqt" path="res://tree.tscn" id="5_xl876"]
+[ext_resource type="PackedScene" uid="uid://dcwqut57but4i" path="res://rocks.tscn" id="6_emeyk"]
+[ext_resource type="PackedScene" uid="uid://4r4xlbhsgpy" path="res://onscui.tscn" id="7_8jmrh"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -32,6 +34,17 @@ tile_set = ExtResource("2_5ah5l")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("5_xl876")]
 position = Vector2(448, 320)
+
+[node name="Rocks" parent="." instance=ExtResource("6_emeyk")]
+position = Vector2(960, 320)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OnScui" parent="CanvasLayer" instance=ExtResource("7_8jmrh")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.584314, 0.261053, 0.955764, 1)
 
 [connection signal="body_entered" from="Player/Arm/Hand/Item" to="Player/Arm/Hand/Item" method="_on_body_entered"]
 

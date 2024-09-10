@@ -6,6 +6,7 @@ var lastdir : Vector2 = Vector2(-2, -2)
 const SPEED = 8.0
 var swinging : bool = false
 var posinMap : Vector2i
+var spdir : String = "up"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,8 +19,6 @@ func _process(delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
-	$Arm.look_at(get_global_mouse_position())
-	$Arm.rotation -= PI/2
 	if (swinging):
 		$Arm/Hand.rotation_degrees -= 6
 		if ($Arm/Hand.rotation_degrees < -270):
@@ -36,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		var newdir : Vector2
 		if (dir == Vector2(0, 0)):
 			newdir = Vector2(-2, -2)
+			$Sprite2D.play(spdir + "_idle")
 		else:
 			if (dir == lastdir):
 				newdir = lastdir
@@ -57,9 +57,18 @@ func _physics_process(delta: float) -> void:
 				lastdir = newdir
 			wantedpos = global_position + (size * newdir)
 			lastpos = global_position
-			$Sprite2D.rotation = newdir.angle() - PI/2
+			$Arm.rotation =  newdir.angle() - PI/2
 			posinMap += Vector2i(newdir)
 			
+			if (newdir.y == -1):
+				spdir = "up"
+			elif (newdir.y == 1):
+				spdir = "down"
+			elif (newdir.x == -1):
+				$Sprite2D.flip_h = false
+			elif (newdir.x == 1):
+				$Sprite2D.flip_h = true
+			$Sprite2D.play(spdir + "_walk")
 		
 	elif (lastdir.x != 0 and lastdir.x != -2 ):
 		velocity.y = 0

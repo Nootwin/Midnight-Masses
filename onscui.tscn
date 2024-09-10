@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://4r4xlbhsgpy"]
+
+[ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="1_3mpst"]
+[ext_resource type="Script" path="res://onscui.gd" id="1_rnqcp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpii4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4bpsd"]
+load_path = "res://.godot/imported/materials.png-7eca2a5f188f12986114ce0a7828d3a2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvsr8"]
+atlas = SubResource("CompressedTexture2D_4bpsd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sfvia"]
+load_path = "res://.godot/imported/materials.png-7eca2a5f188f12986114ce0a7828d3a2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32jtk"]
+atlas = SubResource("CompressedTexture2D_sfvia")
+region = Rect2(16, 0, 16, 16)
+
+[node name="OnScui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cpii4")
+script = ExtResource("1_rnqcp")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_vvsr8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 176.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("1_3mpst")
+theme_override_font_sizes/mono_font_size = 32
+theme_override_font_sizes/normal_font_size = 32
+text = "0"
+scroll_active = false
+text_direction = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Panel"]
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+texture = SubResource("AtlasTexture_32jtk")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 176.0
+offset_bottom = 80.0
+theme_override_fonts/normal_font = ExtResource("1_3mpst")
+theme_override_font_sizes/mono_font_size = 32
+theme_override_font_sizes/normal_font_size = 32
+text = "0"
+scroll_active = false
+text_direction = 1
