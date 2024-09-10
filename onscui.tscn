@@ -53,12 +53,14 @@ scroll_active = false
 text_direction = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Panel"]
+layout_mode = 0
 offset_top = 40.0
 offset_right = 40.0
 offset_bottom = 80.0
 texture = SubResource("AtlasTexture_32jtk")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 176.0

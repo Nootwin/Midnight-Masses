@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctraatmxjoioe"]
+
+[ext_resource type="Script" path="res://battlecam.gd" id="1_oj8an"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
+script = ExtResource("1_oj8an")
