@@ -1,0 +1,206 @@
+[gd_scene load_steps=12 format=3 uid="uid://trf2sfjwl42b"]
+
+[ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="1_27dus"]
+[ext_resource type="Texture2D" uid="uid://c2vw1xxj0cani" path="res://art/materials.png" id="2_7idw0"]
+[ext_resource type="Texture2D" uid="uid://bjwvjfeuautdt" path="res://art/cardtemp.png" id="2_wasi2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2fhc"]
+bg_color = Color(0.619608, 0.482353, 0.278431, 0.631373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhtj8"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cna7"]
+bg_color = Color(0.207347, 0.151252, 0.0668619, 0.631373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pamyo"]
+bg_color = Color(0.619608, 0.482353, 0.278431, 0.631373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ryso"]
+bg_color = Color(0.933333, 0.788235, 0.572549, 0.568627)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sdjh"]
+atlas = ExtResource("2_7idw0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yfdc"]
+atlas = ExtResource("2_7idw0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpmia"]
+bg_color = Color(0.619608, 0.482353, 0.278431, 0.631373)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_27dus")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_i2fhc")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_vhtj8")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_7cna7")
+tab_alignment = 1
+current_tab = 0
+
+[node name="Craft" type="Panel" parent="MarginContainer/TabContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pamyo")
+metadata/_tab_index = 0
+
+[node name="VScrollBar" type="VScrollBar" parent="MarginContainer/TabContainer/Craft"]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/TabContainer/Craft"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+dragger_visibility = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/TabContainer/Craft/HSplitContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ryso")
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel"]
+layout_mode = 2
+offset_top = 250.0
+offset_right = 120.0
+offset_bottom = 273.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel/Label"]
+layout_mode = 2
+offset_left = 31.0
+offset_top = -251.0
+offset_right = 131.0
+offset_bottom = 273.0
+theme_override_fonts/normal_font = ExtResource("1_27dus")
+theme_override_font_sizes/normal_font_size = 32
+text = "100"
+scroll_active = false
+autowrap_mode = 0
+text_direction = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel/Label"]
+layout_mode = 2
+offset_left = 34.0
+offset_top = -215.0
+offset_right = 134.0
+offset_bottom = 309.0
+theme_override_fonts/normal_font = ExtResource("1_27dus")
+theme_override_font_sizes/normal_font_size = 32
+text = "0"
+text_direction = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel/Label"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = -250.0
+offset_right = 101.0
+offset_bottom = 274.0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_0sdjh")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel/Label"]
+layout_mode = 2
+offset_top = -214.0
+offset_right = 100.0
+offset_bottom = 310.0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_0yfdc")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Craft/HSplitContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 24
+columns = 6
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_wasi2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_wasi2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_wasi2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton4" type="TextureButton" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_wasi2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton5" type="TextureButton" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_wasi2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton6" type="TextureButton" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_wasi2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton7" type="TextureButton" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_wasi2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Deck" type="Panel" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vpmia")
+metadata/_tab_index = 1
