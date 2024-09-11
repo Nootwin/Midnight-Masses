@@ -52,6 +52,4 @@ shape = SubResource("RectangleShape2D_r1hvt")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = SubResource("PlaceholderTexture2D_06beg")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D"]
-
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
