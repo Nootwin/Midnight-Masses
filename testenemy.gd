@@ -21,11 +21,12 @@ func _physics_process(delta: float) -> void:
 	var start = tilemap.local_to_map(tilemap.to_local(global_position))
 	var end = tilemap.local_to_map(tilemap.to_local(target_position))
 	var path = astar.get_point_path(start, end)
+	print(path)
 	path.remove_at(0)
 	if (not path.is_empty()):
-		var dir = Vector2(start) - path[0]
+		var dir = global_position.direction_to(path[0])
 		print(dir)
-		velocity = Vector2(-1, -1) * dir
+		velocity = Vector2(1, 1) * dir
 		move_and_collide(velocity)
 	pass
 	
