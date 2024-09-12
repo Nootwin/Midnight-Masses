@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://ctraatmxjoioe"]
+[gd_scene load_steps=10 format=4 uid="uid://ctraatmxjoioe"]
 
 [ext_resource type="Texture2D" uid="uid://cha8gnx5b8jmw" path="res://art/tilemap.png" id="1_0p1cc"]
 [ext_resource type="Script" path="res://testenemy.gd" id="2_e8ryr"]
+[ext_resource type="Script" path="res://turn_handler.gd" id="2_wi4e8"]
+[ext_resource type="PackedScene" uid="uid://dd165okf888gp" path="res://Bplayer.tscn" id="3_wvk6f"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2gike"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -40,16 +42,23 @@ tile_set = SubResource("TileSet_v1uqr")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.584314, 0.261053, 0.955764, 1)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="TurnHandler" type="Node2D" parent="."]
+script = ExtResource("2_wi4e8")
+
+[node name="Bplayer" parent="TurnHandler" instance=ExtResource("3_wvk6f")]
+position = Vector2(-32, -32)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="TurnHandler"]
 position = Vector2(32, -32)
+collision_layer = 2
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("2_e8ryr")
+maxsteps = 3
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurnHandler/CharacterBody2D"]
 shape = SubResource("RectangleShape2D_r1hvt")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="TurnHandler/CharacterBody2D"]
 texture = SubResource("PlaceholderTexture2D_06beg")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

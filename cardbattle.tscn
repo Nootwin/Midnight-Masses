@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6gohqgsic3ur"]
+
+[ext_resource type="Texture2D" uid="uid://bjwvjfeuautdt" path="res://art/cardtemp.png" id="1_da7u2"]
+[ext_resource type="Script" path="res://cardbattle.gd" id="2_d0473"]
+
+[node name="Card" type="Sprite2D"]
+scale = Vector2(4, 4)
+texture = ExtResource("1_da7u2")
+script = ExtResource("2_d0473")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -12.0
+offset_top = -16.0
+offset_right = 12.0
+offset_bottom = 16.0
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
