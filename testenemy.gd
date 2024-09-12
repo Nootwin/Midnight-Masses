@@ -29,7 +29,6 @@ func start_turn():
 	var end = tilemap.local_to_map(tilemap.to_local(target_position))
 	path = astar.get_point_path(start, end)
 	path.remove_at(0)
-	print(path)
 	steps = maxsteps
 	
 func _physics_process(delta: float) -> void:

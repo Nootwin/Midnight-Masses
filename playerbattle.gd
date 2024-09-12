@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:	
-	if (global_position == wantedpos and isturn):
+	if (global_position == wantedpos and isturn and steps > 0):
 		
 		var dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
 		var newdir : Vector2
@@ -64,9 +64,6 @@ func _physics_process(delta: float) -> void:
 			elif (newdir.x == 1):
 				$Sprite2D.flip_h = true
 			$Sprite2D.play(spdir + "_walk")
-			
-			if (steps < 1):
-				get_parent().next()
 		
 	elif (lastdir.x != 0 and lastdir.x != -2 ):
 		velocity.y = 0
@@ -80,6 +77,10 @@ func _physics_process(delta: float) -> void:
 		var col = move_and_collide(velocity)
 		if (col):
 			wantedpos = lastpos
+			
+	if (steps < 1):
+			$Sprite2D.play(spdir + "_idle")
+		
 			
 func start_turn():
 	steps = maxsteps

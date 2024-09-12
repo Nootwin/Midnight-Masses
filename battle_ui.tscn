@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=3 uid="uid://cov33l11nb1ab"]
+
+[ext_resource type="Script" path="res://battle_ui.gd" id="1_gjibf"]
+[ext_resource type="Texture2D" uid="uid://dyyvofkweorrb" path="res://art/cardback.png" id="1_jww2j"]
+[ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="2_afaaa"]
+[ext_resource type="Script" path="res://endturnbutton.gd" id="3_0t3b7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfgps"]
+bg_color = Color(0.282353, 0.368627, 1, 1)
+
+[node name="BattleUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gjibf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1031.0
+offset_top = 501.0
+offset_right = 1055.0
+offset_bottom = 533.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_jww2j")
+stretch_mode = 5
+
+[node name="HP" type="RichTextLabel" parent="TextureRect"]
+offset_left = 8.75
+offset_top = 11.75
+offset_right = 137.75
+offset_bottom = 51.75
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("2_afaaa")
+text = "£"
+scroll_active = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 1.0
+offset_right = 1150.0
+offset_bottom = 257.0
+color = Color(0.282353, 0.368627, 1, 1)
+
+[node name="HP" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 131.0
+offset_bottom = 42.0
+theme_override_fonts/normal_font = ExtResource("2_afaaa")
+text = "HP : 5"
+scroll_active = false
+
+[node name="AP" type="RichTextLabel" parent="ColorRect"]
+offset_left = 1.0
+offset_top = 42.0
+offset_right = 130.0
+offset_bottom = 82.0
+theme_override_fonts/normal_font = ExtResource("2_afaaa")
+text = "AP : 3
+"
+scroll_active = false
+
+[node name="DMG" type="RichTextLabel" parent="ColorRect"]
+offset_left = 2.0
+offset_top = 123.0
+offset_right = 131.0
+offset_bottom = 163.0
+theme_override_fonts/normal_font = ExtResource("2_afaaa")
+text = "DMG :"
+scroll_active = false
+
+[node name="RANGE" type="RichTextLabel" parent="ColorRect"]
+offset_left = 2.0
+offset_top = 170.0
+offset_right = 131.0
+offset_bottom = 210.0
+theme_override_fonts/normal_font = ExtResource("2_afaaa")
+text = "RANGE :"
+scroll_active = false
+
+[node name="DURA" type="RichTextLabel" parent="ColorRect"]
+offset_left = 1.0
+offset_top = 214.0
+offset_right = 130.0
+offset_bottom = 254.0
+theme_override_fonts/normal_font = ExtResource("2_afaaa")
+text = "DURA :"
+scroll_active = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 272.0
+offset_right = 1139.0
+offset_bottom = 344.0
+theme_override_fonts/font = ExtResource("2_afaaa")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_lfgps")
+text = "End
+Turn"
+script = ExtResource("3_0t3b7")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
