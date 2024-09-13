@@ -4,6 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$"/root/Inventory".deck.shuffle()
 	pass # Replace with function body.
 
 
@@ -21,3 +22,17 @@ func _physics_process(delta: float) -> void:
 		card = cards[i]
 		card.global_position = Vector2(scsizex + ((offset + i) * 96), scsizey - 64)
 		
+func draw_cards():
+	var card
+	if ($"/root/Inventory".deck.size() > 0):
+		pass
+	if (get_child_count() < 4):
+		while (get_child_count() < 4 and $"/root/Inventory".deck.size() > 0):
+			card = $"/root/Inventory".deck.pop_front()
+			add_child(card)
+			card.visible = true
+			print(card)
+	else:
+		card = $"/root/Inventory".deck.pop_front()
+		add_child(card)
+	

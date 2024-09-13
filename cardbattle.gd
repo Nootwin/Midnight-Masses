@@ -3,6 +3,7 @@ var dragging = false
 var ofset : Vector2
 @onready var crosshiar = $"/root/Node2D/TurnHandler/Bplayer/Boxes"
 @onready var ui = $"../../BattleUI"
+@onready var halfdim = get_viewport_rect().size / 2
 
 @export var dmglow : int
 @export var dmghigh : int
@@ -23,8 +24,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if (dragging):
 		global_position = get_global_mouse_position() - ofset
-		var dis = global_position - crosshiar.global_position
-		print(global_position, crosshiar.global_position)
+		var dis = global_position - halfdim
 		if (abs(dis.x) > abs(dis.y)):
 			if (dis.x < 0):
 				crosshiar.rotation_degrees = 270
@@ -48,8 +48,38 @@ func _on_button_button_down() -> void:
 
 
 func _on_button_button_up() -> void:
-	dragging = false
-	ofset = Vector2(0, 0)
-	modulate.a = 1
-	crosshiar.visible = false
+	if (global_position.y > get_viewport_rect().size.y - 128):
+		dragging = false
+		ofset = Vector2(0, 0)
+		modulate.a = 1
+		crosshiar.visible = false
+	if (dragging):
+		dragging = false
+		ofset = Vector2(0, 0)
+		modulate.a = 1
+		crosshiar.visible = false
+		dura -= 1
+		summon_damage(randi_range(dmglow, dmghigh))
+		
+		if (dura > 0):
+			$"/root/Inventory".deck.push_back(self)
+			get_parent().remove_child(self)
+		else:
+			queue_free()
 	pass # Replace with function body.
+
+func _input(event: InputEvent) -> void:
+	if (dragging):
+		if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT):
+			dragging = false
+			ofset = Vector2(0, 0)
+			modulate.a = 1
+			crosshiar.visible = false
+			
+func summon_damage(damage : int):
+	var bodies
+	for box in crosshiar.grid:
+		if (box.visible):
+			bodies = box.get_overlapping_bodies()
+			if (!bodies.is_empty()):
+				bodies[0].die()

@@ -21,8 +21,6 @@ func _process(delta: float) -> void:
 	currock.text = str($"/root/Inventory".rock)
 	pass
 
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
 
 func updateCurrentCard():
 	costwood.text = str(currentCard.wood)
@@ -34,3 +32,11 @@ func updateCurrentCard():
 func _input(event: InputEvent) -> void:
 	if (event is InputEventKey and event.keycode == KEY_E and event.is_pressed()):
 		visible = !visible
+
+
+func _on_button_pressed() -> void:
+	if (currentCard.wood <= $"/root/Inventory".wood and currentCard.rock <= $"/root/Inventory".rock):
+		$"/root/Inventory".wood -= currentCard.wood
+		$"/root/Inventory".rock -= currentCard.rock
+		$"/root/Inventory".add_to_deck(currentCard.cardscene.duplicate(5))
+	pass # Replace with function body.

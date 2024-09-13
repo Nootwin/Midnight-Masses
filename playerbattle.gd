@@ -10,6 +10,7 @@ var posinMap : Vector2i
 var spdir : String = "up"
 var steps : int
 var isturn = false
+@onready var cardhandler = $"../../CanvasLayer/CardHandler"
 @export var maxsteps : int
 
 # Called when the node enters the scene tree for the first time.
@@ -84,4 +85,5 @@ func _physics_process(delta: float) -> void:
 			
 func start_turn():
 	steps = maxsteps
+	cardhandler.draw_cards()
 	pass

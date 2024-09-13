@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://ctraatmxjoioe"]
+[gd_scene load_steps=13 format=4 uid="uid://ctraatmxjoioe"]
 
 [ext_resource type="Texture2D" uid="uid://cha8gnx5b8jmw" path="res://art/tilemap.png" id="1_0p1cc"]
 [ext_resource type="Script" path="res://testenemy.gd" id="2_e8ryr"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dd165okf888gp" path="res://Bplayer.tscn" id="3_wvk6f"]
 [ext_resource type="PackedScene" uid="uid://irapdpnerkdg" path="res://crosshiar.tscn" id="4_o6bdn"]
 [ext_resource type="PackedScene" uid="uid://cov33l11nb1ab" path="res://battle_ui.tscn" id="5_2iy26"]
-[ext_resource type="PackedScene" uid="uid://b6gohqgsic3ur" path="res://cardbattle.tscn" id="6_duv7m"]
 [ext_resource type="Script" path="res://card_handler.gd" id="6_g6j4p"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2gike"]
@@ -56,8 +55,8 @@ position = Vector2(-32, -32)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="TurnHandler"]
 position = Vector2(32, -32)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 16
+collision_mask = 16
 motion_mode = 1
 script = ExtResource("2_e8ryr")
 maxsteps = 3
@@ -75,16 +74,3 @@ texture = SubResource("PlaceholderTexture2D_06beg")
 
 [node name="CardHandler" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("6_g6j4p")
-
-[node name="Card" parent="CanvasLayer/CardHandler" instance=ExtResource("6_duv7m")]
-dmglow = 1
-dmghigh = 3
-range = 1
-dura = 3
-pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
-
-[node name="Card2" parent="CanvasLayer/CardHandler" instance=ExtResource("6_duv7m")]
-pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
-
-[node name="Card3" parent="CanvasLayer/CardHandler" instance=ExtResource("6_duv7m")]
-pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])

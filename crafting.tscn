@@ -1,9 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://trf2sfjwl42b"]
+[gd_scene load_steps=20 format=3 uid="uid://trf2sfjwl42b"]
 
 [ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="1_27dus"]
 [ext_resource type="Script" path="res://crafting.gd" id="1_cxnn0"]
 [ext_resource type="Texture2D" uid="uid://c2vw1xxj0cani" path="res://art/materials.png" id="2_7idw0"]
 [ext_resource type="PackedScene" uid="uid://dg0gon5cburv5" path="res://card_button.tscn" id="4_6epq8"]
+[ext_resource type="Texture2D" uid="uid://bcl1hgp5s88xo" path="res://art/cards/sword.png" id="5_yoyye"]
+[ext_resource type="PackedScene" uid="uid://b6gohqgsic3ur" path="res://cardbattle.tscn" id="6_ngwkv"]
+[ext_resource type="Texture2D" uid="uid://cgap5aw37tg3u" path="res://art/cards/axe.png" id="7_up4b0"]
+[ext_resource type="Texture2D" uid="uid://bc5354c05o61n" path="res://art/cards/spear.png" id="8_338j3"]
+[ext_resource type="Texture2D" uid="uid://df7nlegvkk1nn" path="res://art/cards/mace.png" id="9_47m40"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2fhc"]
 bg_color = Color(0.619608, 0.482353, 0.278431, 0.631373)
@@ -160,9 +165,9 @@ text_direction = 1
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel"]
 layout_mode = 0
-offset_top = 182.0
+offset_top = 158.0
 offset_right = 120.0
-offset_bottom = 668.0
+offset_bottom = 644.0
 theme_override_fonts/normal_font = ExtResource("1_27dus")
 theme_override_font_sizes/normal_font_size = 16
 text = "Cost"
@@ -170,9 +175,9 @@ text_direction = 1
 
 [node name="TextureRect3" type="TextureRect" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel"]
 layout_mode = 0
-offset_top = 206.0
+offset_top = 182.0
 offset_right = 16.0
-offset_bottom = 222.0
+offset_bottom = 198.0
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_0sdjh")
 stretch_mode = 2
@@ -180,9 +185,9 @@ stretch_mode = 2
 [node name="RichTextLabel5" type="RichTextLabel" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 214.0
+offset_top = 190.0
 offset_right = 156.0
-offset_bottom = 700.0
+offset_bottom = 676.0
 theme_override_fonts/normal_font = ExtResource("1_27dus")
 theme_override_font_sizes/normal_font_size = 16
 text = "0
@@ -191,9 +196,9 @@ text_direction = 1
 
 [node name="TextureRect4" type="TextureRect" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel"]
 layout_mode = 0
-offset_top = 238.0
+offset_top = 214.0
 offset_right = 16.0
-offset_bottom = 254.0
+offset_bottom = 230.0
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_0yfdc")
 stretch_mode = 2
@@ -201,9 +206,9 @@ stretch_mode = 2
 [node name="RichTextLabel6" type="RichTextLabel" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 246.0
+offset_top = 222.0
 offset_right = 156.0
-offset_bottom = 732.0
+offset_bottom = 708.0
 theme_override_fonts/normal_font = ExtResource("1_27dus")
 theme_override_font_sizes/normal_font_size = 16
 text = "0
@@ -212,9 +217,9 @@ text_direction = 1
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel"]
 layout_mode = 0
-offset_top = 286.0
+offset_top = 246.0
 offset_right = 120.0
-offset_bottom = 772.0
+offset_bottom = 732.0
 theme_override_fonts/normal_font = ExtResource("1_27dus")
 theme_override_font_sizes/normal_font_size = 16
 text = "Stats"
@@ -222,9 +227,9 @@ text_direction = 1
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel"]
 layout_mode = 0
-offset_top = 350.0
+offset_top = 326.0
 offset_right = 120.0
-offset_bottom = 812.0
+offset_bottom = 788.0
 theme_override_fonts/normal_font = ExtResource("1_27dus")
 theme_override_font_sizes/normal_font_size = 16
 text = "DMG:
@@ -233,9 +238,9 @@ text_direction = 1
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel"]
 layout_mode = 0
-offset_top = 398.0
+offset_top = 390.0
 offset_right = 120.0
-offset_bottom = 884.0
+offset_bottom = 876.0
 theme_override_fonts/normal_font = ExtResource("1_27dus")
 theme_override_font_sizes/normal_font_size = 16
 text = "RANGE:
@@ -244,9 +249,9 @@ text_direction = 1
 
 [node name="RichTextLabel10" type="RichTextLabel" parent="MarginContainer/TabContainer/Craft/HSplitContainer/Panel"]
 layout_mode = 0
-offset_top = 310.0
+offset_top = 270.0
 offset_right = 120.0
-offset_bottom = 350.0
+offset_bottom = 326.0
 theme_override_fonts/normal_font = ExtResource("1_27dus")
 theme_override_font_sizes/normal_font_size = 16
 text = "NAME:
@@ -276,23 +281,81 @@ layout_mode = 2
 theme_override_constants/v_separation = 24
 columns = 6
 
-[node name="CardButton" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" instance=ExtResource("4_6epq8")]
+[node name="Sword" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
-cardName = "Butt"
+texture_normal = ExtResource("5_yoyye")
+cardName = "Wood Sword"
 wood = 3
-rock = 2
 dmglow = 1
 dmghigh = 6
 range = 2
+cardscene = NodePath("Card")
 
-[node name="CardButton2" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" instance=ExtResource("4_6epq8")]
-layout_mode = 2
+[node name="Card" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer/Sword" instance=ExtResource("6_ngwkv")]
+visible = false
+texture = ExtResource("5_yoyye")
+dmglow = 1
+dmghigh = 6
+range = 1
+dura = 3
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
 
-[node name="CardButton3" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" instance=ExtResource("4_6epq8")]
+[node name="CardButton2" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
+texture_normal = ExtResource("7_up4b0")
+cardName = "Wood Axe"
+wood = 3
+dmglow = 1
+dmghigh = 8
+range = 1
+cardscene = NodePath("Card")
 
-[node name="CardButton4" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" instance=ExtResource("4_6epq8")]
+[node name="Card" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer/CardButton2" instance=ExtResource("6_ngwkv")]
+visible = false
+texture = ExtResource("7_up4b0")
+dmglow = 1
+dmghigh = 8
+range = 1
+dura = 2
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+
+[node name="CardButton3" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
+texture_normal = ExtResource("8_338j3")
+cardName = "Wood Spear"
+wood = 2
+dmglow = 1
+dmghigh = 8
+range = 4
+cardscene = NodePath("Card")
+
+[node name="Card" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer/CardButton3" instance=ExtResource("6_ngwkv")]
+visible = false
+texture = ExtResource("8_338j3")
+dmglow = 1
+dmghigh = 8
+range = 4
+dura = 1
+pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])
+
+[node name="CardButton4" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
+layout_mode = 2
+texture_normal = ExtResource("9_47m40")
+cardName = "Wood Mace"
+wood = 4
+dmglow = 1
+dmghigh = 10
+range = 1
+cardscene = NodePath("Card")
+
+[node name="Card" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer/CardButton4" instance=ExtResource("6_ngwkv")]
+visible = false
+texture = ExtResource("9_47m40")
+dmglow = 1
+dmghigh = 10
+range = 1
+dura = 3
+pattern = Array[bool]([false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
 
 [node name="CardButton5" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" instance=ExtResource("4_6epq8")]
 layout_mode = 2

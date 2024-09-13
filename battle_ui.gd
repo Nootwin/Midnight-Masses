@@ -5,6 +5,7 @@ extends Control
 @onready var DMG = $ColorRect/DMG
 @onready var RNG = $ColorRect/RANGE
 @onready var DUR = $ColorRect/DURA
+@onready var DECKSIZE = $TextureRect/SIZE
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +14,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	DECKSIZE.text = str($"/root/Inventory".deck.size())
 	pass
 
 func load_card(card : CardBattle):

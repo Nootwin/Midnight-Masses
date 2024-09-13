@@ -7,6 +7,7 @@ class_name CardButton extends TextureButton
 @export var dmglow : int
 @export var dmghigh : int
 @export var range : int
+@export var cardscene : CardBattle
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

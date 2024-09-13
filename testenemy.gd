@@ -50,3 +50,7 @@ func _physics_process(delta: float) -> void:
 			path.remove_at(0)
 		if (steps < 1):
 			get_parent().next()
+
+func die():
+	get_parent().turnOrder.erase(self)
+	queue_free()

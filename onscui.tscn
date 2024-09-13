@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://4r4xlbhsgpy"]
+[gd_scene load_steps=11 format=3 uid="uid://4r4xlbhsgpy"]
 
 [ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="1_3mpst"]
 [ext_resource type="Script" path="res://onscui.gd" id="1_rnqcp"]
+[ext_resource type="Texture2D" uid="uid://d20mwi3fmivq1" path="res://art/daylightbar.png" id="3_gi1jp"]
+[ext_resource type="Texture2D" uid="uid://bx1s16ouy7yu4" path="res://art/cards/sun.png" id="4_cl4hh"]
+[ext_resource type="Script" path="res://sun.gd" id="5_4r1gu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpii4"]
 
@@ -71,3 +74,27 @@ theme_override_font_sizes/normal_font_size = 32
 text = "0"
 scroll_active = false
 text_direction = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_right = 512.0
+offset_bottom = 16.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_gi1jp")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 12.0
+texture = ExtResource("4_cl4hh")
+script = ExtResource("5_4r1gu")
+
+[node name="Timer" type="Timer" parent="TextureRect/TextureRect"]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="TextureRect/TextureRect/Timer" to="TextureRect/TextureRect" method="_on_timer_timeout"]
