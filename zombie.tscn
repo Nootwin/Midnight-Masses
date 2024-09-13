@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5cl35orl258g"]
+
+[ext_resource type="Script" path="res://zombie.gd" id="1_t15mu"]
+[ext_resource type="Texture2D" uid="uid://dllp1ne4u3t00" path="res://art/zombie.png" id="2_xhdv0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1aix"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf3ri"]
+atlas = ExtResource("2_xhdv0")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quvnb"]
+atlas = ExtResource("2_xhdv0")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7gsb"]
+atlas = ExtResource("2_xhdv0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbsxe"]
+atlas = ExtResource("2_xhdv0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bghkb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf3ri")
+}],
+"loop": true,
+"name": &"down_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quvnb")
+}],
+"loop": true,
+"name": &"down_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7gsb")
+}],
+"loop": true,
+"name": &"up_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbsxe")
+}],
+"loop": true,
+"name": &"up_walk",
+"speed": 5.0
+}]
+
+[node name="Zombie" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_t15mu")
+maxsteps = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i1aix")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_bghkb")
+animation = &"up_walk"

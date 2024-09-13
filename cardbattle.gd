@@ -40,16 +40,16 @@ func _physics_process(delta: float) -> void:
 		var wantedposy = int(dis.y) / 64
 		print(wantedposx, wantedposy)
 		
-		if (wantedposx > range):
-			wantedposx = range
-		elif (wantedposx < -range):
-			wantedposx = -range
-		if (wantedposy > range):
-			wantedposy = range
-		elif (wantedposy < -range): 
-			wantedposy = -range
+		if (wantedposx > range-1):
+			wantedposx = range-1
+		elif (wantedposx < -range+1):
+			wantedposx = -(range-1)
+		if (wantedposy > range-1):
+			wantedposy = range-1
+		elif (wantedposy < -range+1): 
+			wantedposy = -(range-1)
 			
-		crosshiar.global_position = Vector2(wantedposx * 64, wantedposy * 64)
+		crosshiar.global_position = Vector2(wantedposx * 64 - 32, wantedposy * 64 - 32)
 func _on_button_button_down() -> void:
 	ofset = get_global_mouse_position() - global_position
 	modulate.a = 0.5
