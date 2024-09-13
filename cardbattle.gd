@@ -35,7 +35,21 @@ func _physics_process(delta: float) -> void:
 				crosshiar.rotation_degrees = 0
 			else:
 				crosshiar.rotation_degrees = 180
-
+				
+		var wantedposx = int(dis.x) / 64
+		var wantedposy = int(dis.y) / 64
+		print(wantedposx, wantedposy)
+		
+		if (wantedposx > range):
+			wantedposx = range
+		elif (wantedposx < -range):
+			wantedposx = -range
+		if (wantedposy > range):
+			wantedposy = range
+		elif (wantedposy < -range): 
+			wantedposy = -range
+			
+		crosshiar.global_position = Vector2(wantedposx * 64, wantedposy * 64)
 func _on_button_button_down() -> void:
 	ofset = get_global_mouse_position() - global_position
 	modulate.a = 0.5

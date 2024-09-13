@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://ctraatmxjoioe"]
+[gd_scene load_steps=14 format=4 uid="uid://ctraatmxjoioe"]
 
 [ext_resource type="Texture2D" uid="uid://cha8gnx5b8jmw" path="res://art/tilemap.png" id="1_0p1cc"]
 [ext_resource type="Script" path="res://testenemy.gd" id="2_e8ryr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://irapdpnerkdg" path="res://crosshiar.tscn" id="4_o6bdn"]
 [ext_resource type="PackedScene" uid="uid://cov33l11nb1ab" path="res://battle_ui.tscn" id="5_2iy26"]
 [ext_resource type="Script" path="res://card_handler.gd" id="6_g6j4p"]
+[ext_resource type="PackedScene" uid="uid://b6gohqgsic3ur" path="res://cardbattle.tscn" id="8_ji4k0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2gike"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -74,3 +75,8 @@ texture = SubResource("PlaceholderTexture2D_06beg")
 
 [node name="CardHandler" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("6_g6j4p")
+
+[node name="Card" parent="CanvasLayer/CardHandler" instance=ExtResource("8_ji4k0")]
+range = 4
+dura = 1
+pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])

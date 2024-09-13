@@ -31,7 +31,7 @@ func draw_cards():
 			card = $"/root/Inventory".deck.pop_front()
 			add_child(card)
 			card.visible = true
-			print(card)
+			await get_tree().create_timer(0.3).timeout
 	else:
 		card = $"/root/Inventory".deck.pop_front()
 		add_child(card)
