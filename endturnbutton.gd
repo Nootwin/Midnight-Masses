@@ -1,6 +1,6 @@
 extends Button
 
-@onready var player = $"/root/Node2D/TurnHandler/Bplayer"
+@onready var player = $"/root/Node2D/BattleEssentials/TurnHandler/Bplayer"
 
 
 # Called when the node enters the scene tree for the first time.

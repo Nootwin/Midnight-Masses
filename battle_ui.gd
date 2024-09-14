@@ -14,6 +14,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	HP.text = "HP: " + str($"/root/Node2D/BattleEssentials/TurnHandler/Bplayer".health)
 	DECKSIZE.text = str($"/root/Inventory".deck.size())
 	pass
 

@@ -10,12 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func on_hit(item : Item):
-	print("here")
-	var damage = randi_range(item.damagelow, item.damagehigh)
-	if (item.isPickAxe):
-		damage *= 3
-	take_damage(damage)
 	
 func dispense(amount):
 	$"/root/Inventory".rock += amount

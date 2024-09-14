@@ -1,7 +1,7 @@
 class_name CardBattle extends Sprite2D
 var dragging = false
 var ofset : Vector2
-@onready var crosshiar = $"/root/Node2D/TurnHandler/Bplayer/Boxes"
+@onready var crosshiar = $"/root/Node2D/BattleEssentials/TurnHandler/Bplayer/Boxes"
 @onready var ui = $"../../BattleUI"
 @onready var halfdim = get_viewport_rect().size / 2
 
@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		elif (wantedposy < -range+1): 
 			wantedposy = -(range-1)
 			
-		crosshiar.global_position = Vector2(wantedposx * 64 - 32, wantedposy * 64 - 32)
+		crosshiar.position = Vector2(wantedposx * 64, wantedposy * 64)
 func _on_button_button_down() -> void:
 	ofset = get_global_mouse_position() - global_position
 	modulate.a = 0.5
@@ -92,8 +92,9 @@ func _input(event: InputEvent) -> void:
 			
 func summon_damage(damage : int):
 	var bodies
+	var amount = randi_range(dmglow, dmghigh)
 	for box in crosshiar.grid:
 		if (box.visible):
 			bodies = box.get_overlapping_bodies()
 			if (!bodies.is_empty()):
-				bodies[0].die()
+				bodies[0].damage(amount)

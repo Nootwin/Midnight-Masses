@@ -1,9 +1,10 @@
 class_name CardButton extends TextureButton
 
-@onready var node = $"/root/Node2D/CanvasLayer2/Control"
+@onready var node = $"/root/Node2D/Essentials/CanvasLayer2/Control"
 @export var cardName : String
 @export var wood : int
 @export var rock : int
+@export var iron : int
 @export var dmglow : int
 @export var dmghigh : int
 @export var range : int

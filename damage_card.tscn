@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://tqj3np8b8yg3"]
+
+[ext_resource type="Texture2D" uid="uid://c10ghx2vbpr63" path="res://art/cards/damage.png" id="1_4ghol"]
+[ext_resource type="Script" path="res://DamageCard.gd" id="2_kcbph"]
+
+[node name="Card" type="Sprite2D"]
+scale = Vector2(4, 4)
+texture = ExtResource("1_4ghol")
+script = ExtResource("2_kcbph")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -12.0
+offset_top = -16.0
+offset_right = 12.0
+offset_bottom = 16.0
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

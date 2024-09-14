@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://3fto8ynnc6ym"]
+
+[ext_resource type="Texture2D" uid="uid://dllp1ne4u3t00" path="res://art/zombie.png" id="1_0yxpd"]
+[ext_resource type="Texture2D" uid="uid://dwq7tulkm804c" path="res://art/mainchar.png" id="2_ujkm4"]
+[ext_resource type="Script" path="res://startbutton.gd" id="3_0uvlf"]
+[ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="4_3odd5"]
+[ext_resource type="PackedScene" path="res://goals.tscn" id="4_sndl0"]
+[ext_resource type="AudioStream" uid="uid://cjh6pcb2jvh78" path="res://badsong.wav" id="5_14vqn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecb5a"]
+atlas = ExtResource("2_ujkm4")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 327)
+scale = Vector2(8, 8)
+texture = ExtResource("1_0yxpd")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 298.0
+offset_right = 490.0
+offset_bottom = 314.0
+scale = Vector2(16, 16)
+texture_normal = SubResource("AtlasTexture_ecb5a")
+script = ExtResource("3_0uvlf")
+level = ExtResource("4_sndl0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextureButton"]
+stream = ExtResource("5_14vqn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 593.0
+offset_right = 1154.0
+offset_bottom = 646.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_3odd5")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Click Goose To Start[/center]
+"
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="finished" from="TextureButton/AudioStreamPlayer" to="TextureButton" method="_on_audio_stream_player_finished"]

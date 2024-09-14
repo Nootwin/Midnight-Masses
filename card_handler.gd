@@ -20,7 +20,8 @@ func _physics_process(delta: float) -> void:
 	
 	for i in size:
 		card = cards[i]
-		card.global_position = Vector2(scsizex + ((offset + i) * 96), scsizey - 64)
+		if (!card is DamageCard):
+			card.global_position = Vector2(scsizex + ((offset + i) * 96), scsizey - 64)
 		
 func draw_cards():
 	var card

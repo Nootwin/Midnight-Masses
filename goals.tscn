@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgdgsfrubylw3"]
+
+[ext_resource type="Texture2D" uid="uid://b61y725unfopb" path="res://art/goals.png" id="1_1xqtt"]
+[ext_resource type="Texture2D" uid="uid://db2ypt175ccjd" path="res://art/next.png" id="2_10vvo"]
+[ext_resource type="Script" path="res://startbutton.gd" id="3_cejye"]
+[ext_resource type="PackedScene" uid="uid://fxpg01gkycjs" path="res://control.tscn" id="4_6rnio"]
+[ext_resource type="AudioStream" uid="uid://cssyqa86b3an7" path="res://pickupCoin.wav" id="5_pv8b6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 327)
+texture = ExtResource("1_1xqtt")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 449.0
+offset_right = 691.0
+offset_bottom = 577.0
+texture_normal = ExtResource("2_10vvo")
+script = ExtResource("3_cejye")
+level = ExtResource("4_6rnio")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextureButton"]
+stream = ExtResource("5_pv8b6")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="finished" from="TextureButton/AudioStreamPlayer" to="TextureButton" method="_on_audio_stream_player_finished"]

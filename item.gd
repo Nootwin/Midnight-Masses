@@ -1,7 +1,6 @@
 class_name Item extends Area2D
 
-@export var isAxe : bool = false
-@export var isPickAxe : bool = false
+
 @export var damagelow : int
 @export var damagehigh : int
 
@@ -24,4 +23,5 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body is Provider and $"../../..".swinging):
+		
 		body.on_hit(self)

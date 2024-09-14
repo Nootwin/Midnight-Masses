@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5cl35orl258g"]
+[gd_scene load_steps=11 format=3 uid="uid://c5cl35orl258g"]
 
 [ext_resource type="Script" path="res://zombie.gd" id="1_t15mu"]
 [ext_resource type="Texture2D" uid="uid://dllp1ne4u3t00" path="res://art/zombie.png" id="2_xhdv0"]
+[ext_resource type="Script" path="res://enemy_info.gd" id="3_o01qg"]
+[ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="4_vojj5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1aix"]
 size = Vector2(64, 64)
@@ -60,8 +62,26 @@ animations = [{
 [node name="Zombie" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 16
+input_pickable = true
 script = ExtResource("1_t15mu")
 maxsteps = 3
+range = 1
+health = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+offset_left = -53.0
+offset_top = -64.0
+offset_right = 60.0
+offset_bottom = 3.0
+theme_override_fonts/normal_font = ExtResource("4_vojj5")
+theme_override_font_sizes/normal_font_size = 16
+text = "HP : #
+DMG : 1"
+script = ExtResource("3_o01qg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_i1aix")
@@ -70,3 +90,6 @@ shape = SubResource("RectangleShape2D_i1aix")
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_bghkb")
 animation = &"up_walk"
+
+[connection signal="mouse_entered" from="." to="RichTextLabel" method="_on_zombie_mouse_entered"]
+[connection signal="mouse_exited" from="." to="RichTextLabel" method="_on_zombie_mouse_exited"]

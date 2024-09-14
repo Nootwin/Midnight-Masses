@@ -10,15 +10,19 @@ var posinMap : Vector2i
 var spdir : String = "up"
 var steps : int
 var isturn = false
+var health = 5
 @onready var cardhandler = $"../../CanvasLayer/CardHandler"
 @export var maxsteps : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	steps = maxsteps
 	posinMap = global_position / 64
 	pass # Replace with function body.
 
+func damage(amount : int):
+	health -= amount
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -87,3 +91,4 @@ func start_turn():
 	steps = maxsteps
 	cardhandler.draw_cards()
 	pass
+	

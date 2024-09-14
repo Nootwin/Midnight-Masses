@@ -1,10 +1,9 @@
 extends Control
 
 var currentCard : CardButton
-@onready var curwood = $MarginContainer/TabContainer/Craft/HSplitContainer/Panel/RichTextLabel
-@onready var currock = $MarginContainer/TabContainer/Craft/HSplitContainer/Panel/RichTextLabel2
 @onready var costwood = $MarginContainer/TabContainer/Craft/HSplitContainer/Panel/RichTextLabel5
 @onready var costrock = $MarginContainer/TabContainer/Craft/HSplitContainer/Panel/RichTextLabel6
+@onready var costiron = $MarginContainer/TabContainer/Craft/HSplitContainer/Panel/RichTextLabel11
 @onready var statname = $MarginContainer/TabContainer/Craft/HSplitContainer/Panel/RichTextLabel10
 @onready var statdmg = $MarginContainer/TabContainer/Craft/HSplitContainer/Panel/RichTextLabel8
 @onready var statrng = $MarginContainer/TabContainer/Craft/HSplitContainer/Panel/RichTextLabel9
@@ -16,15 +15,12 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	curwood.text = str($"/root/Inventory".wood)
-	currock.text = str($"/root/Inventory".rock)
-	pass
 
 
 func updateCurrentCard():
 	costwood.text = str(currentCard.wood)
 	costrock.text = str(currentCard.rock)
+	costiron.text = str(currentCard.iron)
 	statname.text = "NAME: \n" + currentCard.cardName
 	statdmg.text = "DMG: \n" + str(currentCard.dmglow) + "-" + str(currentCard.dmghigh)
 	statrng.text = "RANGE: \n" + str(currentCard.range)

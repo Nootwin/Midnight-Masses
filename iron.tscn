@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtlfkpj2o3b1w"]
+
+[ext_resource type="Script" path="res://tree.gd" id="1_unicn"]
+[ext_resource type="Texture2D" uid="uid://p8tn2kfccdo7" path="res://art/iron.png" id="2_4mw5o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7kij"]
+size = Vector2(64, 64)
+
+[node name="Tree" type="StaticBody2D"]
+script = ExtResource("1_unicn")
+health = 100
+dispenseEvery = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_4mw5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w7kij")
