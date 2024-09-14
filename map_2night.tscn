@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://pt6xir5sdvgu"]
+
+[ext_resource type="PackedScene" uid="uid://dj1l7x57vbn0m" path="res://battle_essentials.tscn" id="1_hvcxi"]
+[ext_resource type="PackedScene" uid="uid://80g4l4be2v1g" path="res://map_3.tscn" id="2_u1sxi"]
+[ext_resource type="PackedScene" uid="uid://c5cl35orl258g" path="res://zombie.tscn" id="2_y1lj4"]
+[ext_resource type="PackedScene" uid="uid://c1chdphfslniu" path="res://skeleton.tscn" id="3_yvj5u"]
+[ext_resource type="PackedScene" uid="uid://olg62q2vqpvd" path="res://tut_text.tscn" id="5_wmxu0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BattleEssentials" parent="." instance=ExtResource("1_hvcxi")]
+next_scene = ExtResource("2_u1sxi")
+
+[node name="Zombie" parent="BattleEssentials/TurnHandler" index="1" instance=ExtResource("2_y1lj4")]
+position = Vector2(-224, 608)
+dmg = 4
+health = 10
+
+[node name="Zombie2" parent="BattleEssentials/TurnHandler" index="2" instance=ExtResource("2_y1lj4")]
+position = Vector2(-544, 288)
+dmg = 4
+health = 10
+
+[node name="Zombie3" parent="BattleEssentials/TurnHandler" index="3" instance=ExtResource("2_y1lj4")]
+position = Vector2(-352, -32)
+dmg = 4
+health = 10
+
+[node name="Zombie4" parent="BattleEssentials/TurnHandler" index="4" instance=ExtResource("2_y1lj4")]
+position = Vector2(160, -96)
+dmg = 4
+health = 10
+
+[node name="Zombie5" parent="BattleEssentials/TurnHandler" index="5" instance=ExtResource("2_y1lj4")]
+position = Vector2(-96, 160)
+dmg = 4
+health = 10
+
+[node name="Skeleton" parent="BattleEssentials/TurnHandler" index="6" instance=ExtResource("3_yvj5u")]
+position = Vector2(352, 352)
+health = 7
+dmg = 3
+
+[node name="Skeleton2" parent="BattleEssentials/TurnHandler" index="7" instance=ExtResource("3_yvj5u")]
+position = Vector2(-608, -32)
+health = 7
+dmg = 3
+
+[node name="Skeleton3" parent="BattleEssentials/TurnHandler" index="8" instance=ExtResource("3_yvj5u")]
+position = Vector2(160, -288)
+health = 7
+dmg = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("5_wmxu0")]
+texts = Array[String](["Skeletons have showed up this time", "They can attack from afar", "Be Careful"])
+
+[editable path="BattleEssentials"]

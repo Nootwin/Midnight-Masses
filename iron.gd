@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 	
 	
 func dispense(amount):
+	$AudioStreamPlayer2D.play()
 	$"/root/Inventory".iron += amount

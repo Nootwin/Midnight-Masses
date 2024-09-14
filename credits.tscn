@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://md4ilg2ssq6c"]
+
+[ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="1_jyvxm"]
+[ext_resource type="Script" path="res://credits.gd" id="2_rrcub"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 647.0
+offset_right = 1153.0
+offset_bottom = 4316.0
+theme_override_fonts/normal_font = ExtResource("1_jyvxm")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]Credits
+
+
+
+
+
+
+
+Created By Nootwin
+
+
+
+
+
+
+
+
+
+All assets and code (minus sound) created or edited during the jam
+
+
+
+
+
+Consider Checking out my other projects!
+
+
+
+
+
+
+
+
+Thank you for playing :D
+"
+scroll_active = false
+script = ExtResource("2_rrcub")

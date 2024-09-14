@@ -18,7 +18,6 @@ func _physics_process(delta: float) -> void:
 	global_position.x = move_toward(global_position.x, viewport.x, movement.x)
 	global_position.y = move_toward(global_position.y, viewport.y, movement.y)
 	
-	print(global_position)
 	
 func _enter_tree() -> void:
 	viewport =  get_viewport_rect().size/2

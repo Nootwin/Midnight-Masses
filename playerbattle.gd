@@ -11,11 +11,17 @@ var spdir : String = "up"
 var steps : int
 var isturn = false
 var health = 5
+var ap
 @onready var cardhandler = $"../../CanvasLayer/CardHandler"
 @export var maxsteps : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var rect = $"../../TileMapLayer".get_used_rect().size * 32
+	$Camera2D.limit_top = -rect.y
+	$Camera2D.limit_bottom = rect.y
+	$Camera2D.limit_left = -rect.x
+	$Camera2D.limit_right = rect.x
 	
 	steps = maxsteps
 	posinMap = global_position / 64
@@ -23,6 +29,11 @@ func _ready() -> void:
 
 func damage(amount : int):
 	health -= amount
+	if (health < 0):
+		die()
+	
+func die():
+	get_tree().change_scene_to_file("res://endscreen.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -88,7 +99,9 @@ func _physics_process(delta: float) -> void:
 		
 			
 func start_turn():
+	ap = 3
 	steps = maxsteps
 	cardhandler.draw_cards()
+	isturn = true
 	pass
 	

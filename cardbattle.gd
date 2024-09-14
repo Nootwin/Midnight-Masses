@@ -38,7 +38,6 @@ func _physics_process(delta: float) -> void:
 				
 		var wantedposx = int(dis.x) / 64
 		var wantedposy = int(dis.y) / 64
-		print(wantedposx, wantedposy)
 		
 		if (wantedposx > range-1):
 			wantedposx = range-1
@@ -62,18 +61,20 @@ func _on_button_button_down() -> void:
 
 
 func _on_button_button_up() -> void:
-	if (global_position.y > get_viewport_rect().size.y - 128):
+	if (global_position.y > get_viewport_rect().size.y - 128 or crosshiar.get_parent().ap < 1):
 		dragging = false
 		ofset = Vector2(0, 0)
 		modulate.a = 1
 		crosshiar.visible = false
 	if (dragging):
+		$"../../AudioStreamPlayer".play()
 		dragging = false
 		ofset = Vector2(0, 0)
 		modulate.a = 1
 		crosshiar.visible = false
 		dura -= 1
 		summon_damage(randi_range(dmglow, dmghigh))
+		crosshiar.get_parent().ap -= 1
 		
 		if (dura > 0):
 			$"/root/Inventory".deck.push_back(self)
@@ -90,9 +91,8 @@ func _input(event: InputEvent) -> void:
 			modulate.a = 1
 			crosshiar.visible = false
 			
-func summon_damage(damage : int):
+func summon_damage(amount : int):
 	var bodies
-	var amount = randi_range(dmglow, dmghigh)
 	for box in crosshiar.grid:
 		if (box.visible):
 			bodies = box.get_overlapping_bodies()

@@ -1,0 +1,154 @@
+[gd_scene load_steps=8 format=3 uid="uid://80g4l4be2v1g"]
+
+[ext_resource type="PackedScene" uid="uid://cnekkrhc2o8id" path="res://essentials.tscn" id="1_663xh"]
+[ext_resource type="Script" path="res://essentials.gd" id="2_a2fvt"]
+[ext_resource type="PackedScene" uid="uid://b0xf234jbemqt" path="res://tree.tscn" id="2_f5kia"]
+[ext_resource type="PackedScene" uid="uid://dcwqut57but4i" path="res://rocks.tscn" id="3_7vhwi"]
+[ext_resource type="PackedScene" uid="uid://43l3o6c4i3sw" path="res://map_3night.tscn" id="3_bjqrn"]
+[ext_resource type="PackedScene" uid="uid://dtlfkpj2o3b1w" path="res://iron.tscn" id="4_ugbc4"]
+[ext_resource type="PackedScene" uid="uid://olg62q2vqpvd" path="res://tut_text.tscn" id="7_bry74"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Essentials" parent="." instance=ExtResource("1_663xh")]
+script = ExtResource("2_a2fvt")
+next_scene = ExtResource("3_bjqrn")
+
+[node name="enviroment" type="Node2D" parent="."]
+
+[node name="Tree0" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-192, -192)
+
+[node name="Tree1" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-64, -192)
+
+[node name="Tree2" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(64, -192)
+
+[node name="Tree3" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(192, -192)
+
+[node name="Tree4" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(320, -192)
+
+[node name="Tree5" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-192, 192)
+
+[node name="Tree6" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-64, 192)
+
+[node name="Tree7" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(64, 192)
+
+[node name="Tree8" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(192, 192)
+
+[node name="Tree9" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(320, 192)
+
+[node name="Rocks" parent="enviroment" instance=ExtResource("3_7vhwi")]
+position = Vector2(-576, -192)
+
+[node name="Rocks2" parent="enviroment" instance=ExtResource("3_7vhwi")]
+position = Vector2(-576, -64)
+
+[node name="Rocks3" parent="enviroment" instance=ExtResource("3_7vhwi")]
+position = Vector2(-576, 64)
+
+[node name="Rocks4" parent="enviroment" instance=ExtResource("3_7vhwi")]
+position = Vector2(-576, 192)
+
+[node name="Rocks5" parent="enviroment" instance=ExtResource("3_7vhwi")]
+position = Vector2(704, -192)
+
+[node name="Rocks6" parent="enviroment" instance=ExtResource("3_7vhwi")]
+position = Vector2(704, -64)
+
+[node name="Rocks7" parent="enviroment" instance=ExtResource("3_7vhwi")]
+position = Vector2(704, 64)
+
+[node name="Rocks8" parent="enviroment" instance=ExtResource("3_7vhwi")]
+position = Vector2(704, 192)
+
+[node name="Iron" parent="enviroment" instance=ExtResource("4_ugbc4")]
+position = Vector2(-576, 576)
+
+[node name="Iron2" parent="enviroment" instance=ExtResource("4_ugbc4")]
+position = Vector2(704, 576)
+
+[node name="Iron3" parent="enviroment" instance=ExtResource("4_ugbc4")]
+position = Vector2(-576, -576)
+
+[node name="Iron4" parent="enviroment" instance=ExtResource("4_ugbc4")]
+position = Vector2(704, -576)
+
+[node name="Rocks9" parent="enviroment" instance=ExtResource("3_7vhwi")]
+position = Vector2(64, 576)
+
+[node name="Rocks10" parent="enviroment" instance=ExtResource("3_7vhwi")]
+position = Vector2(64, -576)
+
+[node name="Tree10" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(960, -576)
+
+[node name="Tree11" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(960, -384)
+
+[node name="Tree12" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(960, -192)
+
+[node name="Tree13" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(960, 0)
+
+[node name="Tree14" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(960, 192)
+
+[node name="Tree15" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(960, 384)
+
+[node name="Tree16" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(960, 576)
+
+[node name="Tree17" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-832, -576)
+
+[node name="Tree18" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-832, -384)
+
+[node name="Tree19" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-832, -192)
+
+[node name="Tree20" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-832, 0)
+
+[node name="Tree21" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-832, 192)
+
+[node name="Tree22" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-832, 384)
+
+[node name="Tree23" parent="enviroment" instance=ExtResource("2_f5kia")]
+position = Vector2(-832, 576)
+
+[node name="Iron5" parent="enviroment" instance=ExtResource("4_ugbc4")]
+position = Vector2(64, 1024)
+
+[node name="Iron6" parent="enviroment" instance=ExtResource("4_ugbc4")]
+position = Vector2(704, 1024)
+
+[node name="Iron7" parent="enviroment" instance=ExtResource("4_ugbc4")]
+position = Vector2(-576, 1024)
+
+[node name="Iron8" parent="enviroment" instance=ExtResource("4_ugbc4")]
+position = Vector2(704, -960)
+
+[node name="Iron9" parent="enviroment" instance=ExtResource("4_ugbc4")]
+position = Vector2(64, -960)
+
+[node name="Iron10" parent="enviroment" instance=ExtResource("4_ugbc4")]
+position = Vector2(-576, -960)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("7_bry74")]
+texts = Array[String](["I have a bad feeling about tonight..."])

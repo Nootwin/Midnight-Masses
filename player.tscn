@@ -78,3 +78,5 @@ position_smoothing_speed = 8.0
 
 [node name="Hand" type="Node2D" parent="Arm"]
 position = Vector2(24, 12)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]

@@ -8,6 +8,7 @@ var path
 var wantedpos : Vector2
 var dirani = "up"
 @export var maxsteps : int
+@export var dmg : int
 var steps : int
 @export var range : int
 @export var health : int
@@ -29,13 +30,15 @@ func _process(delta: float) -> void:
 	pass
 	
 func start_turn():
+	await get_tree().create_timer(0.5).timeout
 	target_position = $"../Bplayer".global_position
 	var start = tilemap.local_to_map(tilemap.to_local(global_position))
 	var end = tilemap.local_to_map(tilemap.to_local(target_position))
 	path = get_parent().astar.get_point_path(start, end)
 	path.remove_at(0)
-	print(path)
 	steps = maxsteps
+	isturn = true
+	get_parent().astar.set_point_solid(start, false)
 	
 func _physics_process(delta: float) -> void:
 	if (isturn):
@@ -43,7 +46,9 @@ func _physics_process(delta: float) -> void:
 		if (wantedpos == global_position):
 			steps -= 1
 			if (path.size() <= range):
-				$"/root/Inventory".damage(3)
+				$AudioStreamPlayer2D.play()
+				$"/root/Inventory".damage(dmg)
+				get_parent().astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(global_position)), true)
 				get_parent().next()
 			elif (not path.is_empty()):
 				if (path[0].x == global_position.x):
@@ -52,7 +57,6 @@ func _physics_process(delta: float) -> void:
 						velocity = Vector2(0, 16)
 						dirani = "down"
 					else:
-						print(path[0] - global_position, path[0], global_position)
 						wantedpos = Vector2(0, -64) + global_position
 						velocity = Vector2(0, -16)
 						dirani = "up"
@@ -68,12 +72,12 @@ func _physics_process(delta: float) -> void:
 						$Sprite2D.flip_h = false
 				path.remove_at(0)
 				$Sprite2D.play(dirani + "_walk")
-				print("step")
 				if (steps > -1):
 					move_and_collide(velocity)
 			else:
 				$Sprite2D.play(dirani + "_idle")
-			if (steps < 0):
+			if (steps < 0 and isturn):
+				get_parent().astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(global_position)), true)
 				get_parent().next()
 				wantedpos = global_position
 			

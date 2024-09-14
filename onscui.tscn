@@ -119,7 +119,6 @@ texture = ExtResource("4_cl4hh")
 script = ExtResource("5_4r1gu")
 
 [node name="Timer" type="Timer" parent="TextureRect/TextureRect"]
-wait_time = 0.2
 autostart = true
 
 [connection signal="timeout" from="TextureRect/TextureRect/Timer" to="TextureRect/TextureRect" method="_on_timer_timeout"]

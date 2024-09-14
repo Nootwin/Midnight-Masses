@@ -2,6 +2,7 @@ extends Node2D
 @onready var turnOrder = get_children()
 var astar = AStarGrid2D.new()
 @onready var tilemap = $"../TileMapLayer"
+@onready var cam = $Bplayer/Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,11 +24,18 @@ func _process(delta: float) -> void:
 	pass
 	
 func next():
-	turnOrder.back().isturn = false
-	var nex = turnOrder.pop_front()
-	nex.isturn = true
-	nex.start_turn()
-	turnOrder.push_back(nex)
+	if (get_child_count() < 2):
+		get_tree().change_scene_to_packed($"/root/Node2D/BattleEssentials".next_scene)
+	else:
+		turnOrder.back().isturn = false
+		turnOrder.back().remove_child(cam)
+		var nex = turnOrder.pop_front()
+	
+
+		turnOrder.push_back(nex)
+		nex.start_turn()
+		print(nex.name)
+		nex.add_child(cam)
 	
 func _on_env_entered():
 	var env = $"/root/Inventory".enviroment

@@ -31,8 +31,10 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_button_pressed() -> void:
-	if (currentCard.wood <= $"/root/Inventory".wood and currentCard.rock <= $"/root/Inventory".rock):
+	if (currentCard != null and currentCard.wood <= $"/root/Inventory".wood and currentCard.rock <= $"/root/Inventory".rock):
+		
 		$"/root/Inventory".wood -= currentCard.wood
 		$"/root/Inventory".rock -= currentCard.rock
 		$"/root/Inventory".add_to_deck(currentCard.cardscene.duplicate(5))
-	pass # Replace with function body.
+		$AudioStreamPlayer.play()
+	pass # Replace with $AudioStreamPlayerfunction body.

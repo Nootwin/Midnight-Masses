@@ -29,11 +29,15 @@ func draw_cards():
 		pass
 	if (get_child_count() < 4):
 		while (get_child_count() < 4 and $"/root/Inventory".deck.size() > 0):
+			$"../AudioStreamPlayer2".play()
 			card = $"/root/Inventory".deck.pop_front()
 			add_child(card)
 			card.visible = true
 			await get_tree().create_timer(0.3).timeout
 	else:
-		card = $"/root/Inventory".deck.pop_front()
-		add_child(card)
+		if ($"/root/Inventory".deck.size() > 0):
+			$"../AudioStreamPlayer2".play()
+			card = $"/root/Inventory".deck.pop_front()
+			add_child(card)
+			card.visible = true
 	

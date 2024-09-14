@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://djm0m7kb62i2"]
+
+[ext_resource type="PackedScene" uid="uid://cnekkrhc2o8id" path="res://essentials.tscn" id="1_xcaa3"]
+[ext_resource type="PackedScene" uid="uid://b0xf234jbemqt" path="res://tree.tscn" id="2_r0tur"]
+[ext_resource type="Script" path="res://essentials.gd" id="2_tt66p"]
+[ext_resource type="PackedScene" uid="uid://cepwkoep48v25" path="res://map_1night.tscn" id="3_k2q3u"]
+[ext_resource type="PackedScene" uid="uid://dcwqut57but4i" path="res://rocks.tscn" id="3_o46j3"]
+[ext_resource type="PackedScene" uid="uid://olg62q2vqpvd" path="res://tut_text.tscn" id="6_y7ini"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Essentials" parent="." instance=ExtResource("1_xcaa3")]
+script = ExtResource("2_tt66p")
+next_scene = ExtResource("3_k2q3u")
+
+[node name="enviroment" type="Node2D" parent="."]
+
+[node name="Tree0" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(64, -320)
+
+[node name="Tree1" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-384, -64)
+
+[node name="Tree2" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(640, 320)
+
+[node name="Tree3" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-384, 640)
+
+[node name="Tree4" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(128, 448)
+
+[node name="Tree5" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-640, 256)
+
+[node name="Tree6" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-704, -256)
+
+[node name="Tree7" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-576, -704)
+
+[node name="Tree8" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-256, -1024)
+
+[node name="Tree9" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-704, -1088)
+
+[node name="Tree10" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-960, -768)
+
+[node name="Tree11" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-1152, -384)
+
+[node name="Tree12" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-1024, 128)
+
+[node name="Tree13" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-1216, 576)
+
+[node name="Tree14" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-896, 960)
+
+[node name="Tree15" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-1216, 1216)
+
+[node name="Tree16" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(-448, 1088)
+
+[node name="Tree17" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(320, 1280)
+
+[node name="Tree18" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(512, 960)
+
+[node name="Tree19" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(1088, 1216)
+
+[node name="Tree20" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(1152, 768)
+
+[node name="Tree21" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(1024, 128)
+
+[node name="Tree22" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(1216, -192)
+
+[node name="Tree23" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(768, -640)
+
+[node name="Tree24" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(384, -896)
+
+[node name="Tree25" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(640, -1280)
+
+[node name="Tree26" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(64, -320)
+
+[node name="Tree27" parent="enviroment" instance=ExtResource("2_r0tur")]
+position = Vector2(64, -320)
+
+[node name="Rocks" parent="enviroment" instance=ExtResource("3_o46j3")]
+position = Vector2(1152, -1152)
+
+[node name="Rocks2" parent="enviroment" instance=ExtResource("3_o46j3")]
+position = Vector2(-1088, -1152)
+
+[node name="Rocks3" parent="enviroment" instance=ExtResource("3_o46j3")]
+position = Vector2(896, 1024)
+
+[node name="Rocks4" parent="enviroment" instance=ExtResource("3_o46j3")]
+position = Vector2(-896, 640)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("6_y7ini")]
+texts = Array[String](["Hello! press any mouse button to respond", "I am a being from above", "I am here to warm you of an impending attack", "WASD to move around a left click to mine", "...Whatever that means", "you must collect ressources from the trees and rocks around you", "and press e to craft weapons to prepare for the storm of the undead", "in the crafting menu, click on the card you want to craft", "You can see on the side its stats or on the card", "The blue marks are the cards durability (how much it can be played)", "and click the \"craft\" button to craft it", "you have less than 2 minutes! go!"])

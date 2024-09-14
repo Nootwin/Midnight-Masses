@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var wantedpos : Vector2 = global_position
 @onready var lastpos : Vector2 = global_position
 @onready var size = 16 * $Sprite2D.scale.x
+@onready var tilemap = $"../Layer0"
 var lastdir : Vector2 = Vector2(-2, -2)
 const SPEED = 8.0
 var swinging : bool = false
@@ -10,7 +11,15 @@ var spdir : String = "up"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var rect = tilemap.get_used_rect().size * 32
+	$Camera2D.limit_top = -rect.y
+	$Camera2D.limit_bottom = rect.y
+	$Camera2D.limit_left = -rect.x
+	$Camera2D.limit_right = rect.x
+	
 	posinMap = global_position / 64
+	
+	$"/root/Inventory".newday($"/root/Node2D")
 	pass # Replace with function body.
 
 

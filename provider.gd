@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 	pass
 	
 func on_hit(item : Item):
-	print("here")
 	var damage = randi_range(item.damagelow, item.damagehigh)
 	take_damage(damage)
 

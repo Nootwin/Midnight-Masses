@@ -2,6 +2,7 @@ extends Control
 
 @onready var HP = $ColorRect/HP
 @onready var AP = $ColorRect/AP
+@onready var STEPS = $ColorRect/MOVE
 @onready var DMG = $ColorRect/DMG
 @onready var RNG = $ColorRect/RANGE
 @onready var DUR = $ColorRect/DURA
@@ -15,6 +16,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	HP.text = "HP: " + str($"/root/Node2D/BattleEssentials/TurnHandler/Bplayer".health)
+	AP.text = "AP: " + str($"/root/Node2D/BattleEssentials/TurnHandler/Bplayer".ap)
+	STEPS.text = "STEPS: " + str($"/root/Node2D/BattleEssentials/TurnHandler/Bplayer".steps)
 	DECKSIZE.text = str($"/root/Inventory".deck.size())
 	pass
 

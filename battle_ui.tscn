@@ -68,6 +68,16 @@ text = "AP : 3
 "
 scroll_active = false
 
+[node name="MOVE" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_top = 71.0
+offset_right = 138.0
+offset_bottom = 111.0
+theme_override_fonts/normal_font = ExtResource("2_afaaa")
+text = "STEP : 3
+"
+scroll_active = false
+
 [node name="DMG" type="RichTextLabel" parent="ColorRect"]
 layout_mode = 0
 offset_left = 2.0

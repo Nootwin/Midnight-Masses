@@ -58,6 +58,7 @@ animations = [{
 }]
 
 [node name="Bplayer" type="CharacterBody2D"]
+collision_mask = 17
 script = ExtResource("1_535bk")
 maxsteps = 5
 
@@ -70,5 +71,8 @@ sprite_frames = SubResource("SpriteFrames_fxod7")
 animation = &"down_idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]

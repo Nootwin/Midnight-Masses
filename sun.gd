@@ -18,8 +18,8 @@ func _physics_process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	where += 1
 	if (where > 61):
-		var env = $"../../../../enviroment"
+		var env = $"../../../../../enviroment"
 		env.get_parent().remove_child(env)
 		$"/root/Inventory".enviroment = env
-		get_tree().change_scene_to_file("res://battle.tscn")
+		get_tree().change_scene_to_packed($"/root/Node2D/Essentials".next_scene)
 	pass # Replace with function body.
