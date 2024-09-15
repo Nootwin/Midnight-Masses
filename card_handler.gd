@@ -28,7 +28,7 @@ func draw_cards():
 	if ($"/root/Inventory".deck.size() > 0):
 		pass
 	if (get_child_count() < 4):
-		while (get_child_count() < 4 and $"/root/Inventory".deck.size() > 0):
+		while (get_real_children() < 4 and $"/root/Inventory".deck.size() > 0):
 			$"../AudioStreamPlayer2".play()
 			card = $"/root/Inventory".deck.pop_front()
 			add_child(card)
@@ -40,4 +40,11 @@ func draw_cards():
 			card = $"/root/Inventory".deck.pop_front()
 			add_child(card)
 			card.visible = true
-	
+
+func get_real_children():
+	var x = 0
+	for child in get_children():
+		if (!child is DamageCard):
+			x += 1
+			
+	return x	

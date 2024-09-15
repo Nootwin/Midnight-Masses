@@ -13,43 +13,38 @@ next_scene = ExtResource("2_u1sxi")
 
 [node name="Zombie" parent="BattleEssentials/TurnHandler" index="1" instance=ExtResource("2_y1lj4")]
 position = Vector2(-224, 608)
-dmg = 4
-health = 10
+dmg = 3
+health = 7
 
 [node name="Zombie2" parent="BattleEssentials/TurnHandler" index="2" instance=ExtResource("2_y1lj4")]
 position = Vector2(-544, 288)
-dmg = 4
-health = 10
+dmg = 3
+health = 7
 
-[node name="Zombie3" parent="BattleEssentials/TurnHandler" index="3" instance=ExtResource("2_y1lj4")]
-position = Vector2(-352, -32)
-dmg = 4
-health = 10
-
-[node name="Zombie4" parent="BattleEssentials/TurnHandler" index="4" instance=ExtResource("2_y1lj4")]
+[node name="Zombie4" parent="BattleEssentials/TurnHandler" index="3" instance=ExtResource("2_y1lj4")]
 position = Vector2(160, -96)
-dmg = 4
-health = 10
+dmg = 3
+health = 7
 
-[node name="Zombie5" parent="BattleEssentials/TurnHandler" index="5" instance=ExtResource("2_y1lj4")]
+[node name="Zombie5" parent="BattleEssentials/TurnHandler" index="4" instance=ExtResource("2_y1lj4")]
 position = Vector2(-96, 160)
-dmg = 4
-health = 10
+dmg = 3
+health = 7
 
-[node name="Skeleton" parent="BattleEssentials/TurnHandler" index="6" instance=ExtResource("3_yvj5u")]
+[node name="Skeleton" parent="BattleEssentials/TurnHandler" index="5" instance=ExtResource("3_yvj5u")]
 position = Vector2(352, 352)
-health = 7
-dmg = 3
+health = 4
+dmg = 2
 
-[node name="Skeleton2" parent="BattleEssentials/TurnHandler" index="7" instance=ExtResource("3_yvj5u")]
+[node name="Skeleton2" parent="BattleEssentials/TurnHandler" index="6" instance=ExtResource("3_yvj5u")]
 position = Vector2(-608, -32)
-health = 7
-dmg = 3
+health = 4
+dmg = 2
 
-[node name="Skeleton3" parent="BattleEssentials/TurnHandler" index="8" instance=ExtResource("3_yvj5u")]
+[node name="Skeleton3" parent="BattleEssentials/TurnHandler" index="7" instance=ExtResource("3_yvj5u")]
 position = Vector2(160, -288)
-health = 7
-dmg = 3
+health = 4
+dmg = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

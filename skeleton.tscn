@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ciyxmmtc5cv41" path="res://step-skeleton-47785.mp3" id="5_tlv8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fi7d3"]
-size = Vector2(64, 64)
+size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5onn0"]
 atlas = ExtResource("4_qlre3")

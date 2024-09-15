@@ -21,9 +21,9 @@ texture = ExtResource("1_g7cs1")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 512.0
+offset_left = 514.0
 offset_top = 448.0
-offset_right = 528.0
+offset_right = 530.0
 offset_bottom = 464.0
 scale = Vector2(16, 16)
 texture_normal = ExtResource("2_5vi5j")

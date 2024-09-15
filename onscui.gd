@@ -10,4 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$RichTextLabel.text = str($"/root/Inventory".wood)
 	$RichTextLabel2.text = str($"/root/Inventory".rock)
+	$RichTextLabel3.text = str($"/root/Inventory".iron)
 	pass

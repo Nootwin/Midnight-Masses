@@ -20,6 +20,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _enter_tree() -> void:
+	crosshiar = $"/root/Node2D/BattleEssentials/TurnHandler/Bplayer/Boxes"
+	ui = $"../../BattleUI"
 
 func _physics_process(delta: float) -> void:
 	if (dragging):

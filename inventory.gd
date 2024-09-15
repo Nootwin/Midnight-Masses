@@ -18,7 +18,7 @@ func damage(amount : int):
 	
 func newday(rootnode):
 	lastday = load(rootnode.get_scene_file_path())
-	lastdeck = deck.duplicate()
+	lastdeck = deck.duplicate(true)
 	
 func restore():
-	deck = lastdeck.duplicate()
+	deck = lastdeck.duplicate(true)

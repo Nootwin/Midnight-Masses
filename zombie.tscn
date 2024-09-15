@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bhbl4fj1om6d8" path="res://zombie-bite-96528.mp3" id="5_mmub7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1aix"]
-size = Vector2(64, 64)
+size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uf3ri"]
 atlas = ExtResource("2_xhdv0")

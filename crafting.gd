@@ -35,6 +35,7 @@ func _on_button_pressed() -> void:
 		
 		$"/root/Inventory".wood -= currentCard.wood
 		$"/root/Inventory".rock -= currentCard.rock
+		$"/root/Inventory".iron -= currentCard.iron
 		$"/root/Inventory".add_to_deck(currentCard.cardscene.duplicate(5))
 		$AudioStreamPlayer.play()
 	pass # Replace with $AudioStreamPlayerfunction body.

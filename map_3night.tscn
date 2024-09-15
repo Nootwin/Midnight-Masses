@@ -12,72 +12,52 @@ next_scene = ExtResource("2_5vr0h")
 
 [node name="Zombie" parent="BattleEssentials/TurnHandler" index="1" instance=ExtResource("2_ukoly")]
 position = Vector2(-224, 288)
-dmg = 5
-health = 14
+dmg = 4
+health = 8
 
-[node name="Zombie2" parent="BattleEssentials/TurnHandler" index="2" instance=ExtResource("2_ukoly")]
-position = Vector2(-32, 288)
-dmg = 5
-health = 14
-
-[node name="Zombie3" parent="BattleEssentials/TurnHandler" index="3" instance=ExtResource("2_ukoly")]
-position = Vector2(160, -288)
-dmg = 5
-health = 14
-
-[node name="Zombie4" parent="BattleEssentials/TurnHandler" index="4" instance=ExtResource("2_ukoly")]
+[node name="Zombie4" parent="BattleEssentials/TurnHandler" index="2" instance=ExtResource("2_ukoly")]
 position = Vector2(160, 288)
-dmg = 5
-health = 14
+dmg = 4
+health = 8
 
-[node name="Zombie5" parent="BattleEssentials/TurnHandler" index="5" instance=ExtResource("2_ukoly")]
+[node name="Zombie5" parent="BattleEssentials/TurnHandler" index="3" instance=ExtResource("2_ukoly")]
 position = Vector2(352, 288)
-dmg = 5
-health = 14
+dmg = 4
+health = 8
 
-[node name="Zombie6" parent="BattleEssentials/TurnHandler" index="6" instance=ExtResource("2_ukoly")]
+[node name="Zombie6" parent="BattleEssentials/TurnHandler" index="4" instance=ExtResource("2_ukoly")]
 position = Vector2(-224, -288)
-dmg = 5
-health = 14
+dmg = 4
+health = 8
 
-[node name="Zombie7" parent="BattleEssentials/TurnHandler" index="7" instance=ExtResource("2_ukoly")]
+[node name="Zombie7" parent="BattleEssentials/TurnHandler" index="5" instance=ExtResource("2_ukoly")]
 position = Vector2(-32, -288)
-dmg = 5
-health = 14
+dmg = 4
+health = 8
 
-[node name="Zombie8" parent="BattleEssentials/TurnHandler" index="8" instance=ExtResource("2_ukoly")]
+[node name="Zombie8" parent="BattleEssentials/TurnHandler" index="6" instance=ExtResource("2_ukoly")]
 position = Vector2(352, -288)
-dmg = 5
-health = 14
+dmg = 4
+health = 8
 
-[node name="Skeleton" parent="BattleEssentials/TurnHandler" index="9" instance=ExtResource("3_jnidv")]
+[node name="Skeleton" parent="BattleEssentials/TurnHandler" index="7" instance=ExtResource("3_jnidv")]
 position = Vector2(-672, -96)
-health = 8
+health = 5
 dmg = 3
 
-[node name="Skeleton2" parent="BattleEssentials/TurnHandler" index="10" instance=ExtResource("3_jnidv")]
+[node name="Skeleton2" parent="BattleEssentials/TurnHandler" index="8" instance=ExtResource("3_jnidv")]
 position = Vector2(-672, 160)
-health = 8
+health = 5
 dmg = 3
 
-[node name="Skeleton3" parent="BattleEssentials/TurnHandler" index="11" instance=ExtResource("3_jnidv")]
+[node name="Skeleton3" parent="BattleEssentials/TurnHandler" index="9" instance=ExtResource("3_jnidv")]
 position = Vector2(800, -96)
-health = 8
+health = 5
 dmg = 3
 
-[node name="Skeleton4" parent="BattleEssentials/TurnHandler" index="12" instance=ExtResource("3_jnidv")]
+[node name="Skeleton4" parent="BattleEssentials/TurnHandler" index="10" instance=ExtResource("3_jnidv")]
 position = Vector2(800, 160)
-health = 8
-dmg = 3
-
-[node name="Skeleton" parent="BattleEssentials/TurnHandler/Skeleton4" instance=ExtResource("3_jnidv")]
-position = Vector2(-1472, 512)
-health = 8
-dmg = 3
-
-[node name="Skeleton" parent="BattleEssentials/TurnHandler/Skeleton4/Skeleton" instance=ExtResource("3_jnidv")]
-position = Vector2(1472, -1344)
-health = 8
+health = 5
 dmg = 3
 
 [editable path="BattleEssentials"]
