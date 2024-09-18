@@ -8,6 +8,7 @@ const SPEED = 8.0
 var swinging : bool = false
 var posinMap : Vector2i
 var spdir : String = "up"
+var moving : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 	$Camera2D.limit_right = rect.x
 	
 	posinMap = global_position / 64
+	moving = false
 	
 	$"/root/Inventory".newday($"/root/Node2D")
 	pass # Replace with function body.
@@ -39,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		$Arm/Hand.rotation_degrees = 180
 			
-	if (global_position == wantedpos):
+	if (not moving):
 		var dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
 		var newdir : Vector2
 		if (dir == Vector2(0, 0)):
@@ -78,19 +80,23 @@ func _physics_process(delta: float) -> void:
 			elif (newdir.x == 1):
 				$Sprite2D.flip_h = true
 			$Sprite2D.play(spdir + "_walk")
-		
-	elif (lastdir.x != 0 and lastdir.x != -2 ):
-		velocity.y = 0
-		velocity.x = move_toward(global_position.x, wantedpos.x, SPEED) - global_position.x
-		var col = move_and_collide(velocity)
-		if (col):
-			wantedpos = lastpos
-	elif (lastdir.y != 0 and lastdir.y != -2 ):
-		velocity.x = 0
-		velocity.y = move_toward(global_position.y, wantedpos.y, SPEED) -  global_position.y
-		var col = move_and_collide(velocity)
-		if (col):
-			wantedpos = lastpos
+			moving = true
+	else:
+		if (lastdir.x != 0 and lastdir.x != -2 ):
+			velocity.y = 0
+			velocity.x = move_toward(global_position.x, wantedpos.x, SPEED) - global_position.x
+			var col = move_and_collide(velocity)
+			if (col):
+				wantedpos = lastpos
+
+		elif (lastdir.y != 0 and lastdir.y != -2 ):
+			velocity.x = 0
+			velocity.y = move_toward(global_position.y, wantedpos.y, SPEED) -  global_position.y
+			var col = move_and_collide(velocity)
+			if (col):
+				wantedpos = lastpos
+		if (wantedpos == global_position):
+				moving = false
 
 
 
