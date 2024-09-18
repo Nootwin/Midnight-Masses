@@ -12,6 +12,7 @@ var steps : int
 var isturn = false
 var health = 5
 var ap
+var moving = false
 @onready var cardhandler = $"../../CanvasLayer/CardHandler"
 @export var maxsteps : int
 
@@ -40,7 +41,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:	
-	if (global_position == wantedpos and isturn and steps > 0):
+	if ((not moving) and isturn and steps > 0):
 		
 		var dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
 		var newdir : Vector2
@@ -80,19 +81,23 @@ func _physics_process(delta: float) -> void:
 			elif (newdir.x == 1):
 				$Sprite2D.flip_h = true
 			$Sprite2D.play(spdir + "_walk")
+			moving = true
+	elif (moving):
 		
-	elif (lastdir.x != 0 and lastdir.x != -2 ):
-		velocity.y = 0
-		velocity.x = move_toward(global_position.x, wantedpos.x, SPEED) - global_position.x
-		var col = move_and_collide(velocity)
-		if (col):
-			wantedpos = lastpos
-	elif (lastdir.y != 0 and lastdir.y != -2 ):
-		velocity.x = 0
-		velocity.y = move_toward(global_position.y, wantedpos.y, SPEED) -  global_position.y
-		var col = move_and_collide(velocity)
-		if (col):
-			wantedpos = lastpos
+		if (lastdir.x != 0 and lastdir.x != -2 ):
+			velocity.y = 0
+			velocity.x = move_toward(global_position.x, wantedpos.x, SPEED) - global_position.x
+			var col = move_and_collide(velocity)
+			if (col):
+				wantedpos = lastpos
+		elif (lastdir.y != 0 and lastdir.y != -2 ):
+			velocity.x = 0
+			velocity.y = move_toward(global_position.y, wantedpos.y, SPEED) -  global_position.y
+			var col = move_and_collide(velocity)
+			if (col):
+				wantedpos = lastpos
+		if (wantedpos == global_position):
+			moving = false
 			
 	if (steps < 1):
 			$Sprite2D.play(spdir + "_idle")

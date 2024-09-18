@@ -31,7 +31,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_button_pressed() -> void:
-	if (currentCard != null and currentCard.wood <= $"/root/Inventory".wood and currentCard.rock <= $"/root/Inventory".rock):
+	if (currentCard != null and currentCard.wood <= $"/root/Inventory".wood and currentCard.rock <= $"/root/Inventory".rock and currentCard.iron <= $"/root/Inventory".iron):
 		
 		$"/root/Inventory".wood -= currentCard.wood
 		$"/root/Inventory".rock -= currentCard.rock
