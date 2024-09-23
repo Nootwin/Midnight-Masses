@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ymydceo58eya"]
+
+[ext_resource type="Texture2D" uid="uid://lqfwoaik7ofi" path="res://art/cards/spelltemp.png" id="1_2fewg"]
+
+[node name="Spell" type="Sprite2D"]
+texture = ExtResource("1_2fewg")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -48.0
+offset_top = -64.0
+offset_right = 48.0
+offset_bottom = 64.0

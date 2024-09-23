@@ -1,12 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6gohqgsic3ur"]
 
 [ext_resource type="Texture2D" uid="uid://bjwvjfeuautdt" path="res://art/cardtemp.png" id="1_da7u2"]
-[ext_resource type="Script" path="res://cardbattle.gd" id="2_d0473"]
+[ext_resource type="Script" path="res://weaponcardbattle.gd" id="2_hgg73"]
 
 [node name="Card" type="Sprite2D"]
 scale = Vector2(4, 4)
 texture = ExtResource("1_da7u2")
-script = ExtResource("2_d0473")
+script = ExtResource("2_hgg73")
+dmglow = null
+dmghigh = null
+range = null
+dura = null
+pattern = null
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)

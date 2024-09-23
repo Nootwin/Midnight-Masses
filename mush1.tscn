@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://q773r5q2klyq"]
+
+[ext_resource type="Texture2D" uid="uid://c3753ggymiy07" path="res://art/mushrooms.png" id="1_6ksum"]
+[ext_resource type="AudioStream" uid="uid://busjxpmieyfut" path="res://pickupCoin.wav" id="2_ocedq"]
+[ext_resource type="PackedScene" uid="uid://b6gohqgsic3ur" path="res://cardbattle.tscn" id="3_ryksr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bub7w"]
+atlas = ExtResource("1_6ksum")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0vfb"]
+size = Vector2(16, 16)
+
+[node name="RedMushroom" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_bub7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d0vfb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ocedq")
+
+[node name="Card" parent="." instance=ExtResource("3_ryksr")]
+visible = false
+dmglow = null
+dmghigh = null
+range = null
+dura = null
+pattern = null
