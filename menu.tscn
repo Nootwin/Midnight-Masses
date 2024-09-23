@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bx1s16ouy7yu4" path="res://art/cards/sun.png" id="2_5vi5j"]
 [ext_resource type="Script" path="res://startbutton.gd" id="3_0uvlf"]
 [ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="4_3odd5"]
-[ext_resource type="PackedScene" uid="uid://djm0m7kb62i2" path="res://map_1.tscn" id="4_ackla"]
+[ext_resource type="PackedScene" uid="uid://oohhxx1ofnih" path="res://worldmap.tscn" id="4_3wo26"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -28,7 +28,7 @@ offset_bottom = 464.0
 scale = Vector2(16, 16)
 texture_normal = ExtResource("2_5vi5j")
 script = ExtResource("3_0uvlf")
-level = ExtResource("4_ackla")
+level = ExtResource("4_3wo26")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0

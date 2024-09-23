@@ -15,8 +15,8 @@ func _physics_process(delta: float) -> void:
 	position.x = where
 
 
-func _on_timer_timeout() -> void:
-	where += 1
+func increase(val) -> void:
+	where += val
 	if (where > 61):
 		var env = $"../../../../../enviroment"
 		env.get_parent().remove_child(env)

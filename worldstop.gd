@@ -6,6 +6,7 @@ extends Node2D
 @export var downstart : int
 @export var forward : Path2D
 @export var back : Path2D
+@export var level : PackedScene
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,4 +30,4 @@ func move(dir : String):
 			get_node("PathFollow2D").jump_to(forward, 0)
 	else:
 		if (back != null):
-			get_node("PathFollow2D").jump_to(back, 100)
+			get_node("PathFollow2D").jump_to(back, 1)

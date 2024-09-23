@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var lastpos : Vector2 = global_position
 @onready var size = 16 * $Sprite2D.scale.x
 @onready var tilemap = $"../Layer0"
+@onready var sun = $"../CanvasLayer/OnScui/TextureRect/TextureRect"
 var lastdir : Vector2 = Vector2(-2, -2)
 const SPEED = 8.0
 var swinging : bool = false
@@ -36,6 +37,7 @@ func _physics_process(delta: float) -> void:
 			swinging = false
 			
 	elif (Input.is_mouse_button_pressed(1)):
+		sun.increase(0.25)
 		$Arm/Hand.rotation_degrees = -90
 		swinging = true
 	else:
@@ -48,6 +50,7 @@ func _physics_process(delta: float) -> void:
 			newdir = Vector2(-2, -2)
 			$Sprite2D.play(spdir + "_idle")
 		else:
+			sun.increase(0.5)
 			if (dir == lastdir):
 				newdir = lastdir
 			else:

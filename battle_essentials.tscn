@@ -58,6 +58,7 @@ color = Color(0.584314, 0.261053, 0.955764, 1)
 mouse_filter = 1
 
 [node name="CardHandler" type="Node2D" parent="CanvasLayer"]
+process_mode = 1
 script = ExtResource("2_frx1b")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]

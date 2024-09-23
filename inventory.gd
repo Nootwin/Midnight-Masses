@@ -12,6 +12,14 @@ var lastdeck : Array[CardBattle]
 @onready var damageCard = preload("res://damage_card.tscn").instantiate()
 var enviroment : Node2D = Node2D.new()
 
+var strength : int =  0
+var intelligence : int =  0
+var dexterity : int =  0
+var constitution : int = 0
+
+func _on_ressource_added():
+	$"/root/Node2D/Essentials/CanvasLayer2/Control"._ressources_added(wood, rock, iron)
+
 func add_to_deck(card : CardBattle):
 	deck.push_back(card)
 	

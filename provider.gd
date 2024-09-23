@@ -26,6 +26,7 @@ func take_damage(damage : int):
 		die()
 	
 func dispense(amount):
+	$"/root/Inventory"._on_ressource_added()
 	pass
 	
 func die():

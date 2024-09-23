@@ -7,6 +7,11 @@
 
 [node name="Node2D" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("4_qt7up")]
+texts = Array[String](["The undead are here!", "Lemme explain the basics", "each turn, you have 3 ap which can be used to place cards", "cards are your attacks against the undead", "you draw up to 4 cards every turn, or 1 card if you start with 4", "use WASD to move around, you have 5 steps a turn", "Enemies will try to get near you and attack", "If they hurt you, they will add damage cards to your deck", "Hover over enemies with the mouse to view their stats", "if you draw them, you take 1 point of damage", "go to 0 HP, and you die!", "Good luck!"])
+
 [node name="BattleEssentials" parent="." instance=ExtResource("1_j5sxc")]
 next_scene = ExtResource("2_yfu5m")
 
@@ -34,10 +39,5 @@ health = 6
 position = Vector2(544, -160)
 dmg = 3
 health = 6
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" parent="CanvasLayer" instance=ExtResource("4_qt7up")]
-texts = Array[String](["The undead are here!", "Lemme explain the basics", "each turn, you have 3 ap which can be used to place cards", "cards are your attacks against the undead", "you draw up to 4 cards every turn, or 1 card if you start with 4", "use WASD to move around, you have 5 steps a turn", "Enemies will try to get near you and attack", "If they hurt you, they will add damage cards to your deck", "Hover over enemies with the mouse to view their stats", "if you draw them, you take 1 point of damage", "go to 0 HP, and you die!", "Good luck!"])
 
 [editable path="BattleEssentials"]
