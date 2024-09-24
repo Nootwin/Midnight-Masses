@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bku0cjapc46k4"]
+[gd_scene load_steps=6 format=3 uid="uid://bku0cjapc46k4"]
 
 [ext_resource type="Script" path="res://worldui.gd" id="1_nbyar"]
 [ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="2_e5bs1"]
@@ -7,6 +7,22 @@
 bg_color = Color(0.619608, 0.482353, 0.278431, 1)
 border_width_top = 8
 border_width_right = 8
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ona5c"]
+bg_color = Color(0.619608, 0.482353, 0.278431, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4y6a"]
+bg_color = Color(0.619608, 0.482353, 0.278431, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
 border_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control"]
@@ -57,4 +73,31 @@ offset_top = -128.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_e5bs1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ona5c")
 text = "Level Up"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 200
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y4y6a")
+
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 131.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("2_e5bs1")
+theme_override_font_sizes/font_size = 32
+text = "Skills"
