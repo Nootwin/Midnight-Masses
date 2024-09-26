@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bku0cjapc46k4"]
+[gd_scene load_steps=11 format=3 uid="uid://bku0cjapc46k4"]
 
 [ext_resource type="Script" path="res://worldui.gd" id="1_nbyar"]
 [ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="2_e5bs1"]
+[ext_resource type="Script" path="res://lvlupbutton.gd" id="3_ikp8p"]
 [ext_resource type="Texture2D" uid="uid://c6heluedle1ll" path="res://art/plusbutton.png" id="3_s1v8n"]
+[ext_resource type="Script" path="res://availpoint.gd" id="4_ctlsf"]
+[ext_resource type="Script" path="res://pointsCounter.gd" id="5_djtyn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixb0k"]
 bg_color = Color(0.619608, 0.482353, 0.278431, 1)
@@ -84,24 +87,18 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_e5bs1")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ona5c")
 text = "Level Up"
+script = ExtResource("3_ikp8p")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 300
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 300
-theme_override_constants/margin_bottom = 200
-
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="Panel2" type="Panel" parent="."]
+visible = false
 layout_mode = 2
+offset_left = 300.0
+offset_top = 100.0
+offset_right = 852.0
+offset_bottom = 448.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_y4y6a")
 
-[node name="Label" type="Label" parent="MarginContainer/Panel"]
+[node name="Label" type="Label" parent="Panel2"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
@@ -111,7 +108,7 @@ theme_override_fonts/font = ExtResource("2_e5bs1")
 theme_override_font_sizes/font_size = 32
 text = "Skills"
 
-[node name="Label2" type="Label" parent="MarginContainer/Panel"]
+[node name="Label2" type="Label" parent="Panel2"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 59.0
@@ -121,7 +118,8 @@ theme_override_fonts/font = ExtResource("2_e5bs1")
 theme_override_font_sizes/font_size = 24
 text = "Strength"
 
-[node name="Label3" type="Label" parent="MarginContainer/Panel"]
+[node name="Label3" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 52.0
 offset_top = 92.0
 offset_right = 276.0
@@ -131,7 +129,8 @@ theme_override_font_sizes/font_size = 8
 text = "Increases base dmg by 1 
 for each point invested"
 
-[node name="Label4" type="Label" parent="MarginContainer/Panel"]
+[node name="Label4" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 113.0
 offset_right = 296.0
@@ -140,7 +139,8 @@ theme_override_fonts/font = ExtResource("2_e5bs1")
 theme_override_font_sizes/font_size = 24
 text = "Intelligence"
 
-[node name="Label5" type="Label" parent="MarginContainer/Panel"]
+[node name="Label5" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 52.0
 offset_top = 146.0
 offset_right = 276.0
@@ -150,7 +150,8 @@ theme_override_font_sizes/font_size = 8
 text = "Increase Hand size by 1 for 
 each point invested"
 
-[node name="Label6" type="Label" parent="MarginContainer/Panel"]
+[node name="Label6" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 167.0
 offset_right = 296.0
@@ -159,7 +160,8 @@ theme_override_fonts/font = ExtResource("2_e5bs1")
 theme_override_font_sizes/font_size = 24
 text = "Dexterity"
 
-[node name="Label7" type="Label" parent="MarginContainer/Panel"]
+[node name="Label7" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 52.0
 offset_top = 200.0
 offset_right = 276.0
@@ -169,7 +171,8 @@ theme_override_font_sizes/font_size = 8
 text = "Increase Movement by 1 for 
 each point invested"
 
-[node name="Label8" type="Label" parent="MarginContainer/Panel"]
+[node name="Label8" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 222.0
 offset_right = 296.0
@@ -178,17 +181,19 @@ theme_override_fonts/font = ExtResource("2_e5bs1")
 theme_override_font_sizes/font_size = 24
 text = "Vitality"
 
-[node name="Label9" type="Label" parent="MarginContainer/Panel"]
+[node name="Label9" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 52.0
 offset_top = 255.0
 offset_right = 276.0
 offset_bottom = 300.0
 theme_override_fonts/font = ExtResource("2_e5bs1")
 theme_override_font_sizes/font_size = 8
-text = "Increase health by 1 for 
+text = "Increase health by 2 for 
 each point invested"
 
-[node name="Label10" type="Label" parent="MarginContainer/Panel"]
+[node name="Label10" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 230.0
 offset_top = 8.0
 offset_right = 518.0
@@ -196,8 +201,9 @@ offset_bottom = 59.0
 theme_override_fonts/font = ExtResource("2_e5bs1")
 theme_override_font_sizes/font_size = 16
 text = "Available Points: "
+script = ExtResource("4_ctlsf")
 
-[node name="Button" type="Button" parent="MarginContainer/Panel"]
+[node name="Button" type="Button" parent="Panel2"]
 layout_mode = 0
 offset_left = 495.0
 offset_top = 59.0
@@ -206,3 +212,80 @@ offset_bottom = 99.0
 theme_override_fonts/font = ExtResource("2_e5bs1")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ofvdn")
 icon = ExtResource("3_s1v8n")
+
+[node name="Button2" type="Button" parent="Panel2"]
+offset_left = 495.0
+offset_top = 113.0
+offset_right = 535.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("2_e5bs1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ofvdn")
+icon = ExtResource("3_s1v8n")
+
+[node name="Button3" type="Button" parent="Panel2"]
+offset_left = 495.0
+offset_top = 167.0
+offset_right = 535.0
+offset_bottom = 207.0
+theme_override_fonts/font = ExtResource("2_e5bs1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ofvdn")
+icon = ExtResource("3_s1v8n")
+
+[node name="Button4" type="Button" parent="Panel2"]
+offset_left = 495.0
+offset_top = 222.0
+offset_right = 535.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("2_e5bs1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ofvdn")
+icon = ExtResource("3_s1v8n")
+
+[node name="str" type="Label" parent="Panel2"]
+offset_left = 296.0
+offset_top = 59.0
+offset_right = 488.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("2_e5bs1")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("5_djtyn")
+
+[node name="int" type="Label" parent="Panel2"]
+offset_left = 296.0
+offset_top = 113.0
+offset_right = 488.0
+offset_bottom = 164.0
+theme_override_fonts/font = ExtResource("2_e5bs1")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("5_djtyn")
+
+[node name="dex" type="Label" parent="Panel2"]
+offset_left = 296.0
+offset_top = 167.0
+offset_right = 488.0
+offset_bottom = 218.0
+theme_override_fonts/font = ExtResource("2_e5bs1")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("5_djtyn")
+
+[node name="vit" type="Label" parent="Panel2"]
+offset_left = 296.0
+offset_top = 222.0
+offset_right = 488.0
+offset_bottom = 273.0
+theme_override_fonts/font = ExtResource("2_e5bs1")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("5_djtyn")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel2/Button" to="Panel2/str" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel2/Button2" to="Panel2/int" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel2/Button3" to="Panel2/dex" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Panel2/Button4" to="Panel2/vit" method="_on_button_4_pressed"]

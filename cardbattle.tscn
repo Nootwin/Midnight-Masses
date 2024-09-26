@@ -7,11 +7,6 @@
 scale = Vector2(4, 4)
 texture = ExtResource("1_da7u2")
 script = ExtResource("2_hgg73")
-dmglow = null
-dmghigh = null
-range = null
-dura = null
-pattern = null
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
