@@ -17,6 +17,7 @@ var inte : int =  0
 var dex : int =  0
 var vit : int = 0
 var pointsleft : int = 0
+var levelcomp = [false, false, false, false, false, false, false, false, false]
 
 func _on_ressource_added():
 	$"/root/Node2D/Essentials/CanvasLayer2/Control"._ressources_added(wood, rock, iron)

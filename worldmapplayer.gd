@@ -2,6 +2,7 @@ extends PathFollow2D
 var speed : float
 var destination : Node2D
 @onready var ui = $"/root/Node2D/CanvasLayer/Control"
+@onready var light = $PointLight2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -36,7 +37,7 @@ func _input(event: InputEvent) -> void:
 		elif (event.keycode == KEY_A):
 			get_parent().move("back")
 		elif (event.keycode == KEY_SPACE):
-			get_tree().change_scene_to_packed(get_parent().level)
+			light.start(get_parent().level)
 	
 func jump_to(path : Path2D, spot : float):
 	get_parent().remove_child(self)

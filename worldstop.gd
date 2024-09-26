@@ -1,5 +1,6 @@
 extends Node2D
 
+var completed : bool = false
 @export var up : Path2D
 @export var upstart : int
 @export var down : Path2D
@@ -11,6 +12,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var coords = $"../../TileMapLayer2".local_to_map($"../../TileMapLayer2".to_local(self.global_position))
+	completed = $"/root/Inventory".levelcomp[int(str(name))]
+	if (completed):
+		$"../../TileMapLayer2".set_cell(coords, -1, Vector2i($"../../TileMapLayer2".get_cell_atlas_coords(coords) + Vector2(-1, 0)))
+	
 	pass # Replace with function body.
 
 

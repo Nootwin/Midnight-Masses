@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://oohhxx1ofnih"]
+[gd_scene load_steps=29 format=4 uid="uid://oohhxx1ofnih"]
 
 [ext_resource type="Texture2D" uid="uid://34wwok56jjen" path="res://art/worldmap.png" id="1_y5qbd"]
 [ext_resource type="Script" path="res://worldpath.gd" id="2_4j3le"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://djm0m7kb62i2" path="res://map_1.tscn" id="4_4pdhw"]
 [ext_resource type="Script" path="res://worldstop.gd" id="5_onmrf"]
 [ext_resource type="PackedScene" uid="uid://bku0cjapc46k4" path="res://worldui.tscn" id="6_clysi"]
+[ext_resource type="Script" path="res://transisition_circle.gd" id="7_dma5y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sh7ks"]
 texture = ExtResource("1_y5qbd")
@@ -150,6 +151,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_vgljl"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_akw7n"]
+gradient = SubResource("Gradient_vgljl")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.495726, 0.508547)
+fill_to = Vector2(0.188034, 0.149573)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -245,6 +258,12 @@ frame_progress = 0.11219
 speed_scale = 1.5
 flip_h = true
 
+[node name="PointLight2D" type="PointLight2D" parent="Worlds/0/PathFollow2D"]
+process_mode = 3
+texture = SubResource("GradientTexture2D_akw7n")
+texture_scale = 13.21
+script = ExtResource("7_dma5y")
+
 [node name="1" type="Node2D" parent="Worlds" node_paths=PackedStringArray("up", "down", "forward", "back")]
 position = Vector2(240, 337)
 script = ExtResource("5_onmrf")
@@ -308,3 +327,6 @@ back = NodePath("../../Paths/5-8")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("6_clysi")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
