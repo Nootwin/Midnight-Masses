@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ymydceo58eya"]
+[gd_scene load_steps=3 format=3 uid="uid://ymydceo58eya"]
 
 [ext_resource type="Texture2D" uid="uid://lqfwoaik7ofi" path="res://art/cards/spelltemp.png" id="1_2fewg"]
+[ext_resource type="Script" path="res://spellcardbattle.gd" id="2_d3vkx"]
 
 [node name="Spell" type="Sprite2D"]
 texture = ExtResource("1_2fewg")
+script = ExtResource("2_d3vkx")
 
 [node name="Button" type="Button" parent="."]
 offset_left = -48.0

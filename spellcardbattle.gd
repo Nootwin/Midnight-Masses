@@ -1,18 +1,6 @@
-class_name CardBattle extends Sprite2D
-var dragging = false
-var ofset : Vector2
-@onready var crosshiar = $"/root/Node2D/BattleEssentials/TurnHandler/Bplayer/Boxes"
-@onready var ui = $"../../BattleUI"
-@onready var halfdim = get_viewport_rect().size / 2
-
-@export var dmglow : int
-@export var dmghigh : int
-@export var range : int
-@export var dura : int
-@export var pattern : Array[bool]
+class_name SpellCardBattle extends CardBattle
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -50,6 +38,7 @@ func _on_button_button_up() -> void:
 		ofset = Vector2(0, 0)
 		modulate.a = 1
 		dura -= 1
+		_spell_use()
 		
 		if (dura > 0):
 			$"/root/Inventory".deck.push_back(self)
@@ -65,3 +54,5 @@ func _input(event: InputEvent) -> void:
 			ofset = Vector2(0, 0)
 			modulate.a = 1
 			
+func _spell_use():
+	pass
