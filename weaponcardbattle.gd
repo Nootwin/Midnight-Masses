@@ -1,5 +1,9 @@
 class_name WeaponCardBattle extends CardBattle
 
+@export var dmglow : int
+@export var dmghigh : int
+@export var range : int
+@export var pattern : Array[bool]
 
 
 # Called when the node enters the scene tree for the first time.

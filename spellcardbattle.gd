@@ -1,5 +1,7 @@
 class_name SpellCardBattle extends CardBattle
 
+@onready var player = $"/root/Node2D/BattleEssentials/TurnHandler/Bplayer"
+@onready var inv = $"/root/Inventory"
 
 func _ready() -> void:
 	pass # Replace with function body.

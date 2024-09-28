@@ -304,8 +304,8 @@ texture = ExtResource("5_yoyye")
 dmglow = 1
 dmghigh = 6
 range = 1
-dura = 3
 pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
 
 [node name="CardButton2" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
@@ -323,8 +323,8 @@ texture = ExtResource("7_up4b0")
 dmglow = 2
 dmghigh = 8
 range = 1
-dura = 2
 pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 2
 
 [node name="CardButton3" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
@@ -342,8 +342,8 @@ texture = ExtResource("8_338j3")
 dmglow = 1
 dmghigh = 8
 range = 4
-dura = 1
 pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 1
 
 [node name="CardButton4" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
@@ -361,8 +361,8 @@ texture = ExtResource("9_47m40")
 dmglow = 3
 dmghigh = 10
 range = 1
-dura = 3
 pattern = Array[bool]([false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 3
 
 [node name="CardButton5" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
@@ -381,8 +381,8 @@ texture = ExtResource("10_um5fp")
 dmglow = 3
 dmghigh = 9
 range = 1
-dura = 3
 pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
 
 [node name="CardButton6" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
@@ -401,8 +401,8 @@ texture = ExtResource("11_b1nxu")
 dmglow = 4
 dmghigh = 11
 range = 1
-dura = 2
 pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 2
 
 [node name="CardButton7" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
@@ -421,8 +421,8 @@ texture = ExtResource("12_h7rhr")
 dmglow = 1
 dmghigh = 8
 range = 3
-dura = 3
 pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 3
 
 [node name="CardButton8" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
@@ -441,8 +441,8 @@ texture = ExtResource("13_kahsp")
 dmglow = 5
 dmghigh = 12
 range = 1
-dura = 3
 pattern = Array[bool]([false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 3
 
 [node name="Sword2" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
@@ -461,8 +461,8 @@ texture = ExtResource("14_irmp4")
 dmglow = 5
 dmghigh = 11
 range = 1
-dura = 3
 pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
 
 [node name="CardButton9" parent="MarginContainer/TabContainer/Craft/HSplitContainer/MarginContainer/GridContainer" node_paths=PackedStringArray("cardscene") instance=ExtResource("4_6epq8")]
 layout_mode = 2
@@ -481,8 +481,8 @@ texture = ExtResource("15_3jfi2")
 dmglow = 6
 dmghigh = 15
 range = 1
-dura = 1
 pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, true, true, true, false, false, false, false, false, false])
+dura = 1
 
 [node name="Deck" type="Panel" parent="MarginContainer/TabContainer"]
 visible = false

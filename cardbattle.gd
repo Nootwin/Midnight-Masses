@@ -5,11 +5,9 @@ var ofset : Vector2
 @onready var ui = $"../../BattleUI"
 @onready var halfdim = get_viewport_rect().size / 2
 
-@export var dmglow : int
-@export var dmghigh : int
-@export var range : int
+
 @export var dura : int
-@export var pattern : Array[bool]
+
 
 
 # Called when the node enters the scene tree for the first time.
