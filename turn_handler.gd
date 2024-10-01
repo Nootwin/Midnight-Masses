@@ -25,7 +25,8 @@ func _process(delta: float) -> void:
 	
 func next():
 	if (get_child_count() < 2):
-		get_tree().change_scene_to_packed($"/root/Node2D/BattleEssentials".next_scene)
+		$"/root/Inventory".levelcomp[$"/root/Node2D/BattleEssentials".levelID] = true
+		get_tree().change_scene_to_file($"/root/Node2D/BattleEssentials".next_scene)
 	else:
 		turnOrder.back().isturn = false
 		turnOrder.back().remove_child(cam)

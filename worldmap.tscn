@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://oohhxx1ofnih"]
+[gd_scene load_steps=31 format=4 uid="uid://oohhxx1ofnih"]
 
 [ext_resource type="Texture2D" uid="uid://34wwok56jjen" path="res://art/worldmap.png" id="1_y5qbd"]
 [ext_resource type="Script" path="res://worldpath.gd" id="2_4j3le"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://worldstop.gd" id="5_onmrf"]
 [ext_resource type="PackedScene" uid="uid://bku0cjapc46k4" path="res://worldui.tscn" id="6_clysi"]
 [ext_resource type="Script" path="res://transisition_circle.gd" id="7_dma5y"]
+[ext_resource type="PackedScene" uid="uid://dusjarwkpvu2s" path="res://map_2.tscn" id="8_6ebvf"]
+[ext_resource type="PackedScene" uid="uid://buf0ko2dfvu5a" path="res://map_mush.tscn" id="9_cnjxu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sh7ks"]
 texture = ExtResource("1_y5qbd")
@@ -271,6 +273,7 @@ up = NodePath("../../Paths/1-2")
 down = NodePath("../../Paths/1-3")
 forward = NodePath("../../Paths/1-2")
 back = NodePath("../../Paths/0-1")
+level = ExtResource("8_6ebvf")
 
 [node name="2" type="Node2D" parent="Worlds" node_paths=PackedStringArray("down", "forward", "back")]
 position = Vector2(432, 240)
@@ -285,6 +288,7 @@ script = ExtResource("5_onmrf")
 up = NodePath("../../Paths/3-4")
 forward = NodePath("../../Paths/3-4")
 back = NodePath("../../Paths/1-3")
+level = ExtResource("9_cnjxu")
 
 [node name="4" type="Node2D" parent="Worlds" node_paths=PackedStringArray("up", "down", "forward", "back")]
 position = Vector2(624, 337)

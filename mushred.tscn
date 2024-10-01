@@ -1,13 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce3n5ec63awva"]
+[gd_scene load_steps=9 format=3 uid="uid://ce3n5ec63awva"]
 
-[ext_resource type="Texture2D" uid="uid://c3753ggymiy07" path="res://art/mushrooms.png" id="1_egsq1"]
+[ext_resource type="Script" path="res://cardgiver.gd" id="1_viw5r"]
 [ext_resource type="AudioStream" uid="uid://busjxpmieyfut" path="res://pickupCoin.wav" id="2_n66hi"]
 [ext_resource type="PackedScene" uid="uid://ymydceo58eya" path="res://spellcardbattle.tscn" id="3_wdorx"]
 [ext_resource type="Texture2D" uid="uid://whnt8txqmfwf" path="res://art/cards/redmush.png" id="4_poc6r"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bub7w"]
-atlas = ExtResource("1_egsq1")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2ljbk"]
+load_path = "res://.godot/imported/mushrooms.png-8dc1bc7b2b34812b50366d5684a2787a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epmse"]
+atlas = SubResource("CompressedTexture2D_2ljbk")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0vfb"]
 size = Vector2(16, 16)
@@ -17,13 +20,18 @@ script/source = "extends SpellCardBattle
 
 func _spell_use():
 	player.health += 4
+	
+	$\"/root/Inventory\".add_to_deck(load(\"res://damage_card.tscn\").instantiate())
 "
 
 [node name="RedMushroom" type="StaticBody2D"]
+script = ExtResource("1_viw5r")
+health = 12
+dispenseEvery = 12
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
-texture = SubResource("AtlasTexture_bub7w")
+texture = SubResource("AtlasTexture_epmse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_d0vfb")

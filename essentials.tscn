@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://cnekkrhc2o8id"]
+[gd_scene load_steps=12 format=4 uid="uid://cnekkrhc2o8id"]
 
+[ext_resource type="Script" path="res://essentials.gd" id="1_5r7df"]
 [ext_resource type="PackedScene" uid="uid://cmdjudmdd2f7v" path="res://player.tscn" id="1_ng4hp"]
 [ext_resource type="PackedScene" uid="uid://b4hg0ihhx0kr1" path="res://item.tscn" id="2_b62td"]
 [ext_resource type="TileSet" uid="uid://dvxdv52oqo73c" path="res://grounds.tres" id="2_rh6hm"]
@@ -17,6 +18,7 @@ size = Vector2(3072, 64)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3e46y"]
 
 [node name="Essentials" type="Node2D"]
+script = ExtResource("1_5r7df")
 
 [node name="Player" parent="." instance=ExtResource("1_ng4hp")]
 z_index = 1

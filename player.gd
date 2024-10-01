@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 			swinging = false
 			
 	elif (Input.is_mouse_button_pressed(1)):
-		sun.increase(0.25)
+		
 		$Arm/Hand.rotation_degrees = -90
 		swinging = true
 	else:

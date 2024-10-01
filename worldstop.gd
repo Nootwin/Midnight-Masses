@@ -25,13 +25,13 @@ func _process(delta: float) -> void:
 	pass
 	
 func move(dir : String):
-	if (dir == "up"):
+	if (dir == "up" and (completed == true or upstart == 1)):
 		if (up != null):
 			get_node("PathFollow2D").jump_to(up, upstart)
-	elif (dir == "down"):
+	elif (dir == "down" and (completed == true or downstart == 1)):
 		if (down != null):
 			get_node("PathFollow2D").jump_to(down, downstart)
-	elif (dir == "forward"):
+	elif (dir == "forward" and completed):
 		if (forward != null):
 			get_node("PathFollow2D").jump_to(forward, 0)
 	else:

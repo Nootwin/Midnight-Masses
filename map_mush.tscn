@@ -1,0 +1,144 @@
+[gd_scene load_steps=9 format=3 uid="uid://buf0ko2dfvu5a"]
+
+[ext_resource type="PackedScene" uid="uid://cnekkrhc2o8id" path="res://essentials.tscn" id="1_pb5k0"]
+[ext_resource type="PackedScene" uid="uid://b0xf234jbemqt" path="res://tree.tscn" id="2_i6evp"]
+[ext_resource type="PackedScene" uid="uid://dub1mq58fneku" path="res://map_mush_night.tscn" id="2_snlol"]
+[ext_resource type="PackedScene" uid="uid://dcwqut57but4i" path="res://rocks.tscn" id="3_lrwfu"]
+[ext_resource type="PackedScene" uid="uid://ce3n5ec63awva" path="res://mushred.tscn" id="4_j0e0p"]
+[ext_resource type="PackedScene" uid="uid://dn0wvg0c20ii0" path="res://bluemush.tscn" id="5_y8o0l"]
+[ext_resource type="PackedScene" uid="uid://i80t4k08h1le" path="res://yellowmush.tscn" id="6_kswx3"]
+[ext_resource type="PackedScene" uid="uid://dx4d7dlq8cs12" path="res://greymush.tscn" id="7_85o2d"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Essentials" parent="." instance=ExtResource("1_pb5k0")]
+next_scene = ExtResource("2_snlol")
+metadata/_edit_lock_ = true
+
+[node name="enviroment" type="Node2D" parent="."]
+
+[node name="Tree0" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(-64, 192)
+
+[node name="Tree1" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(128, 192)
+
+[node name="Tree2" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(-128, 0)
+
+[node name="Tree3" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(-64, -192)
+
+[node name="Tree4" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(192, 0)
+
+[node name="Tree5" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(128, -192)
+
+[node name="Tree6" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(-704, 576)
+
+[node name="Tree7" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(-640, 128)
+
+[node name="Tree8" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(-960, -448)
+
+[node name="Tree9" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(-512, -704)
+
+[node name="Tree10" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(0, -448)
+
+[node name="Tree11" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(576, -704)
+
+[node name="Tree12" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(1024, -192)
+
+[node name="Tree13" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(704, 64)
+
+[node name="Tree14" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(320, 384)
+
+[node name="Tree15" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(896, 768)
+
+[node name="Tree16" parent="enviroment" instance=ExtResource("2_i6evp")]
+position = Vector2(64, 832)
+
+[node name="Rocks" parent="enviroment" instance=ExtResource("3_lrwfu")]
+position = Vector2(-1152, 1152)
+
+[node name="Rocks2" parent="enviroment" instance=ExtResource("3_lrwfu")]
+position = Vector2(0, -1024)
+
+[node name="Rocks3" parent="enviroment" instance=ExtResource("3_lrwfu")]
+position = Vector2(-1088, -960)
+
+[node name="Rocks4" parent="enviroment" instance=ExtResource("3_lrwfu")]
+position = Vector2(1280, 448)
+
+[node name="Rocks5" parent="enviroment" instance=ExtResource("3_lrwfu")]
+position = Vector2(768, 1088)
+
+[node name="RedMushroom" parent="enviroment" instance=ExtResource("4_j0e0p")]
+position = Vector2(-352, 352)
+
+[node name="RedMushroom2" parent="enviroment" instance=ExtResource("4_j0e0p")]
+position = Vector2(480, -160)
+
+[node name="RedMushroom3" parent="enviroment" instance=ExtResource("4_j0e0p")]
+position = Vector2(-864, -608)
+
+[node name="RedMushroom4" parent="enviroment" instance=ExtResource("4_j0e0p")]
+position = Vector2(928, 672)
+
+[node name="RedMushroom5" parent="enviroment" instance=ExtResource("4_j0e0p")]
+position = Vector2(-1120, 288)
+
+[node name="BlueMushroom" parent="enviroment" instance=ExtResource("5_y8o0l")]
+position = Vector2(-480, 864)
+
+[node name="BlueMushroom2" parent="enviroment" instance=ExtResource("5_y8o0l")]
+position = Vector2(-1056, -160)
+
+[node name="BlueMushroom3" parent="enviroment" instance=ExtResource("5_y8o0l")]
+position = Vector2(480, 928)
+
+[node name="BlueMushroom4" parent="enviroment" instance=ExtResource("5_y8o0l")]
+position = Vector2(736, -480)
+
+[node name="BlueMushroom5" parent="enviroment" instance=ExtResource("5_y8o0l")]
+position = Vector2(-224, -928)
+
+[node name="YellowMushroom" parent="enviroment" instance=ExtResource("6_kswx3")]
+position = Vector2(1184, -608)
+
+[node name="YellowMushroom2" parent="enviroment" instance=ExtResource("6_kswx3")]
+position = Vector2(672, -1120)
+
+[node name="YellowMushroom3" parent="enviroment" instance=ExtResource("6_kswx3")]
+position = Vector2(-672, -1120)
+
+[node name="YellowMushroom4" parent="enviroment" instance=ExtResource("6_kswx3")]
+position = Vector2(1184, 1056)
+
+[node name="YellowMushroom5" parent="enviroment" instance=ExtResource("6_kswx3")]
+position = Vector2(-1056, 800)
+
+[node name="GreyMushroom" parent="enviroment" instance=ExtResource("7_85o2d")]
+position = Vector2(1376, -1248)
+
+[node name="GreyMushroom2" parent="enviroment" instance=ExtResource("7_85o2d")]
+position = Vector2(-1056, -1248)
+
+[node name="GreyMushroom3" parent="enviroment" instance=ExtResource("7_85o2d")]
+position = Vector2(1120, 1376)
+
+[node name="GreyMushroom4" parent="enviroment" instance=ExtResource("7_85o2d")]
+position = Vector2(-224, 1120)
+
+[node name="GreyMushroom5" parent="enviroment" instance=ExtResource("7_85o2d")]
+position = Vector2(-1312, 32)

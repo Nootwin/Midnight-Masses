@@ -23,6 +23,17 @@ func _on_ressource_added():
 	$"/root/Node2D/Essentials/CanvasLayer2/Control"._ressources_added(wood, rock, iron)
 
 func add_to_deck(card : CardBattle):
+	var canvas
+	if (get_node_or_null("/root/Node2D/Essentials") != null):
+		canvas = $"/root/Node2D/Essentials/CanvasLayer"
+	else:
+		canvas = $"/root/Node2D/BattleEssentials/CanvasLayer"
+		
+	var fakecard = FakeCard.new()
+	fakecard.texture = card.texture
+	fakecard.scale = Vector2(4, 4)
+	canvas.add_child(fakecard)
+	fakecard.position = Vector2(1100, 500)
 	deck.push_back(card)
 	
 func damage(amount : int):

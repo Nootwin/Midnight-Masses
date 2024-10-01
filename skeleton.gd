@@ -54,20 +54,20 @@ func _physics_process(delta: float) -> void:
 				if (path[0].x == global_position.x):
 					if (path[0].y > global_position.y):
 						wantedpos = Vector2(0, 64) + global_position
-						velocity = Vector2(0, 16)
+						velocity = Vector2(0, 4)
 					else:
 						print(path[0] - global_position, path[0], global_position)
 						wantedpos = Vector2(0, -64) + global_position
-						velocity = Vector2(0, -16)
+						velocity = Vector2(0, -4)
 				else:
 					
 					if (path[0].x > global_position.x):
 						wantedpos = Vector2(64, 0) + global_position
-						velocity = Vector2(16, 0)
+						velocity = Vector2(4, 0)
 						$Sprite2D.flip_h = true
 					else:
 						wantedpos = Vector2(-64, 0) + global_position
-						velocity = Vector2(-16, 0)
+						velocity = Vector2(-4, 0)
 						$Sprite2D.flip_h = false
 				path.remove_at(0)
 				$Sprite2D.play("walk")

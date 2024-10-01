@@ -23,5 +23,5 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body is Provider and $"../../..".swinging):
-		
+		$"../../..".sun.increase(0.25)
 		body.on_hit(self)

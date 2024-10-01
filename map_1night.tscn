@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cepwkoep48v25"]
+[gd_scene load_steps=4 format=3 uid="uid://cepwkoep48v25"]
 
 [ext_resource type="PackedScene" uid="uid://dj1l7x57vbn0m" path="res://battle_essentials.tscn" id="1_j5sxc"]
 [ext_resource type="PackedScene" uid="uid://c5cl35orl258g" path="res://zombie.tscn" id="2_dnrvl"]
-[ext_resource type="PackedScene" uid="uid://dusjarwkpvu2s" path="res://map_2.tscn" id="2_yfu5m"]
 [ext_resource type="PackedScene" uid="uid://olg62q2vqpvd" path="res://tut_text.tscn" id="4_qt7up"]
 
 [node name="Node2D" type="Node2D"]
@@ -13,7 +12,6 @@
 texts = Array[String](["The undead are here!", "Lemme explain the basics", "each turn, you have 3 ap which can be used to place cards", "cards are your attacks against the undead", "you draw up to 4 cards every turn, or 1 card if you start with 4", "use WASD to move around, you have 5 steps a turn", "Enemies will try to get near you and attack", "If they hurt you, they will add damage cards to your deck", "Hover over enemies with the mouse to view their stats", "if you draw them, you take 1 point of damage", "go to 0 HP, and you die!", "Good luck!"])
 
 [node name="BattleEssentials" parent="." instance=ExtResource("1_j5sxc")]
-next_scene = ExtResource("2_yfu5m")
 
 [node name="Zombie" parent="BattleEssentials/TurnHandler" index="1" instance=ExtResource("2_dnrvl")]
 position = Vector2(224, 416)
