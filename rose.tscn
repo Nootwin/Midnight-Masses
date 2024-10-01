@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://q0aihjsvcbme"]
+
+[ext_resource type="Script" path="res://cardgiver.gd" id="1_rcji4"]
+[ext_resource type="AudioStream" uid="uid://busjxpmieyfut" path="res://pickupCoin.wav" id="2_i5ps0"]
+[ext_resource type="PackedScene" uid="uid://ymydceo58eya" path="res://spellcardbattle.tscn" id="3_wxpdi"]
+[ext_resource type="Texture2D" uid="uid://c7kamo0f3nedh" path="res://art/cards/rose.png" id="4_0q5w1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kj0gj"]
+load_path = "res://.godot/imported/flowers.png-b0b092773cf8ee05e5902ebc7033fb1e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0nk8"]
+atlas = SubResource("CompressedTexture2D_kj0gj")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0vfb"]
+size = Vector2(16, 16)
+
+[sub_resource type="GDScript" id="GDScript_lvqun"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	$\"/root/Inventory\".cantGetHit = true
+"
+
+[node name="Rose" type="StaticBody2D"]
+script = ExtResource("1_rcji4")
+health = 12
+dispenseEvery = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_c0nk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d0vfb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_i5ps0")
+
+[node name="Spell" parent="." instance=ExtResource("3_wxpdi")]
+visible = false
+texture = ExtResource("4_0q5w1")
+script = SubResource("GDScript_lvqun")
+dura = 1

@@ -71,7 +71,10 @@ func _on_button_button_up() -> void:
 		modulate.a = 1
 		crosshiar.visible = false
 		dura -= 1
-		summon_damage(randi_range(dmglow, dmghigh))
+		if (get_parent().maxDamage):
+			summon_damage(dmghigh)
+		else:
+			summon_damage(randi_range(dmglow, dmghigh))
 		crosshiar.get_parent().ap -= 1
 		
 		if (dura > 0):

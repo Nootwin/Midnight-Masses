@@ -104,6 +104,8 @@ func _physics_process(delta: float) -> void:
 		
 			
 func start_turn():
+	$"/root/Inventory".cantGetHit = false
+	cardhandler.maxDamage = false
 	ap = 3
 	steps = maxsteps
 	cardhandler.draw_cards()

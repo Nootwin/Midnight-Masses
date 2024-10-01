@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://cy83mhbdpgut1"]
+
+[ext_resource type="Script" path="res://cardgiver.gd" id="1_uan2t"]
+[ext_resource type="AudioStream" uid="uid://busjxpmieyfut" path="res://pickupCoin.wav" id="2_et2w7"]
+[ext_resource type="PackedScene" uid="uid://ymydceo58eya" path="res://spellcardbattle.tscn" id="3_4hrhj"]
+[ext_resource type="Texture2D" uid="uid://c5e3khhbi6ln7" path="res://art/cards/allium.png" id="4_8quic"]
+[ext_resource type="PackedScene" uid="uid://b6gohqgsic3ur" path="res://cardbattle.tscn" id="5_u2myv"]
+[ext_resource type="Texture2D" uid="uid://cksi84u610qsa" path="res://art/cards/puff.png" id="6_hwl5j"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aca4i"]
+load_path = "res://.godot/imported/flowers.png-b0b092773cf8ee05e5902ebc7033fb1e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrdhg"]
+atlas = SubResource("CompressedTexture2D_aca4i")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0vfb"]
+size = Vector2(16, 16)
+
+[sub_resource type="GDScript" id="GDScript_5j6ck"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	var inv = $\"/root/Inventory\"
+	var count = 3
+	for i in inv.deck.size():
+		if inv.deck[i] is DamageCard:
+			inv.deck[i] = $\"../Puff\".duplicate(5)
+			count -= 1
+			if (count < 1):
+				break
+			
+"
+
+[node name="Allium" type="StaticBody2D"]
+script = ExtResource("1_uan2t")
+health = 12
+dispenseEvery = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_hrdhg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d0vfb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_et2w7")
+
+[node name="Spell" parent="." instance=ExtResource("3_4hrhj")]
+visible = false
+texture = ExtResource("4_8quic")
+script = SubResource("GDScript_5j6ck")
+dura = 1
+
+[node name="Puff" parent="." instance=ExtResource("5_u2myv")]
+texture = ExtResource("6_hwl5j")
+dmglow = 1
+dmghigh = 4
+range = 4
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, true, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 1

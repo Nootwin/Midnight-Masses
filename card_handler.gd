@@ -1,6 +1,7 @@
 extends Node2D
 @onready var scsizex = get_viewport_rect().size.x / 2.0
 @onready var scsizey = get_viewport_rect().size.y
+var maxDamage : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,22 +25,22 @@ func _physics_process(delta: float) -> void:
 			card.global_position = Vector2(scsizex + ((offset + i) * 96), scsizey - 64)
 		
 func draw_cards():
-	var card
 	if ($"/root/Inventory".deck.size() > 0):
 		pass
 	if (get_child_count() < 4):
 		while (get_real_children() < 4 and $"/root/Inventory".deck.size() > 0):
-			$"../AudioStreamPlayer2".play()
-			card = $"/root/Inventory".deck.pop_front()
-			add_child(card)
-			card.visible = true
+			draw_card()
 			await get_tree().create_timer(0.3).timeout
 	else:
 		if ($"/root/Inventory".deck.size() > 0):
-			$"../AudioStreamPlayer2".play()
-			card = $"/root/Inventory".deck.pop_front()
-			add_child(card)
-			card.visible = true
+			draw_card()
+			
+func draw_card():
+	var card
+	$"../AudioStreamPlayer2".play()
+	card = $"/root/Inventory".deck.pop_front()
+	add_child(card)
+	card.visible = true
 
 func get_real_children():
 	var x = 0

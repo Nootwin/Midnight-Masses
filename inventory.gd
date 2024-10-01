@@ -18,6 +18,7 @@ var dex : int =  0
 var vit : int = 0
 var pointsleft : int = 0
 var levelcomp = [false, false, false, false, false, false, false, false, false]
+var cantGetHit : bool
 
 func _on_ressource_added():
 	$"/root/Node2D/Essentials/CanvasLayer2/Control"._ressources_added(wood, rock, iron)
@@ -37,8 +38,9 @@ func add_to_deck(card : CardBattle):
 	deck.push_back(card)
 	
 func damage(amount : int):
-	for i in amount:
-		deck.insert(randi_range(0, deck.size()), damageCard.duplicate(5))
+	if (cantGetHit):
+		for i in amount:
+			deck.insert(randi_range(0, deck.size()), damageCard.duplicate(5))
 	
 func newday(rootnode):
 	lastwood = wood

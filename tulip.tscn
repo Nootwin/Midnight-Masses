@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbvcg2yrd6fu5"]
+
+[ext_resource type="Script" path="res://cardgiver.gd" id="1_8mlau"]
+[ext_resource type="AudioStream" uid="uid://busjxpmieyfut" path="res://pickupCoin.wav" id="2_44qxc"]
+[ext_resource type="PackedScene" uid="uid://ymydceo58eya" path="res://spellcardbattle.tscn" id="3_krji6"]
+[ext_resource type="Texture2D" uid="uid://f7v2f8ncyaom" path="res://art/cards/tulip.png" id="4_jkd5l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qfeyk"]
+load_path = "res://.godot/imported/flowers.png-b0b092773cf8ee05e5902ebc7033fb1e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vivh"]
+atlas = SubResource("CompressedTexture2D_qfeyk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0vfb"]
+size = Vector2(16, 16)
+
+[sub_resource type="GDScript" id="GDScript_25b0k"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	get_parent().maxDamage = true
+"
+
+[node name="Tulip" type="StaticBody2D"]
+script = ExtResource("1_8mlau")
+health = 12
+dispenseEvery = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_4vivh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d0vfb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_44qxc")
+
+[node name="Spell" parent="." instance=ExtResource("3_krji6")]
+visible = false
+texture = ExtResource("4_jkd5l")
+script = SubResource("GDScript_25b0k")
+dura = 1
