@@ -54,6 +54,7 @@ script = SubResource("GDScript_5j6ck")
 dura = 1
 
 [node name="Puff" parent="." instance=ExtResource("5_u2myv")]
+visible = false
 texture = ExtResource("6_hwl5j")
 dmglow = 1
 dmghigh = 4
