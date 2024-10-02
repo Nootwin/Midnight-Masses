@@ -32,7 +32,8 @@ func add_to_deck(card : CardBattle):
 		
 	var fakecard = FakeCard.new()
 	fakecard.texture = card.texture
-	fakecard.scale = Vector2(4, 4)
+	if (!card is SpellCardBattle):
+		fakecard.scale = Vector2(4, 4)
 	canvas.add_child(fakecard)
 	fakecard.position = Vector2(1100, 500)
 	deck.push_back(card)

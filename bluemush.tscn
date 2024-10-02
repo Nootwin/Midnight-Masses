@@ -26,6 +26,8 @@ func _spell_use():
 
 [node name="BlueMushroom" type="StaticBody2D"]
 script = ExtResource("1_kwitk")
+health = 30
+dispenseEvery = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)

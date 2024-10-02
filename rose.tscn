@@ -24,8 +24,8 @@ func _spell_use():
 
 [node name="Rose" type="StaticBody2D"]
 script = ExtResource("1_rcji4")
-health = 12
-dispenseEvery = 12
+health = 30
+dispenseEvery = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)

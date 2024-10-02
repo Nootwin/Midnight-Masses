@@ -26,8 +26,8 @@ func _spell_use():
 
 [node name="RedMushroom" type="StaticBody2D"]
 script = ExtResource("1_viw5r")
-health = 12
-dispenseEvery = 12
+health = 30
+dispenseEvery = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
@@ -41,6 +41,7 @@ stream = ExtResource("2_n66hi")
 
 [node name="Spell" parent="." instance=ExtResource("3_wdorx")]
 visible = false
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_poc6r")
 script = SubResource("GDScript_y636j")
 dura = 3

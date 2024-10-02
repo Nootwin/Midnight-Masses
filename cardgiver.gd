@@ -3,4 +3,5 @@ extends Provider
 func dispense(amount):
 	super.dispense(amount)
 	$AudioStreamPlayer2D.play()
-	$"/root/Inventory".deck.push($Spell)
+	if (amount > 0):
+		$"/root/Inventory".add_to_deck($Spell)
