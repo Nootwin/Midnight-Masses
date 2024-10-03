@@ -15,6 +15,7 @@ func _on_zombie_mouse_entered() -> void:
 	print("here")
 	text = "HP: " + str(get_parent().health) + "\nDMG: 1" 
 	visible = true
+	$"../AreaSpawner".visible = true
 
 
 func _on_zombie_mouse_exited() -> void:

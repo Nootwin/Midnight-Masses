@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt00ktpda5pml"]
+
+[ext_resource type="Script" path="res://area_spawner.gd" id="1_xliks"]
+
+[node name="AreaSpawner" type="Node2D"]
+script = ExtResource("1_xliks")
+
+[node name="Movement" type="Polygon2D" parent="."]
+color = Color(0.152941, 0.996078, 1, 0.215686)
+
+[node name="AttackRange" type="Polygon2D" parent="."]
+color = Color(0.0470588, 0.2, 0.305882, 0.329412)
+invert_border = 128.0

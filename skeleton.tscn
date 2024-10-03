@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1chdphfslniu"]
+[gd_scene load_steps=11 format=3 uid="uid://c1chdphfslniu"]
 
 [ext_resource type="Script" path="res://skeleton.gd" id="1_s55bt"]
 [ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="2_j3ljg"]
 [ext_resource type="Script" path="res://enemy_info.gd" id="3_gda2x"]
 [ext_resource type="Texture2D" uid="uid://cs6kn51ct8h2p" path="res://art/skeleton.png" id="4_qlre3"]
 [ext_resource type="AudioStream" uid="uid://ciyxmmtc5cv41" path="res://step-skeleton-47785.mp3" id="5_tlv8j"]
+[ext_resource type="PackedScene" uid="uid://bt00ktpda5pml" path="res://area_spawner.tscn" id="6_f3hfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fi7d3"]
 size = Vector2(32, 32)
@@ -68,3 +69,7 @@ animation = &"idle"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_tlv8j")
+
+[node name="AreaSpawner" parent="." instance=ExtResource("6_f3hfa")]
+visible = false
+scale = Vector2(1, 1)
