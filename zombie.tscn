@@ -98,7 +98,6 @@ stream = ExtResource("5_mmub7")
 
 [node name="AreaSpawner" parent="." instance=ExtResource("6_oociu")]
 visible = false
-scale = Vector2(1, 1)
 
 [connection signal="mouse_entered" from="." to="RichTextLabel" method="_on_zombie_mouse_entered"]
 [connection signal="mouse_exited" from="." to="RichTextLabel" method="_on_zombie_mouse_exited"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://mrvgs2yor8hq"]
+
+[ext_resource type="Script" path="res://chest.gd" id="1_dfbs5"]
+[ext_resource type="Texture2D" uid="uid://c3cic40o1wctm" path="res://art/chest.png" id="2_oo4k2"]
+[ext_resource type="AudioStream" uid="uid://busjxpmieyfut" path="res://pickupCoin.wav" id="3_rt5qt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl5uv"]
+atlas = ExtResource("2_oo4k2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yiql7"]
+size = Vector2(32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_dfbs5")
+health = 1
+dispenseEvery = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_dl5uv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yiql7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rt5qt")
+
+[node name="Contents" type="Node2D" parent="."]
