@@ -72,4 +72,3 @@ stream = ExtResource("5_tlv8j")
 
 [node name="AreaSpawner" parent="." instance=ExtResource("6_f3hfa")]
 visible = false
-scale = Vector2(1, 1)

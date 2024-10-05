@@ -50,7 +50,8 @@ func _physics_process(delta: float) -> void:
 			newdir = Vector2(-2, -2)
 			$Sprite2D.play(spdir + "_idle")
 		else:
-			sun.increase(0.5)
+			if (sun != null):
+				sun.increase(0.5)
 			if (dir == lastdir):
 				newdir = lastdir
 			else:

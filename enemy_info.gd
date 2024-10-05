@@ -20,3 +20,4 @@ func _on_zombie_mouse_entered() -> void:
 
 func _on_zombie_mouse_exited() -> void:
 	visible = false
+	$"../AreaSpawner".visible = false

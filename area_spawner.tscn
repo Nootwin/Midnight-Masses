@@ -6,8 +6,8 @@
 script = ExtResource("1_xliks")
 
 [node name="Movement" type="Polygon2D" parent="."]
-color = Color(0.152941, 0.996078, 1, 0.215686)
+color = Color(0.831373, 0.105882, 0.145098, 0.215686)
 
 [node name="AttackRange" type="Polygon2D" parent="."]
-color = Color(0.0470588, 0.2, 0.305882, 0.329412)
+color = Color(0.831373, 0.105882, 0.145098, 0.215686)
 invert_border = 128.0
