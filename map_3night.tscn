@@ -40,22 +40,14 @@ health = 8
 
 [node name="Skeleton" parent="BattleEssentials/TurnHandler" index="7" instance=ExtResource("3_jnidv")]
 position = Vector2(-672, -96)
-health = 5
-dmg = 3
 
 [node name="Skeleton2" parent="BattleEssentials/TurnHandler" index="8" instance=ExtResource("3_jnidv")]
 position = Vector2(-672, 160)
-health = 5
-dmg = 3
 
 [node name="Skeleton3" parent="BattleEssentials/TurnHandler" index="9" instance=ExtResource("3_jnidv")]
 position = Vector2(800, -96)
-health = 5
-dmg = 3
 
 [node name="Skeleton4" parent="BattleEssentials/TurnHandler" index="10" instance=ExtResource("3_jnidv")]
 position = Vector2(800, 160)
-health = 5
-dmg = 3
 
 [editable path="BattleEssentials"]

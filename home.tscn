@@ -1,11 +1,29 @@
-[gd_scene load_steps=10 format=4 uid="uid://bifg6en0ibghw"]
+[gd_scene load_steps=40 format=4 uid="uid://bifg6en0ibghw"]
 
 [ext_resource type="Texture2D" uid="uid://blielndrsvby1" path="res://art/cards/woodfloor.png" id="1_cjdno"]
 [ext_resource type="Script" path="res://home.gd" id="1_fvjl1"]
 [ext_resource type="PackedScene" uid="uid://mrvgs2yor8hq" path="res://chest.tscn" id="3_m1413"]
 [ext_resource type="PackedScene" uid="uid://cmdjudmdd2f7v" path="res://player.tscn" id="4_5272q"]
+[ext_resource type="PackedScene" uid="uid://b6gohqgsic3ur" path="res://cardbattle.tscn" id="4_qtv4f"]
 [ext_resource type="PackedScene" uid="uid://b4hg0ihhx0kr1" path="res://item.tscn" id="5_j5mlc"]
+[ext_resource type="Texture2D" uid="uid://dwlbiyabqrjcf" path="res://art/cards/swordi.png" id="5_ybkro"]
 [ext_resource type="Texture2D" uid="uid://bmi54k4xub46c" path="res://art/key.png" id="6_dee72"]
+[ext_resource type="Texture2D" uid="uid://lsbrei481cbp" path="res://art/cards/axei.png" id="6_hyv2f"]
+[ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="7_y7gwt"]
+[ext_resource type="Texture2D" uid="uid://bcl1hgp5s88xo" path="res://art/cards/sword.png" id="8_gvmdy"]
+[ext_resource type="Texture2D" uid="uid://cgap5aw37tg3u" path="res://art/cards/axe.png" id="9_o4jya"]
+[ext_resource type="Texture2D" uid="uid://bc5354c05o61n" path="res://art/cards/spear.png" id="10_j03e0"]
+[ext_resource type="Texture2D" uid="uid://df7nlegvkk1nn" path="res://art/cards/mace.png" id="11_mvghg"]
+[ext_resource type="Texture2D" uid="uid://h1pexp50sfbf" path="res://art/cards/swords.png" id="12_jko7u"]
+[ext_resource type="Texture2D" uid="uid://cs6xo4o5gtpy1" path="res://art/cards/sling.png" id="13_er01t"]
+[ext_resource type="PackedScene" uid="uid://ymydceo58eya" path="res://spellcardbattle.tscn" id="14_4mm8n"]
+[ext_resource type="Texture2D" uid="uid://c7kamo0f3nedh" path="res://art/cards/rose.png" id="15_n6jro"]
+[ext_resource type="Texture2D" uid="uid://c5e3khhbi6ln7" path="res://art/cards/allium.png" id="16_fm88i"]
+[ext_resource type="Texture2D" uid="uid://whnt8txqmfwf" path="res://art/cards/redmush.png" id="17_6vlr1"]
+[ext_resource type="Texture2D" uid="uid://mburtoax0rb2" path="res://art/cards/ylwmush.png" id="18_nv1xw"]
+[ext_resource type="Texture2D" uid="uid://dl08v4gfg3stl" path="res://art/cards/Greymush.png" id="19_k57vj"]
+[ext_resource type="Texture2D" uid="uid://f7v2f8ncyaom" path="res://art/cards/tulip.png" id="20_nkw48"]
+[ext_resource type="AudioStream" uid="uid://csdjwnm5pye45" path="res://A Little R & R.ogg" id="24_c7qs0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gtlu"]
 texture = ExtResource("1_cjdno")
@@ -35,6 +53,85 @@ texture = ExtResource("1_cjdno")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1gtlu")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7mmvk"]
+load_path = "res://.godot/imported/chest.png-541bf735874d6a9d8155622ae282e21b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyc43"]
+atlas = SubResource("CompressedTexture2D_7mmvk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t7blo"]
+load_path = "res://.godot/imported/chest.png-541bf735874d6a9d8155622ae282e21b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gogdt"]
+atlas = SubResource("CompressedTexture2D_t7blo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1t5hk"]
+load_path = "res://.godot/imported/chest.png-541bf735874d6a9d8155622ae282e21b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67f66"]
+atlas = SubResource("CompressedTexture2D_1t5hk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="GDScript" id="GDScript_mcjxq"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	$\"/root/Inventory\".cantGetHit = true
+"
+
+[sub_resource type="GDScript" id="GDScript_ypltd"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	var inv = $\"/root/Inventory\"
+	var count = 3
+	for i in inv.deck.size():
+		if inv.deck[i] is DamageCard:
+			inv.deck[i] = $\"../Puff\".duplicate(5)
+			count -= 1
+			if (count < 1):
+				break
+			
+"
+
+[sub_resource type="GDScript" id="GDScript_7tmmd"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	player.health += 4
+	
+	$\"/root/Inventory\".add_to_deck(load(\"res://damage_card.tscn\").instantiate())
+"
+
+[sub_resource type="GDScript" id="GDScript_p232d"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	player.steps += player.maxsteps
+	$\"/root/Inventory\".add_to_deck(load(\"res://damage_card.tscn\").instantiate())
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_cn4v7"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	var turnhandler = player.get_parent()
+	for child in turnhandler.get_children():
+		if (child != player):
+			child.damage(3)
+	$\"/root/Inventory\".add_to_deck(load(\"res://damage_card.tscn\").instantiate())
+"
+
+[sub_resource type="GDScript" id="GDScript_52gsk"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	get_parent().maxDamage = true
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrvj8"]
 size = Vector2(208, 72)
 
@@ -50,11 +147,197 @@ tile_set = SubResource("TileSet_jkgk5")
 [node name="Quality" parent="." instance=ExtResource("3_m1413")]
 position = Vector2(288, 352)
 
+[node name="Sprite2D" parent="Quality" index="0"]
+texture = SubResource("AtlasTexture_pyc43")
+
+[node name="Card" parent="Quality/Contents" index="0" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("5_ybkro")
+dmglow = 5
+dmghigh = 11
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card3" parent="Quality/Contents" index="1" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("5_ybkro")
+dmglow = 5
+dmghigh = 11
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card2" parent="Quality/Contents" index="2" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("6_hyv2f")
+dmglow = 6
+dmghigh = 15
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, true, true, true, false, false, false, false, false, false])
+dura = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Quality"]
+offset_left = -85.0
+offset_top = -64.0
+offset_right = 110.0
+offset_bottom = -33.0
+theme_override_fonts/normal_font = ExtResource("7_y7gwt")
+theme_override_font_sizes/normal_font_size = 24
+text = "Quality
+"
+
 [node name="Quantity" parent="." instance=ExtResource("3_m1413")]
 position = Vector2(544, 352)
 
+[node name="Sprite2D" parent="Quantity" index="0"]
+texture = SubResource("AtlasTexture_gogdt")
+
+[node name="Card" parent="Quantity/Contents" index="0" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("8_gvmdy")
+dmglow = 1
+dmghigh = 6
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card2" parent="Quantity/Contents" index="1" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("9_o4jya")
+dmglow = 2
+dmghigh = 8
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 2
+
+[node name="Card3" parent="Quantity/Contents" index="2" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("10_j03e0")
+dmglow = 1
+dmghigh = 8
+range = 4
+pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 1
+
+[node name="Card4" parent="Quantity/Contents" index="3" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("11_mvghg")
+dmglow = 3
+dmghigh = 10
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card7" parent="Quantity/Contents" index="4" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("8_gvmdy")
+dmglow = 1
+dmghigh = 6
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card8" parent="Quantity/Contents" index="5" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("9_o4jya")
+dmglow = 2
+dmghigh = 8
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 2
+
+[node name="Card9" parent="Quantity/Contents" index="6" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("10_j03e0")
+dmglow = 1
+dmghigh = 8
+range = 4
+pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 1
+
+[node name="Card10" parent="Quantity/Contents" index="7" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("11_mvghg")
+dmglow = 3
+dmghigh = 10
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card5" parent="Quantity/Contents" index="8" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("12_jko7u")
+dmglow = 3
+dmghigh = 9
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card6" parent="Quantity/Contents" index="9" instance=ExtResource("4_qtv4f")]
+visible = false
+texture = ExtResource("13_er01t")
+dmglow = 1
+dmghigh = 8
+range = 3
+pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Quantity"]
+offset_left = -100.0
+offset_top = -64.0
+offset_right = 95.0
+offset_bottom = -33.0
+theme_override_fonts/normal_font = ExtResource("7_y7gwt")
+theme_override_font_sizes/normal_font_size = 24
+text = "Quantity"
+
 [node name="Utility" parent="." instance=ExtResource("3_m1413")]
 position = Vector2(800, 352)
+
+[node name="Sprite2D" parent="Utility" index="0"]
+texture = SubResource("AtlasTexture_67f66")
+
+[node name="Spell" parent="Utility/Contents" index="0" instance=ExtResource("14_4mm8n")]
+visible = false
+texture = ExtResource("15_n6jro")
+script = SubResource("GDScript_mcjxq")
+
+[node name="Spell2" parent="Utility/Contents" index="1" instance=ExtResource("14_4mm8n")]
+visible = false
+texture = ExtResource("16_fm88i")
+script = SubResource("GDScript_ypltd")
+
+[node name="Spell3" parent="Utility/Contents" index="2" instance=ExtResource("14_4mm8n")]
+visible = false
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("17_6vlr1")
+script = SubResource("GDScript_7tmmd")
+
+[node name="Spell4" parent="Utility/Contents" index="3" instance=ExtResource("14_4mm8n")]
+visible = false
+texture = ExtResource("18_nv1xw")
+script = SubResource("GDScript_p232d")
+
+[node name="Spell5" parent="Utility/Contents" index="4" instance=ExtResource("14_4mm8n")]
+visible = false
+texture = ExtResource("19_k57vj")
+script = SubResource("GDScript_cn4v7")
+
+[node name="Spell6" parent="Utility/Contents" index="5" instance=ExtResource("14_4mm8n")]
+visible = false
+texture = ExtResource("20_nkw48")
+script = SubResource("GDScript_52gsk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Utility"]
+offset_left = -83.0
+offset_top = -64.0
+offset_right = 112.0
+offset_bottom = -33.0
+theme_override_fonts/normal_font = ExtResource("7_y7gwt")
+theme_override_font_sizes/normal_font_size = 24
+text = "Utility
+"
 
 [node name="Player" parent="." instance=ExtResource("4_5272q")]
 position = Vector2(544, 608)
@@ -80,7 +363,27 @@ position = Vector2(480, 672)
 position = Vector2(94, 28)
 shape = SubResource("RectangleShape2D_wrvj8")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 336.0
+offset_top = 80.0
+offset_right = 806.0
+offset_bottom = 236.0
+theme_override_fonts/normal_font = ExtResource("7_y7gwt")
+theme_override_font_sizes/normal_font_size = 48
+text = "Take One
+"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_c7qs0")
+autoplay = true
+parameters/looping = true
+
 [connection signal="body_entered" from="Player/Arm/Hand/Item" to="Player/Arm/Hand/Item" method="_on_body_entered"]
 
+[editable path="Quality"]
+[editable path="Quantity"]
+[editable path="Utility"]
 [editable path="Player"]
 [editable path="Player/Arm/Hand/Item"]

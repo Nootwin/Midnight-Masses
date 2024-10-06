@@ -15,8 +15,10 @@ func _ready() -> void:
 	var coords = $"../../TileMapLayer2".local_to_map($"../../TileMapLayer2".to_local(self.global_position))
 	completed = $"/root/Inventory".levelcomp[int(str(name))]
 	if (completed):
-		$"../../TileMapLayer2".set_cell(coords, -1, Vector2i($"../../TileMapLayer2".get_cell_atlas_coords(coords) + Vector2(-1, 0)))
-	
+		print($"../../TileMapLayer2".get_cell_atlas_coords(coords))
+		print(Vector2i($"../../TileMapLayer2".get_cell_atlas_coords(coords) + Vector2i(-1, 0)))
+		$"../../TileMapLayer2".set_cell(coords, 0, Vector2i($"../../TileMapLayer2".get_cell_atlas_coords(coords) + Vector2i(-1, 0)))
+		
 	pass # Replace with function body.
 
 

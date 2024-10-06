@@ -31,18 +31,21 @@ health = 7
 
 [node name="Skeleton" parent="BattleEssentials/TurnHandler" index="5" instance=ExtResource("3_yvj5u")]
 position = Vector2(352, 352)
-health = 4
 dmg = 2
+range = 3
+health = 4
 
 [node name="Skeleton2" parent="BattleEssentials/TurnHandler" index="6" instance=ExtResource("3_yvj5u")]
 position = Vector2(-608, -32)
-health = 4
 dmg = 2
+range = 3
+health = 4
 
 [node name="Skeleton3" parent="BattleEssentials/TurnHandler" index="7" instance=ExtResource("3_yvj5u")]
 position = Vector2(160, -288)
-health = 4
 dmg = 2
+range = 3
+health = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

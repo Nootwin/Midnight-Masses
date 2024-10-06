@@ -1,0 +1,292 @@
+[gd_scene load_steps=31 format=4 uid="uid://cmb1vfv56vqgv"]
+
+[ext_resource type="Script" path="res://home.gd" id="1_s77b3"]
+[ext_resource type="Texture2D" uid="uid://blielndrsvby1" path="res://art/cards/woodfloor.png" id="2_4xryc"]
+[ext_resource type="PackedScene" uid="uid://mrvgs2yor8hq" path="res://chest.tscn" id="3_b4j7l"]
+[ext_resource type="PackedScene" uid="uid://b6gohqgsic3ur" path="res://cardbattle.tscn" id="4_5l2iu"]
+[ext_resource type="Texture2D" uid="uid://dwlbiyabqrjcf" path="res://art/cards/swordi.png" id="5_xsesu"]
+[ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="7_epi0i"]
+[ext_resource type="Texture2D" uid="uid://bcl1hgp5s88xo" path="res://art/cards/sword.png" id="8_vaab2"]
+[ext_resource type="Texture2D" uid="uid://cgap5aw37tg3u" path="res://art/cards/axe.png" id="9_1ftoi"]
+[ext_resource type="Texture2D" uid="uid://bijo2gqiwob71" path="res://art/cards/axes.png" id="9_muogi"]
+[ext_resource type="Texture2D" uid="uid://bc5354c05o61n" path="res://art/cards/spear.png" id="10_amomt"]
+[ext_resource type="Texture2D" uid="uid://br13y56eivwpq" path="res://art/cards/maces.png" id="10_fwcou"]
+[ext_resource type="Texture2D" uid="uid://df7nlegvkk1nn" path="res://art/cards/mace.png" id="11_m2hio"]
+[ext_resource type="Texture2D" uid="uid://h1pexp50sfbf" path="res://art/cards/swords.png" id="12_fhean"]
+[ext_resource type="Texture2D" uid="uid://cs6xo4o5gtpy1" path="res://art/cards/sling.png" id="13_p7l0r"]
+[ext_resource type="PackedScene" uid="uid://ymydceo58eya" path="res://spellcardbattle.tscn" id="14_h6x78"]
+[ext_resource type="Texture2D" uid="uid://mburtoax0rb2" path="res://art/cards/ylwmush.png" id="18_uohx1"]
+[ext_resource type="Texture2D" uid="uid://dl08v4gfg3stl" path="res://art/cards/Greymush.png" id="19_emplu"]
+[ext_resource type="PackedScene" uid="uid://cmdjudmdd2f7v" path="res://player.tscn" id="21_0u3un"]
+[ext_resource type="AudioStream" uid="uid://csdjwnm5pye45" path="res://A Little R & R.ogg" id="21_vhuxa"]
+[ext_resource type="PackedScene" uid="uid://b4hg0ihhx0kr1" path="res://item.tscn" id="22_y1j2a"]
+[ext_resource type="Texture2D" uid="uid://bmi54k4xub46c" path="res://art/key.png" id="23_suf5f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gtlu"]
+texture = ExtResource("2_4xryc")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:1/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_jkgk5"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1gtlu")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7mmvk"]
+load_path = "res://.godot/imported/chest.png-541bf735874d6a9d8155622ae282e21b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyc43"]
+atlas = SubResource("CompressedTexture2D_7mmvk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1t5hk"]
+load_path = "res://.godot/imported/chest.png-541bf735874d6a9d8155622ae282e21b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67f66"]
+atlas = SubResource("CompressedTexture2D_1t5hk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="GDScript" id="GDScript_p232d"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	player.steps += player.maxsteps
+	$\"/root/Inventory\".add_to_deck(load(\"res://damage_card.tscn\").instantiate())
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_cn4v7"]
+script/source = "extends SpellCardBattle
+
+func _spell_use():
+	var turnhandler = player.get_parent()
+	for child in turnhandler.get_children():
+		if (child != player):
+			child.damage(3)
+	$\"/root/Inventory\".add_to_deck(load(\"res://damage_card.tscn\").instantiate())
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrvj8"]
+size = Vector2(208, 72)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_s77b3")
+levelID = 7
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAABAAEAAAABAAUAAAABAAEAAAABAAYAAAABAAEAAAABAAcAAAABAAEAAAABAAgAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAEAAAACAAYAAAABAAEAAAACAAcAAAABAAEAAAACAAgAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAUAAAABAAEAAAADAAYAAAABAAEAAAADAAcAAAABAAEAAAADAAgAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAEAAYAAAABAAEAAAAEAAcAAAABAAEAAAAEAAgAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAEAAAAFAAYAAAABAAEAAAAFAAcAAAABAAEAAAAFAAgAAAABAAEAAAAGAAEAAAABAAEAAAAGAAIAAAABAAEAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAEAAAAGAAYAAAABAAEAAAAGAAcAAAABAAEAAAAGAAgAAAABAAEAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAHAAUAAAABAAEAAAAHAAYAAAABAAEAAAAHAAcAAAABAAEAAAAHAAgAAAABAAEAAAAIAAEAAAABAAEAAAAIAAIAAAABAAEAAAAIAAMAAAABAAEAAAAIAAQAAAABAAEAAAAIAAUAAAABAAEAAAAIAAYAAAABAAEAAAAIAAcAAAABAAEAAAAIAAgAAAABAAEAAAAJAAEAAAABAAEAAAAJAAIAAAABAAEAAAAJAAMAAAABAAEAAAAJAAQAAAABAAEAAAAJAAUAAAABAAEAAAAJAAYAAAABAAEAAAAJAAcAAAABAAEAAAAJAAgAAAABAAEAAAAKAAEAAAABAAEAAAAKAAIAAAABAAEAAAAKAAMAAAABAAEAAAAKAAQAAAABAAEAAAAKAAUAAAABAAEAAAAKAAYAAAABAAEAAAAKAAcAAAABAAEAAAAKAAgAAAABAAEAAAALAAEAAAABAAEAAAALAAIAAAABAAEAAAALAAMAAAABAAEAAAALAAQAAAABAAEAAAALAAUAAAABAAEAAAALAAYAAAABAAEAAAALAAcAAAABAAEAAAALAAgAAAABAAEAAAAMAAEAAAABAAEAAAAMAAIAAAABAAEAAAAMAAMAAAABAAEAAAAMAAQAAAABAAEAAAAMAAUAAAABAAEAAAAMAAYAAAABAAEAAAAMAAcAAAABAAEAAAAMAAgAAAABAAEAAAANAAEAAAABAAEAAAANAAIAAAABAAEAAAANAAMAAAABAAEAAAANAAQAAAABAAEAAAANAAUAAAABAAEAAAANAAYAAAABAAEAAAANAAcAAAABAAEAAAANAAgAAAABAAEAAAAOAAEAAAABAAEAAAAOAAIAAAABAAEAAAAOAAMAAAABAAEAAAAOAAQAAAABAAEAAAAOAAUAAAABAAEAAAAOAAYAAAABAAEAAAAOAAcAAAABAAEAAAAOAAgAAAABAAEAAAAPAAEAAAABAAEAAAAPAAIAAAABAAEAAAAPAAMAAAABAAEAAAAPAAQAAAABAAEAAAAPAAUAAAABAAEAAAAPAAYAAAABAAEAAAAPAAcAAAABAAEAAAAPAAgAAAABAAEAAAAQAAEAAAABAAEAAAAQAAIAAAABAAEAAAAQAAMAAAABAAEAAAAQAAQAAAABAAEAAAAQAAUAAAABAAEAAAAQAAYAAAABAAEAAAAQAAcAAAABAAEAAAAQAAgAAAABAAEAAAAAAAAAAAAAAAAAAAARAAAAAAACAAAAAAARAAkAAAACAAIAAAAAAAkAAAAAAAIAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAARAAEAAAACAAEAAAARAAIAAAACAAEAAAARAAMAAAACAAEAAAARAAQAAAACAAEAAAARAAUAAAACAAEAAAARAAYAAAACAAEAAAARAAcAAAACAAEAAAARAAgAAAACAAEAAAABAAkAAAABAAIAAAACAAkAAAABAAIAAAADAAkAAAABAAIAAAAEAAkAAAABAAIAAAAFAAkAAAABAAIAAAAGAAkAAAABAAIAAAAHAAkAAAADAAAAAAAIAAkAAAABAAEAAAAJAAkAAAABAAEAAAAKAAkAAAADAAEAAAALAAkAAAABAAIAAAAMAAkAAAABAAIAAAANAAkAAAABAAIAAAAOAAkAAAABAAIAAAAPAAkAAAABAAIAAAAQAAkAAAABAAIAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_jkgk5")
+
+[node name="Melee" parent="." instance=ExtResource("3_b4j7l")]
+position = Vector2(416, 352)
+
+[node name="Sprite2D" parent="Melee" index="0"]
+texture = SubResource("AtlasTexture_pyc43")
+
+[node name="Card2" parent="Melee/Contents" index="0" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("8_vaab2")
+dmglow = 1
+dmghigh = 6
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card3" parent="Melee/Contents" index="1" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("9_1ftoi")
+dmglow = 2
+dmghigh = 8
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 2
+
+[node name="Card4" parent="Melee/Contents" index="2" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("11_m2hio")
+dmglow = 3
+dmghigh = 10
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card5" parent="Melee/Contents" index="3" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("12_fhean")
+dmglow = 3
+dmghigh = 9
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card6" parent="Melee/Contents" index="4" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("9_muogi")
+dmglow = 4
+dmghigh = 11
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 2
+
+[node name="Card7" parent="Melee/Contents" index="5" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("10_fwcou")
+dmglow = 5
+dmghigh = 12
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card" parent="Melee/Contents" index="6" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("5_xsesu")
+dmglow = 5
+dmghigh = 11
+range = 1
+pattern = Array[bool]([false, false, false, false, false, false, true, true, true, false, false, true, false, true, false, false, true, true, true, false, false, false, false, false, false])
+dura = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Melee"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 131.0
+offset_bottom = -33.0
+theme_override_fonts/normal_font = ExtResource("7_epi0i")
+theme_override_font_sizes/normal_font_size = 24
+text = "Melee
+"
+
+[node name="Range" parent="." instance=ExtResource("3_b4j7l")]
+position = Vector2(736, 352)
+
+[node name="Sprite2D" parent="Range" index="0"]
+texture = SubResource("AtlasTexture_67f66")
+
+[node name="Card" parent="Range/Contents" index="0" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("10_amomt")
+dmglow = 1
+dmghigh = 8
+range = 4
+pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 1
+
+[node name="Card3" parent="Range/Contents" index="1" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("10_amomt")
+dmglow = 1
+dmghigh = 8
+range = 4
+pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 1
+
+[node name="Card2" parent="Range/Contents" index="2" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("13_p7l0r")
+dmglow = 1
+dmghigh = 8
+range = 3
+pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 3
+
+[node name="Card4" parent="Range/Contents" index="3" instance=ExtResource("4_5l2iu")]
+visible = false
+texture = ExtResource("13_p7l0r")
+dmglow = 1
+dmghigh = 8
+range = 3
+pattern = Array[bool]([false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false])
+dura = 3
+
+[node name="Spell4" parent="Range/Contents" index="4" instance=ExtResource("14_h6x78")]
+visible = false
+texture = ExtResource("18_uohx1")
+script = SubResource("GDScript_p232d")
+
+[node name="Spell6" parent="Range/Contents" index="5" instance=ExtResource("14_h6x78")]
+visible = false
+texture = ExtResource("18_uohx1")
+script = SubResource("GDScript_p232d")
+
+[node name="Spell5" parent="Range/Contents" index="6" instance=ExtResource("14_h6x78")]
+visible = false
+texture = ExtResource("19_emplu")
+script = SubResource("GDScript_cn4v7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Range"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 131.0
+offset_bottom = -33.0
+theme_override_fonts/normal_font = ExtResource("7_epi0i")
+theme_override_font_sizes/normal_font_size = 24
+text = "Range
+
+"
+
+[node name="Player" parent="." instance=ExtResource("21_0u3un")]
+position = Vector2(544, 608)
+
+[node name="Camera2D" parent="Player" index="2"]
+offset = Vector2(572, 314)
+
+[node name="Hand" parent="Player/Arm" index="0"]
+position = Vector2(0, 0)
+
+[node name="Item" parent="Player/Arm/Hand" index="0" instance=ExtResource("22_y1j2a")]
+position = Vector2(0, -48)
+damagelow = 1
+damagehigh = 1
+
+[node name="Sprite2D" parent="Player/Arm/Hand/Item" index="1"]
+texture = ExtResource("23_suf5f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(480, 672)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(94, 28)
+shape = SubResource("RectangleShape2D_wrvj8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 352.0
+offset_top = 96.0
+offset_right = 822.0
+offset_bottom = 252.0
+theme_override_fonts/normal_font = ExtResource("7_epi0i")
+theme_override_font_sizes/normal_font_size = 48
+text = "Take One
+"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_vhuxa")
+autoplay = true
+parameters/looping = true
+
+[connection signal="body_entered" from="Player/Arm/Hand/Item" to="Player/Arm/Hand/Item" method="_on_body_entered"]
+
+[editable path="Melee"]
+[editable path="Range"]
+[editable path="Player"]
+[editable path="Player/Arm/Hand/Item"]

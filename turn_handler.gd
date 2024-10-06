@@ -29,14 +29,14 @@ func next():
 		get_tree().change_scene_to_file($"/root/Node2D/BattleEssentials".next_scene)
 	else:
 		turnOrder.back().isturn = false
-		turnOrder.back().remove_child(cam)
 		var nex = turnOrder.pop_front()
 	
 
 		turnOrder.push_back(nex)
 		nex.start_turn()
 		print(nex.name)
-		nex.add_child(cam)
+		cam.reparent(nex, false)
+		cam.mouse_change = Vector2(0, 0)
 	
 func _on_env_entered():
 	var env = $"/root/Inventory".enviroment

@@ -1,0 +1,227 @@
+[gd_scene load_steps=13 format=3 uid="uid://vii8rb36xvmq"]
+
+[ext_resource type="PackedScene" uid="uid://cnekkrhc2o8id" path="res://essentials.tscn" id="1_26aj1"]
+[ext_resource type="PackedScene" uid="uid://b0xf234jbemqt" path="res://tree.tscn" id="2_ufecw"]
+[ext_resource type="PackedScene" uid="uid://dcwqut57but4i" path="res://rocks.tscn" id="3_xrxom"]
+[ext_resource type="PackedScene" uid="uid://dtlfkpj2o3b1w" path="res://iron.tscn" id="4_xoaf2"]
+[ext_resource type="PackedScene" uid="uid://ce3n5ec63awva" path="res://mushred.tscn" id="5_wmkga"]
+[ext_resource type="PackedScene" uid="uid://dn0wvg0c20ii0" path="res://bluemush.tscn" id="6_ijdnv"]
+[ext_resource type="PackedScene" uid="uid://dx4d7dlq8cs12" path="res://greymush.tscn" id="7_5lwbo"]
+[ext_resource type="PackedScene" uid="uid://i80t4k08h1le" path="res://yellowmush.tscn" id="8_ywoah"]
+[ext_resource type="PackedScene" uid="uid://cs3t5h4b1v518" path="res://daisy.tscn" id="9_lc0gx"]
+[ext_resource type="PackedScene" uid="uid://q0aihjsvcbme" path="res://rose.tscn" id="10_m4bbv"]
+[ext_resource type="PackedScene" uid="uid://cy83mhbdpgut1" path="res://allium.tscn" id="11_cwo1c"]
+[ext_resource type="PackedScene" uid="uid://bbvcg2yrd6fu5" path="res://tulip.tscn" id="12_lmdl5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Essentials" parent="." instance=ExtResource("1_26aj1")]
+
+[node name="enviroment" type="Node2D" parent="."]
+
+[node name="Tree0" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-256, 64)
+
+[node name="Tree1" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(320, 64)
+
+[node name="Tree2" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-256, -64)
+
+[node name="Tree3" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-256, -192)
+
+[node name="Tree4" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-256, -320)
+
+[node name="Tree5" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-256, 192)
+
+[node name="Tree6" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-256, 320)
+
+[node name="Tree7" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-256, 448)
+
+[node name="Tree8" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(320, -64)
+
+[node name="Tree9" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(320, -192)
+
+[node name="Tree10" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(320, -320)
+
+[node name="Tree11" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(320, 192)
+
+[node name="Tree12" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(320, 320)
+
+[node name="Tree13" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(320, 448)
+
+[node name="Rocks" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(-448, 448)
+
+[node name="Rocks2" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(-448, 256)
+
+[node name="Rocks3" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(-448, 64)
+
+[node name="Rocks4" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(-448, -128)
+
+[node name="Rocks5" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(-448, -320)
+
+[node name="Rocks6" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(512, 448)
+
+[node name="Rocks7" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(512, 256)
+
+[node name="Rocks8" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(512, 64)
+
+[node name="Rocks9" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(512, -128)
+
+[node name="Rocks10" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(512, -320)
+
+[node name="Iron" parent="enviroment" instance=ExtResource("4_xoaf2")]
+position = Vector2(-1216, 1152)
+
+[node name="Iron2" parent="enviroment" instance=ExtResource("4_xoaf2")]
+position = Vector2(704, 960)
+
+[node name="Iron3" parent="enviroment" instance=ExtResource("4_xoaf2")]
+position = Vector2(-1216, -640)
+
+[node name="Iron4" parent="enviroment" instance=ExtResource("4_xoaf2")]
+position = Vector2(-256, -1408)
+
+[node name="Iron5" parent="enviroment" instance=ExtResource("4_xoaf2")]
+position = Vector2(832, -896)
+
+[node name="Iron6" parent="enviroment" instance=ExtResource("4_xoaf2")]
+position = Vector2(-128, 1408)
+
+[node name="Iron7" parent="enviroment" instance=ExtResource("4_xoaf2")]
+position = Vector2(1280, -128)
+
+[node name="Iron8" parent="enviroment" instance=ExtResource("4_xoaf2")]
+position = Vector2(-1344, 128)
+
+[node name="Tree14" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-576, 960)
+
+[node name="Tree15" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-896, 576)
+
+[node name="Tree16" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-896, -128)
+
+[node name="Tree17" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-704, -640)
+
+[node name="Tree18" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(-128, -832)
+
+[node name="Tree19" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(576, -640)
+
+[node name="Tree20" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(960, -128)
+
+[node name="Tree21" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(896, 448)
+
+[node name="Tree22" parent="enviroment" instance=ExtResource("2_ufecw")]
+position = Vector2(192, 832)
+
+[node name="Rocks11" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(896, 1408)
+
+[node name="Rocks12" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(384, -1024)
+
+[node name="Rocks13" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(-960, -1088)
+
+[node name="Rocks14" parent="enviroment" instance=ExtResource("3_xrxom")]
+position = Vector2(-1280, 704)
+
+[node name="RedMushroom" parent="enviroment" instance=ExtResource("5_wmkga")]
+position = Vector2(32, -160)
+
+[node name="BlueMushroom" parent="enviroment" instance=ExtResource("6_ijdnv")]
+position = Vector2(32, 288)
+
+[node name="GreyMushroom2" parent="enviroment" instance=ExtResource("7_5lwbo")]
+position = Vector2(224, 480)
+
+[node name="GreyMushroom" parent="enviroment" instance=ExtResource("7_5lwbo")]
+position = Vector2(-160, 480)
+
+[node name="YellowMushroom" parent="enviroment" instance=ExtResource("8_ywoah")]
+position = Vector2(-160, -288)
+
+[node name="YellowMushroom2" parent="enviroment" instance=ExtResource("8_ywoah")]
+position = Vector2(224, -288)
+
+[node name="Daisy" parent="enviroment" instance=ExtResource("9_lc0gx")]
+position = Vector2(-416, 352)
+
+[node name="Daisy2" parent="enviroment" instance=ExtResource("9_lc0gx")]
+position = Vector2(480, -224)
+
+[node name="Daisy3" parent="enviroment" instance=ExtResource("9_lc0gx")]
+position = Vector2(-416, -224)
+
+[node name="Daisy4" parent="enviroment" instance=ExtResource("9_lc0gx")]
+position = Vector2(480, 352)
+
+[node name="Rose" parent="enviroment" instance=ExtResource("10_m4bbv")]
+position = Vector2(-416, 160)
+
+[node name="Rose2" parent="enviroment" instance=ExtResource("10_m4bbv")]
+position = Vector2(-416, -32)
+
+[node name="Rose3" parent="enviroment" instance=ExtResource("10_m4bbv")]
+position = Vector2(480, 160)
+
+[node name="Rose4" parent="enviroment" instance=ExtResource("10_m4bbv")]
+position = Vector2(480, -32)
+
+[node name="Allium" parent="enviroment" instance=ExtResource("11_cwo1c")]
+position = Vector2(-160, 736)
+
+[node name="Allium2" parent="enviroment" instance=ExtResource("11_cwo1c")]
+position = Vector2(1056, 1120)
+
+[node name="Allium3" parent="enviroment" instance=ExtResource("11_cwo1c")]
+position = Vector2(-1248, 288)
+
+[node name="Allium4" parent="enviroment" instance=ExtResource("11_cwo1c")]
+position = Vector2(1120, -1184)
+
+[node name="Allium5" parent="enviroment" instance=ExtResource("11_cwo1c")]
+position = Vector2(-1056, -864)
+
+[node name="Allium6" parent="enviroment" instance=ExtResource("11_cwo1c")]
+position = Vector2(-608, -1248)
+
+[node name="Tulip" parent="enviroment" instance=ExtResource("12_lmdl5")]
+position = Vector2(480, -1312)
+
+[node name="Tulip2" parent="enviroment" instance=ExtResource("12_lmdl5")]
+position = Vector2(1120, 1312)
+
+[node name="Tulip3" parent="enviroment" instance=ExtResource("12_lmdl5")]
+position = Vector2(-800, 1248)
+
+[node name="Tulip4" parent="enviroment" instance=ExtResource("12_lmdl5")]
+position = Vector2(-1312, 1376)

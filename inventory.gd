@@ -27,9 +27,10 @@ func add_to_deck(card : CardBattle):
 	var canvas
 	if (get_node_or_null("/root/Node2D/Essentials") != null):
 		canvas = $"/root/Node2D/Essentials/CanvasLayer"
-	else:
+	elif (get_node_or_null("/root/Node2D/BattleEssentials/CanvasLayer") != null):
 		canvas = $"/root/Node2D/BattleEssentials/CanvasLayer"
-		
+	else:
+		canvas = $"/root/Node2D/CanvasLayer"
 	var fakecard = FakeCard.new()
 	fakecard.texture = card.texture
 	if (!card is SpellCardBattle):

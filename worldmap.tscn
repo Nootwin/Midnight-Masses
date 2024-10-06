@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://oohhxx1ofnih"]
+[gd_scene load_steps=37 format=4 uid="uid://oohhxx1ofnih"]
 
 [ext_resource type="Texture2D" uid="uid://34wwok56jjen" path="res://art/worldmap.png" id="1_y5qbd"]
 [ext_resource type="Script" path="res://worldpath.gd" id="2_4j3le"]
@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://buf0ko2dfvu5a" path="res://map_mush.tscn" id="9_cnjxu"]
 [ext_resource type="PackedScene" uid="uid://b4x6for2ag01u" path="res://map_flower.tscn" id="9_xmtel"]
 [ext_resource type="PackedScene" uid="uid://dennotafpx6jo" path="res://map_rocky.tscn" id="11_drtuv"]
+[ext_resource type="PackedScene" uid="uid://bifg6en0ibghw" path="res://home.tscn" id="11_ix53i"]
+[ext_resource type="PackedScene" uid="uid://vii8rb36xvmq" path="res://map_extra.tscn" id="13_1lilf"]
+[ext_resource type="PackedScene" uid="uid://cmb1vfv56vqgv" path="res://home2.tscn" id="13_kh5nw"]
+[ext_resource type="AudioStream" uid="uid://cglwvfccxvxh2" path="res://On The Move.ogg" id="15_2bki1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sh7ks"]
 texture = ExtResource("1_y5qbd")
@@ -302,6 +306,7 @@ down = NodePath("../../Paths/3-4")
 downstart = 1
 forward = NodePath("../../Paths/4-5")
 back = NodePath("../../Paths/2-4")
+level = ExtResource("11_ix53i")
 
 [node name="5" type="Node2D" parent="Worlds" node_paths=PackedStringArray("up", "forward", "back")]
 position = Vector2(752, 337)
@@ -317,6 +322,7 @@ script = ExtResource("5_onmrf")
 down = NodePath("../../Paths/6-7")
 forward = NodePath("../../Paths/6-8")
 back = NodePath("../../Paths/5-6")
+level = ExtResource("13_1lilf")
 
 [node name="7" type="Node2D" parent="Worlds" node_paths=PackedStringArray("up", "back")]
 position = Vector2(848, 241)
@@ -324,6 +330,7 @@ script = ExtResource("5_onmrf")
 up = NodePath("../../Paths/6-7")
 upstart = 1
 back = NodePath("../../Paths/6-7")
+level = ExtResource("13_kh5nw")
 
 [node name="8" type="Node2D" parent="Worlds" node_paths=PackedStringArray("up", "back")]
 position = Vector2(1008, 336)
@@ -338,3 +345,9 @@ back = NodePath("../../Paths/5-8")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_2bki1")
+volume_db = -10.297
+autoplay = true
+parameters/looping = true

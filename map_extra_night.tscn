@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://siu6q1it0jdl"]
+
+[ext_resource type="PackedScene" uid="uid://dj1l7x57vbn0m" path="res://battle_essentials.tscn" id="1_5ddai"]
+[ext_resource type="PackedScene" uid="uid://c5cl35orl258g" path="res://zombie.tscn" id="2_kmgs7"]
+[ext_resource type="PackedScene" uid="uid://c1chdphfslniu" path="res://skeleton.tscn" id="3_c25jl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BattleEssentials" parent="." instance=ExtResource("1_5ddai")]
+
+[node name="Zombie" parent="BattleEssentials/TurnHandler" index="1" instance=ExtResource("2_kmgs7")]
+position = Vector2(416, 352)
+maxsteps = 4
+dmg = 5
+health = 12
+
+[node name="Zombie2" parent="BattleEssentials/TurnHandler" index="2" instance=ExtResource("2_kmgs7")]
+position = Vector2(416, 160)
+dmg = 5
+
+[node name="Zombie3" parent="BattleEssentials/TurnHandler" index="3" instance=ExtResource("2_kmgs7")]
+position = Vector2(416, -32)
+dmg = 5
+
+[node name="Zombie4" parent="BattleEssentials/TurnHandler" index="4" instance=ExtResource("2_kmgs7")]
+position = Vector2(416, -224)
+dmg = 5
+
+[node name="Zombie5" parent="BattleEssentials/TurnHandler" index="5" instance=ExtResource("2_kmgs7")]
+position = Vector2(-352, 352)
+dmg = 5
+
+[node name="Zombie6" parent="BattleEssentials/TurnHandler" index="6" instance=ExtResource("2_kmgs7")]
+position = Vector2(-352, 160)
+dmg = 5
+
+[node name="Zombie7" parent="BattleEssentials/TurnHandler" index="7" instance=ExtResource("2_kmgs7")]
+position = Vector2(-352, -32)
+dmg = 5
+
+[node name="Zombie8" parent="BattleEssentials/TurnHandler" index="8" instance=ExtResource("2_kmgs7")]
+position = Vector2(-352, -224)
+dmg = 5
+
+[node name="Skeleton" parent="BattleEssentials/TurnHandler" index="9" instance=ExtResource("3_c25jl")]
+position = Vector2(-544, 224)
+maxsteps = 3
+range = 4
+health = 6
+
+[node name="Skeleton2" parent="BattleEssentials/TurnHandler" index="10" instance=ExtResource("3_c25jl")]
+position = Vector2(-544, -96)
+maxsteps = 3
+range = 4
+health = 6
+
+[node name="Skeleton3" parent="BattleEssentials/TurnHandler" index="11" instance=ExtResource("3_c25jl")]
+position = Vector2(608, 224)
+maxsteps = 3
+range = 4
+health = 6
+
+[node name="Skeleton4" parent="BattleEssentials/TurnHandler" index="12" instance=ExtResource("3_c25jl")]
+position = Vector2(608, -96)
+maxsteps = 3
+range = 4
+health = 6
+
+[node name="Skeleton5" parent="BattleEssentials/TurnHandler" index="13" instance=ExtResource("3_c25jl")]
+position = Vector2(32, -224)
+maxsteps = 3
+range = 4
+health = 6
+
+[node name="Zombie9" parent="BattleEssentials/TurnHandler" index="14" instance=ExtResource("2_kmgs7")]
+position = Vector2(-160, 416)
+maxsteps = 4
+dmg = 5
+health = 12
+
+[node name="Zombie10" parent="BattleEssentials/TurnHandler" index="15" instance=ExtResource("2_kmgs7")]
+position = Vector2(224, 416)
+maxsteps = 4
+dmg = 5
+health = 12
+
+[editable path="BattleEssentials"]

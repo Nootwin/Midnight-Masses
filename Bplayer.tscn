@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dd165okf888gp"]
+[gd_scene load_steps=10 format=3 uid="uid://dd165okf888gp"]
 
 [ext_resource type="Script" path="res://playerbattle.gd" id="1_535bk"]
 [ext_resource type="Texture2D" uid="uid://dwq7tulkm804c" path="res://art/mainchar.png" id="2_vvle0"]
+[ext_resource type="Script" path="res://battlecam.gd" id="3_anvoe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykcq1"]
 size = Vector2(64, 64)
@@ -71,8 +72,11 @@ sprite_frames = SubResource("SpriteFrames_fxod7")
 animation = &"down_idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+top_level = true
+position = Vector2(32, 32)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+script = ExtResource("3_anvoe")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
