@@ -17,6 +17,9 @@ var steps : int
 func _ready() -> void:
 	wantedpos = global_position
 	steps = maxsteps
+	_summon_animation()
+	get_parent().astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(global_position)), true)
+	print(tilemap.local_to_map(tilemap.to_local(global_position)))
 	
 	pass # Replace with function body.
 
@@ -106,4 +109,17 @@ func pass_after_one(time : int = 1):
 	isturn = false
 	await get_tree().create_timer(time).timeout
 	get_parent().next()	
-	
+
+func _summon_animation():
+	$AnimatedSprite2D.visible = true
+	$Sprite2D.visible = false
+	$AnimatedSprite2D.play("default")
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if $AnimatedSprite2D.frame == 2:
+		$Sprite2D.visible = true
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	$AnimatedSprite2D.visible = false	

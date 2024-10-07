@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5cl35orl258g"]
+[gd_scene load_steps=23 format=3 uid="uid://c5cl35orl258g"]
 
 [ext_resource type="Script" path="res://zombie.gd" id="1_t15mu"]
 [ext_resource type="Texture2D" uid="uid://dllp1ne4u3t00" path="res://art/zombie.png" id="2_xhdv0"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="4_vojj5"]
 [ext_resource type="AudioStream" uid="uid://bhbl4fj1om6d8" path="res://zombie-bite-96528.mp3" id="5_mmub7"]
 [ext_resource type="PackedScene" uid="uid://bt00ktpda5pml" path="res://area_spawner.tscn" id="6_oociu"]
+[ext_resource type="Texture2D" uid="uid://rhqmjrifucqy" path="res://deadflame.png" id="7_gxkkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1aix"]
 size = Vector2(32, 32)
@@ -94,6 +95,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_htqta"]
+atlas = ExtResource("7_gxkkc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh4k5"]
+atlas = ExtResource("7_gxkkc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei4p5"]
+atlas = ExtResource("7_gxkkc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh1em"]
+atlas = ExtResource("7_gxkkc")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vrgd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htqta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh4k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei4p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh1em")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Zombie" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 33
@@ -133,5 +170,18 @@ stream = ExtResource("5_mmub7")
 [node name="AreaSpawner" parent="." instance=ExtResource("6_oociu")]
 visible = false
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+visible = false
+modulate = Color(0.952831, 0.000772402, 0.957648, 1)
+position = Vector2(-5, 0)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_vrgd8")
+frame = 3
+frame_progress = 1.0
+speed_scale = 1.5
+
 [connection signal="mouse_entered" from="." to="RichTextLabel" method="_on_zombie_mouse_entered"]
 [connection signal="mouse_exited" from="." to="RichTextLabel" method="_on_zombie_mouse_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

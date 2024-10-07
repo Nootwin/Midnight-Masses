@@ -42,7 +42,6 @@ func _buildPoints(point):
 
 		if (curx == 0 and cury == 0):
 			break
-		print(curx, cury)
 	return area
 	
 	

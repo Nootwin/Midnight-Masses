@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1chdphfslniu"]
+[gd_scene load_steps=19 format=3 uid="uid://c1chdphfslniu"]
 
 [ext_resource type="Script" path="res://skeleton.gd" id="1_s55bt"]
 [ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="2_j3ljg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cs6kn51ct8h2p" path="res://art/skeleton.png" id="4_qlre3"]
 [ext_resource type="AudioStream" uid="uid://ciyxmmtc5cv41" path="res://step-skeleton-47785.mp3" id="5_tlv8j"]
 [ext_resource type="PackedScene" uid="uid://bt00ktpda5pml" path="res://area_spawner.tscn" id="6_f3hfa"]
+[ext_resource type="Texture2D" uid="uid://rhqmjrifucqy" path="res://deadflame.png" id="7_g2jej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fi7d3"]
 size = Vector2(32, 32)
@@ -61,6 +62,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_htqta"]
+atlas = ExtResource("7_g2jej")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh4k5"]
+atlas = ExtResource("7_g2jej")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei4p5"]
+atlas = ExtResource("7_g2jej")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh1em"]
+atlas = ExtResource("7_g2jej")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cn01b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htqta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh4k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei4p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh1em")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Skeleton" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 33
@@ -94,3 +131,15 @@ stream = ExtResource("5_tlv8j")
 
 [node name="AreaSpawner" parent="." instance=ExtResource("6_f3hfa")]
 visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+visible = false
+modulate = Color(0.952831, 0.000772402, 0.957648, 1)
+position = Vector2(-5, 0)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_cn01b")
+speed_scale = 1.5
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

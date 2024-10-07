@@ -11,7 +11,7 @@ func pass_after_one(time : int = 1):
 	while true:
 		xoff = randi_range(-2, 2)
 		yoff = randi_range(-2, 2)
-		pos = tilepos + Vector2(xoff, yoff)
+		pos = tilepos + Vector2i(xoff, yoff)
 		
 		if !get_parent().astar.is_point_solid(pos):
 			var zombie : BasicEnemy = zombiefile.instantiate()
@@ -20,7 +20,7 @@ func pass_after_one(time : int = 1):
 			zombie.maxsteps = 4
 			zombie.range = 1
 			get_parent().add_child(zombie)
-			zombie.global_position = pos * 64
+			zombie.global_position = pos * 64 + Vector2(32, 32)
 			break;
 		
 	await get_tree().create_timer(time).timeout
