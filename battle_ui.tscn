@@ -131,6 +131,7 @@ Turn"
 script = ExtResource("3_0t3b7")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -166,6 +167,7 @@ theme_override_fonts/normal_font = ExtResource("2_afaaa")
 text = "Level Ups Earned: "
 
 [node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
 offset_left = 46.0
 offset_top = 242.0
 offset_right = 368.0
