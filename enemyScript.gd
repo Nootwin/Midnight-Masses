@@ -93,6 +93,7 @@ func _physics_process(delta: float) -> void:
 
 func die():
 	get_parent().turnOrder.erase(self)
+	get_parent().check_if_done()
 	queue_free()
 
 

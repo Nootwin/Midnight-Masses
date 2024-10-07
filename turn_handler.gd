@@ -23,10 +23,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
+func check_if_done():
+	if (get_child_count() < 2):
+		$"/root/Node2D/BattleEssentials"._completeLevel()	
+	
 func next():
 	if (get_child_count() < 2):
-		$"/root/Inventory".levelcomp[$"/root/Node2D/BattleEssentials".levelID] = true
-		get_tree().change_scene_to_file($"/root/Node2D/BattleEssentials".next_scene)
+		$"/root/Node2D/BattleEssentials"._completeLevel()
+		
 	else:
 		turnOrder.back().isturn = false
 		var nex = turnOrder.pop_front()
