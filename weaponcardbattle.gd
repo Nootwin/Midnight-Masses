@@ -22,7 +22,8 @@ func _enter_tree() -> void:
 func _physics_process(delta: float) -> void:
 	if (dragging):
 		global_position = get_global_mouse_position() - ofset
-		var dis = global_position - halfdim
+		var dis = global_position - halfdim + (get_viewport().get_camera_2d().global_position - Vector2(32, 32))
+		print(dis)
 		if (abs(dis.x) > abs(dis.y)):
 			if (dis.x < 0):
 				crosshiar.rotation_degrees = 270
@@ -74,7 +75,7 @@ func _on_button_button_up() -> void:
 		if (get_parent().maxDamage):
 			summon_damage(dmghigh)
 		else:
-			summon_damage(randi_range(dmglow, dmghigh))
+			summon_damage(randi_range(dmglow, dmghigh) + $"/root/Inventory".str)
 		crosshiar.get_parent().ap -= 1
 		
 		if (dura > 0):

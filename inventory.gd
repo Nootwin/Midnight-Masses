@@ -7,7 +7,7 @@ var lastwood : int
 var lastrock : int
 var lastiron : int
 var deck : Array[CardBattle]
-var lastday : PackedScene
+var lastBeatDay : int
 var lastdeck : Array[CardBattle]
 @onready var damageCard = preload("res://damage_card.tscn").instantiate()
 var enviroment : Node2D = Node2D.new()
@@ -48,7 +48,6 @@ func newday(rootnode):
 	lastwood = wood
 	lastrock = rock
 	lastiron = iron
-	lastday = load(rootnode.get_scene_file_path())
 	lastdeck = deckdup(deck)
 	
 func restore():

@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func check_if_done():
-	if (get_child_count() < 2):
+	if (get_child_count() < 3):
 		$"/root/Node2D/BattleEssentials"._completeLevel()	
 	
 func next():

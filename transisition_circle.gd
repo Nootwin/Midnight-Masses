@@ -16,4 +16,6 @@ func _process(delta: float) -> void:
 		if (texture_scale < 0.2):
 			get_tree().change_scene_to_packed(scene)
 		texture_scale -= 0.15
+	elif (texture_scale < 13.21):
+		texture_scale += 0.15
 	pass

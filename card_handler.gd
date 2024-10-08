@@ -2,9 +2,11 @@ extends Node2D
 @onready var scsizex = get_viewport_rect().size.x / 2.0
 @onready var scsizey = get_viewport_rect().size.y
 var maxDamage : bool = false
+var handLimit : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$"/root/Inventory".handLimit = 4 + $"/root/Inventory".inte
 	$"/root/Inventory".deck.shuffle()
 	pass # Replace with function body.
 
@@ -27,7 +29,7 @@ func _physics_process(delta: float) -> void:
 func draw_cards():
 	if ($"/root/Inventory".deck.size() > 0):
 		pass
-	if (get_child_count() < 4):
+	if (get_child_count() < handLimit):
 		while (get_real_children() < 4 and $"/root/Inventory".deck.size() > 0):
 			draw_card()
 			await get_tree().create_timer(0.3).timeout

@@ -38,12 +38,12 @@ text = "[center]You Died[/center]"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 459.0
-offset_top = 412.0
-offset_right = 683.0
-offset_bottom = 476.0
+offset_left = 429.0
+offset_top = 408.0
+offset_right = 725.0
+offset_bottom = 472.0
 theme_override_fonts/font = ExtResource("1_l8oo8")
-text = "Reload Last Day"
+text = "Return To Overword"
 script = ExtResource("2_llt86")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

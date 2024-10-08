@@ -25,6 +25,7 @@ func _ready() -> void:
 	$Camera2D.limit_right = rect.x
 	maxsteps += $"/root/Inventory".dex
 	steps = maxsteps
+	health += $"/root/Inventory".vit * 2
 	posinMap = global_position / 64
 	pass # Replace with function body.
 

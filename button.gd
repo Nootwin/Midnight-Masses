@@ -1,10 +1,8 @@
 extends Button
 
-var level : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	level = $"/root/Inventory".lastday
 	$"/root/Inventory".restore()
 	pass # Replace with function body.
 
@@ -14,4 +12,4 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_pressed():	
-	get_tree().change_scene_to_packed(level)
+	get_tree().change_scene_to_file("res://worldmap.tscn")

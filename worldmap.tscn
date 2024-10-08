@@ -269,7 +269,7 @@ flip_h = true
 [node name="PointLight2D" type="PointLight2D" parent="Worlds/0/PathFollow2D"]
 process_mode = 3
 texture = SubResource("GradientTexture2D_akw7n")
-texture_scale = 13.21
+texture_scale = 0.01
 script = ExtResource("7_dma5y")
 
 [node name="1" type="Node2D" parent="Worlds" node_paths=PackedStringArray("up", "down", "forward", "back")]
