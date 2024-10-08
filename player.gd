@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 	
 func _physics_process(delta: float) -> void:
 	if (swinging):
-		$Arm/Hand.rotation_degrees -= 6
+		$Arm/Hand.rotation_degrees -= 8
 		if ($Arm/Hand.rotation_degrees < -270):
 			swinging = false
 			

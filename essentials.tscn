@@ -29,7 +29,7 @@ position = Vector2(0, 0)
 
 [node name="Item" parent="Player/Arm/Hand" index="0" instance=ExtResource("2_b62td")]
 position = Vector2(0, -48)
-damagelow = 1
+damagelow = 5
 damagehigh = 9
 
 [node name="Sprite2D" parent="Player/Arm/Hand/Item" index="1"]

@@ -6,7 +6,7 @@ var handLimit : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$"/root/Inventory".handLimit = 4 + $"/root/Inventory".inte
+	handLimit = 4 + $"/root/Inventory".inte
 	$"/root/Inventory".deck.shuffle()
 	pass # Replace with function body.
 

@@ -68,19 +68,26 @@ text = "World: 0"
 
 [node name="Label2" type="Label" parent="Panel"]
 layout_mode = 0
-offset_top = 61.0
-offset_right = 40.0
-offset_bottom = 84.0
+offset_top = 100.0
+offset_right = 176.0
+offset_bottom = 123.0
 theme_override_fonts/font = ExtResource("2_e5bs1")
 text = "New Cards: "
 
+[node name="Label3" type="Label" parent="Panel"]
+offset_top = 52.0
+offset_right = 176.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_e5bs1")
+
 [node name="GridContainer" type="GridContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 176.0
+offset_left = 206.0
 offset_top = 9.0
-offset_right = 530.0
+offset_right = 568.0
 offset_bottom = 137.0
 columns = 3
+metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Panel/GridContainer"]
 custom_minimum_size = Vector2(118, 118)
@@ -92,14 +99,12 @@ stretch_mode = 5
 [node name="TextureRect2" type="TextureRect" parent="Panel/GridContainer"]
 custom_minimum_size = Vector2(118, 118)
 layout_mode = 2
-texture = ExtResource("3_yas7n")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="Panel/GridContainer"]
 custom_minimum_size = Vector2(118, 118)
 layout_mode = 2
-texture = ExtResource("3_yas7n")
 expand_mode = 1
 stretch_mode = 5
 

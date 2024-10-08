@@ -54,7 +54,7 @@ func jump_to(path : Path2D, spot : float):
 		$Sprite2D.flip_h = true
 		destination = path.end_destination
 		speed = 5
-	ui.load(destination)
+	ui.loadWorld(destination)
 	
 	
 	
