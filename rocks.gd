@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	
 	
 func dispense(amount):
-	$AudioStreamPlayer2D.play()
-	$"/root/Inventory".rock += amount
-	super.dispense(amount)
+	if ($"/root/Inventory" != null):
+		$AudioStreamPlayer2D.play()
+		$"/root/Inventory".rock += amount
+		super.dispense(amount)

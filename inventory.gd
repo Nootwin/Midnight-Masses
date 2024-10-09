@@ -39,10 +39,27 @@ func add_to_deck(card : CardBattle):
 	fakecard.position = Vector2(1100, 500)
 	deck.push_back(card)
 	
+func add_to_deck_insert(card : CardBattle, pos :int):
+	var canvas
+	if (get_node_or_null("/root/Node2D/Essentials") != null):
+		canvas = $"/root/Node2D/Essentials/CanvasLayer"
+	elif (get_node_or_null("/root/Node2D/BattleEssentials/CanvasLayer") != null):
+		canvas = $"/root/Node2D/BattleEssentials/CanvasLayer"
+	else:
+		canvas = $"/root/Node2D/CanvasLayer"
+	var fakecard = FakeCard.new()
+	fakecard.texture = card.texture
+	if (!card is SpellCardBattle):
+		fakecard.scale = Vector2(4, 4)
+	canvas.add_child(fakecard)
+	fakecard.position = Vector2(1100, 500)
+	deck.insert(pos, card)
+	
+	
 func damage(amount : int):
 	if (cantGetHit):
 		for i in amount:
-			deck.insert(randi_range(0, deck.size()), damageCard.duplicate(5))
+			add_to_deck_insert(damageCard.duplicate(5), randi_range(0, deck.size()))
 	
 func newday(rootnode):
 	lastwood = wood

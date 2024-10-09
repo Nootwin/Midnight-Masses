@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_zombie_mouse_entered() -> void:
 	print("here")
-	text = "HP: " + str(get_parent().health) + "\nDMG: 1" 
+	text = "HP: " + str(get_parent().health) + "\nDMG: " + str(get_parent().dmg) + "\nSTEPS: " + str(get_parent().maxsteps)
 	visible = true
 	$"../AreaSpawner".visible = true
 

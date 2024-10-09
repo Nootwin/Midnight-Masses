@@ -140,19 +140,21 @@ maxsteps = 3
 range = 1
 health = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 light_mask = 2
 visibility_layer = 2
 z_index = 2
-offset_left = -53.0
-offset_top = -64.0
-offset_right = 60.0
-offset_bottom = 3.0
+offset_left = -64.0
+offset_top = -75.0
+offset_right = 71.0
+offset_bottom = -8.0
 theme_override_fonts/normal_font = ExtResource("4_vojj5")
 theme_override_font_sizes/normal_font_size = 16
 text = "HP : #
-DMG : 1"
+DMG : 1
+STEPS: 1"
 script = ExtResource("3_o01qg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -181,7 +183,7 @@ frame = 3
 frame_progress = 1.0
 speed_scale = 1.5
 
-[connection signal="mouse_entered" from="." to="RichTextLabel" method="_on_zombie_mouse_entered"]
-[connection signal="mouse_exited" from="." to="RichTextLabel" method="_on_zombie_mouse_exited"]
+[connection signal="mouse_entered" from="." to="CanvasLayer/RichTextLabel" method="_on_zombie_mouse_entered"]
+[connection signal="mouse_exited" from="." to="CanvasLayer/RichTextLabel" method="_on_zombie_mouse_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

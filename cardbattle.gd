@@ -50,7 +50,7 @@ func _on_button_button_up() -> void:
 		dura -= 1
 		
 		if (dura > 0):
-			$"/root/Inventory".deck.push_back(self)
+			$"/root/Inventory".add_to_deck(self)
 			get_parent().remove_child(self)
 		else:
 			queue_free()
