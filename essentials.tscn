@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cnekkrhc2o8id"]
+[gd_scene load_steps=13 format=4 uid="uid://cnekkrhc2o8id"]
 
 [ext_resource type="Script" path="res://essentials.gd" id="1_5r7df"]
 [ext_resource type="PackedScene" uid="uid://cmdjudmdd2f7v" path="res://player.tscn" id="1_ng4hp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dmqqpc6ots04i" path="res://art/woodaxe.png" id="3_p3lho"]
 [ext_resource type="PackedScene" uid="uid://trf2sfjwl42b" path="res://crafting.tscn" id="4_iw14d"]
 [ext_resource type="AudioStream" uid="uid://siby40r3a6ys" path="res://Origins.ogg" id="7_kkxhx"]
+[ext_resource type="PackedScene" uid="uid://dky31n5a33eti" path="res://options.tscn" id="9_6y2mw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12j0y"]
 size = Vector2(64, 3200)
@@ -44,6 +45,12 @@ tile_set = ExtResource("2_rh6hm")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="OnScui" parent="CanvasLayer" instance=ExtResource("3_jiufq")]
+
+[node name="Panel" parent="CanvasLayer" instance=ExtResource("9_6y2mw")]
+offset_left = -106.0
+offset_top = -68.0
+offset_right = 145.0
+offset_bottom = 19.0
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 

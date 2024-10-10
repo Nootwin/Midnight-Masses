@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://cmb1vfv56vqgv"]
+[gd_scene load_steps=32 format=4 uid="uid://cmb1vfv56vqgv"]
 
 [ext_resource type="Script" path="res://home.gd" id="1_s77b3"]
 [ext_resource type="Texture2D" uid="uid://blielndrsvby1" path="res://art/cards/woodfloor.png" id="2_4xryc"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dl08v4gfg3stl" path="res://art/cards/Greymush.png" id="19_emplu"]
 [ext_resource type="PackedScene" uid="uid://cmdjudmdd2f7v" path="res://player.tscn" id="21_0u3un"]
 [ext_resource type="AudioStream" uid="uid://csdjwnm5pye45" path="res://A Little R & R.ogg" id="21_vhuxa"]
+[ext_resource type="PackedScene" uid="uid://dky31n5a33eti" path="res://options.tscn" id="22_d2mcj"]
 [ext_resource type="PackedScene" uid="uid://b4hg0ihhx0kr1" path="res://item.tscn" id="22_y1j2a"]
 [ext_resource type="Texture2D" uid="uid://bmi54k4xub46c" path="res://art/key.png" id="23_suf5f"]
 
@@ -278,6 +279,12 @@ text = "Take One
 "
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" instance=ExtResource("22_d2mcj")]
+offset_left = -160.0
+offset_top = -36.0
+offset_right = 91.0
+offset_bottom = 51.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_vhuxa")

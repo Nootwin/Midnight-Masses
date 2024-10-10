@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://oohhxx1ofnih"]
+[gd_scene load_steps=55 format=4 uid="uid://oohhxx1ofnih"]
 
 [ext_resource type="Texture2D" uid="uid://34wwok56jjen" path="res://art/worldmap.png" id="1_y5qbd"]
 [ext_resource type="Script" path="res://worldpath.gd" id="2_4j3le"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://cs6xo4o5gtpy1" path="res://art/cards/sling.png" id="27_r27sn"]
 [ext_resource type="PackedScene" uid="uid://bmaffi5t1ocus" path="res://map_finale.tscn" id="30_g2ydv"]
 [ext_resource type="Texture2D" uid="uid://c10ghx2vbpr63" path="res://art/cards/damage.png" id="31_7s0p3"]
+[ext_resource type="PackedScene" uid="uid://dky31n5a33eti" path="res://options.tscn" id="34_3b2sk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sh7ks"]
 texture = ExtResource("1_y5qbd")
@@ -386,10 +387,16 @@ stringname = "Sapharol's Sanctum"
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("6_clysi")]
 
+[node name="Panel" parent="CanvasLayer" instance=ExtResource("34_3b2sk")]
+offset_left = -126.0
+offset_top = -87.0
+offset_right = 125.0
+offset_bottom = 0.0
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_2bki1")
 volume_db = -10.297
 autoplay = true

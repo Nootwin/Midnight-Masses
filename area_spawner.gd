@@ -7,10 +7,12 @@ var sc = 64
 func _ready() -> void:
 	var move = get_parent().maxsteps
 	var atk = get_parent().range
-	$Movement.polygon = _buildPoints(move)
-	$Movement.offset = Vector2(move * -64 -32 ,-32)
-	$AttackRange.polygon = _buildPoints(move+atk)
-	$AttackRange.offset = Vector2((move+atk) * -64 - 32, -32)
+	if (move > 0):
+		$Movement.polygon = _buildPoints(move)
+		$Movement.offset = Vector2(move * -64 -32 ,-32)
+	if (atk > 0):
+		$AttackRange.polygon = _buildPoints(move+atk)
+		$AttackRange.offset = Vector2((move+atk) * -64 - 32, -32)
 	pass # Replace with function body.
 
 	

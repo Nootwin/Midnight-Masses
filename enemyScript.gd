@@ -106,6 +106,7 @@ func _attack():
 func _do_when_hit():
 	$AudioStreamPlayer2D.play()
 	$"/root/Inventory".damage(dmg)
+	
 func pass_after_one(time : int = 1):
 	isturn = false
 	await get_tree().create_timer(time).timeout

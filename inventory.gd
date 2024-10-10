@@ -17,9 +17,36 @@ var inte : int =  0
 var dex : int =  0
 var vit : int = 0
 var levelcomp = [false, false, false, false, false, false, false, false, false]
-var cantGetHit : bool
+var cantGetHit : bool = false
 var availPoints : int
 
+var music = 1.0
+var sfx = 1.0
+
+func changed_music(panel):
+	if (music > 0):
+		panel.get_node("../../AudioStreamPlayer").volume_db = 10 * music - 10
+	else:
+		panel.get_node("../../AudioStreamPlayer").volume_db = -80
+	
+
+func changed_sfx(panel):
+	if (get_node_or_null("/root/Node2D/Essentials") != null):
+		var goOver = $"/root/Node2D/enviroment"
+		for nme in goOver.get_children():
+			nme.get_node("AudioStreamPlayer2D").volume_db = sfx * 5 - 5
+	elif (get_node_or_null("/root/Node2D/BattleEssentials") != null):
+		var goOver = panel.get_node("../../TurnHandler")
+		for nme in goOver.get_children():
+			if (nme is not BPlayer):
+				nme.get_node("AudioStreamPlayer2D").volume_db = sfx * 5 - 5
+			else:
+				nme.get_node("AudioStreamPlayer").volume_db = sfx * 5 - 5
+	elif (get_node("/root/Node2D") is Home):
+		var goOver = $"/root/Node2D"
+		for nme in goOver.get_children():
+			if (nme is Provider):
+				nme.get_node("AudioStreamPlayer2D").volume_db = sfx * 5 - 5
 func _on_ressource_added():
 	$"/root/Node2D/Essentials/CanvasLayer2/Control"._ressources_added(wood, rock, iron)
 
@@ -57,9 +84,10 @@ func add_to_deck_insert(card : CardBattle, pos :int):
 	
 	
 func damage(amount : int):
-	if (cantGetHit):
+	if (!cantGetHit):
 		for i in amount:
 			add_to_deck_insert(damageCard.duplicate(5), randi_range(0, deck.size()))
+			
 	
 func newday(rootnode):
 	lastwood = wood

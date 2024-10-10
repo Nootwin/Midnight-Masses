@@ -17,7 +17,6 @@ func _enter_tree() -> void:
 func _physics_process(delta: float) -> void:
 	if (dragging):
 		global_position = get_global_mouse_position() - ofset
-		var dis = global_position - halfdim
 			
 		
 func _on_button_button_down() -> void:

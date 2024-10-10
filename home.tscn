@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bifg6en0ibghw"]
+[gd_scene load_steps=41 format=4 uid="uid://bifg6en0ibghw"]
 
 [ext_resource type="Texture2D" uid="uid://blielndrsvby1" path="res://art/cards/woodfloor.png" id="1_cjdno"]
 [ext_resource type="Script" path="res://home.gd" id="1_fvjl1"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dl08v4gfg3stl" path="res://art/cards/Greymush.png" id="19_k57vj"]
 [ext_resource type="Texture2D" uid="uid://f7v2f8ncyaom" path="res://art/cards/tulip.png" id="20_nkw48"]
 [ext_resource type="AudioStream" uid="uid://csdjwnm5pye45" path="res://A Little R & R.ogg" id="24_c7qs0"]
+[ext_resource type="PackedScene" uid="uid://dky31n5a33eti" path="res://options.tscn" id="25_1f8sn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gtlu"]
 texture = ExtResource("1_cjdno")
@@ -374,6 +375,12 @@ text = "Take One
 "
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" instance=ExtResource("25_1f8sn")]
+offset_left = -132.0
+offset_top = -36.0
+offset_right = 119.0
+offset_bottom = 51.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_c7qs0")

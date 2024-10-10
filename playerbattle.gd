@@ -31,6 +31,7 @@ func _ready() -> void:
 
 func damage(amount : int):
 	health -= amount
+	$AudioStreamPlayer.play()
 	if (health < 0):
 		die()
 	

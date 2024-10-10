@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dj1l7x57vbn0m"]
+[gd_scene load_steps=17 format=4 uid="uid://dj1l7x57vbn0m"]
 
 [ext_resource type="PackedScene" uid="uid://cov33l11nb1ab" path="res://battle_ui.tscn" id="1_0mjlg"]
 [ext_resource type="Script" path="res://battle_essentials.gd" id="1_1ncs0"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://irapdpnerkdg" path="res://crosshiar.tscn" id="5_qur7j"]
 [ext_resource type="AudioStream" uid="uid://btdvrhs0c6y2k" path="res://blipSelect.wav" id="5_s4qcj"]
 [ext_resource type="AudioStream" uid="uid://cmou7ii7bgtpn" path="res://If It's a Fight You Want.ogg" id="9_n1yb2"]
+[ext_resource type="PackedScene" uid="uid://dky31n5a33eti" path="res://options.tscn" id="10_615pf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_a5cbd"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -67,6 +68,12 @@ stream = ExtResource("4_sq3le")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("5_s4qcj")
+
+[node name="Panel" parent="CanvasLayer" instance=ExtResource("10_615pf")]
+offset_left = -77.0
+offset_top = -32.0
+offset_right = 174.0
+offset_bottom = 55.0
 
 [node name="TurnHandler" type="Node2D" parent="."]
 script = ExtResource("3_nmccc")

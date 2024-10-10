@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c5cl35orl258g"]
+[gd_scene load_steps=24 format=3 uid="uid://c5cl35orl258g"]
 
 [ext_resource type="Script" path="res://zombie.gd" id="1_t15mu"]
 [ext_resource type="Texture2D" uid="uid://dllp1ne4u3t00" path="res://art/zombie.png" id="2_xhdv0"]
@@ -7,6 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://bhbl4fj1om6d8" path="res://zombie-bite-96528.mp3" id="5_mmub7"]
 [ext_resource type="PackedScene" uid="uid://bt00ktpda5pml" path="res://area_spawner.tscn" id="6_oociu"]
 [ext_resource type="Texture2D" uid="uid://rhqmjrifucqy" path="res://deadflame.png" id="7_gxkkc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lmjs7"]
+light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1aix"]
 size = Vector2(32, 32)
@@ -140,12 +143,12 @@ maxsteps = 3
 range = 1
 health = 5
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 light_mask = 2
 visibility_layer = 2
 z_index = 2
+material = SubResource("CanvasItemMaterial_lmjs7")
 offset_left = -64.0
 offset_top = -75.0
 offset_right = 71.0
@@ -183,7 +186,7 @@ frame = 3
 frame_progress = 1.0
 speed_scale = 1.5
 
-[connection signal="mouse_entered" from="." to="CanvasLayer/RichTextLabel" method="_on_zombie_mouse_entered"]
-[connection signal="mouse_exited" from="." to="CanvasLayer/RichTextLabel" method="_on_zombie_mouse_exited"]
+[connection signal="mouse_entered" from="." to="RichTextLabel" method="_on_zombie_mouse_entered"]
+[connection signal="mouse_exited" from="." to="RichTextLabel" method="_on_zombie_mouse_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

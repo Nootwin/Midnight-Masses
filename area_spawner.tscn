@@ -1,13 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bt00ktpda5pml"]
+[gd_scene load_steps=4 format=3 uid="uid://bt00ktpda5pml"]
 
 [ext_resource type="Script" path="res://area_spawner.gd" id="1_xliks"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fflao"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qacl2"]
+blend_mode = 1
+light_mode = 1
 
 [node name="AreaSpawner" type="Node2D"]
 script = ExtResource("1_xliks")
 
-[node name="Movement" type="Polygon2D" parent="."]
-color = Color(0.831373, 0.105882, 0.145098, 0.215686)
-
 [node name="AttackRange" type="Polygon2D" parent="."]
-color = Color(0.831373, 0.105882, 0.145098, 0.215686)
+material = SubResource("CanvasItemMaterial_fflao")
+color = Color(0.831373, 0.105882, 0.145098, 0.101961)
 invert_border = 128.0
+
+[node name="Movement" type="Polygon2D" parent="."]
+material = SubResource("CanvasItemMaterial_qacl2")
+color = Color(0.831373, 0.105882, 0.145098, 0.215686)

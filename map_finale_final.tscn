@@ -1,11 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3req6b4kxrej"]
+[gd_scene load_steps=6 format=3 uid="uid://c3req6b4kxrej"]
 
+[ext_resource type="PackedScene" uid="uid://olg62q2vqpvd" path="res://tut_text.tscn" id="1_prhun"]
 [ext_resource type="PackedScene" uid="uid://dj1l7x57vbn0m" path="res://battle_essentials.tscn" id="1_pvbgw"]
 [ext_resource type="PackedScene" uid="uid://c2etdafpci5jq" path="res://sapharol.tscn" id="2_8x386"]
 [ext_resource type="PackedScene" uid="uid://c5cl35orl258g" path="res://zombie.tscn" id="3_q0r7x"]
 [ext_resource type="PackedScene" uid="uid://c1chdphfslniu" path="res://skeleton.tscn" id="4_3bhov"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("1_prhun")]
+texts = Array[String](["Poor, Poor Fool", "Walking into my Sanctum...", "You think you can save this Land?", "Rid it of my curse?", "Foolish.", "I shall show you the error in your ways", "and remind the world of my armies command."])
+
+[node name="RichTextLabel" parent="CanvasLayer/Control/Panel" index="0"]
+theme_override_colors/default_color = Color(0.836677, 0.000659776, 0.85571, 1)
 
 [node name="BattleEssentials" parent="." instance=ExtResource("1_pvbgw")]
 
@@ -123,4 +132,5 @@ health = 12
 [node name="Sapharol" parent="BattleEssentials/TurnHandler" index="18" instance=ExtResource("2_8x386")]
 position = Vector2(32, -416)
 
+[editable path="CanvasLayer/Control"]
 [editable path="BattleEssentials"]

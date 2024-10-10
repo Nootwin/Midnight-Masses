@@ -1,4 +1,4 @@
-extends Node2D
+class_name Home extends Node2D
 
 @export var levelID : int
 var opened = false
