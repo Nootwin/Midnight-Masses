@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 func _completeLevel():
 	$"/root/Inventory".lastBeatDay = levelID
 	$"/root/Inventory".levelcomp[levelID] = true
+	$"/root/Inventory".availPoints += pointsGiven
 	$CanvasLayer/BattleUI/Panel/RichTextLabel2.text += str(pointsGiven)
 	$CanvasLayer/BattleUI/Panel.visible = true
 	

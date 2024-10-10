@@ -18,7 +18,7 @@ var dex : int =  0
 var vit : int = 0
 var levelcomp = [false, false, false, false, false, false, false, false, false]
 var cantGetHit : bool = false
-var availPoints : int
+var availPoints : int = 0
 
 var music = 1.0
 var sfx = 1.0
@@ -31,22 +31,27 @@ func changed_music(panel):
 	
 
 func changed_sfx(panel):
+	var value
+	if (sfx > 0):
+		value = sfx * 5 - 5
+	else:
+		value = -80
 	if (get_node_or_null("/root/Node2D/Essentials") != null):
 		var goOver = $"/root/Node2D/enviroment"
 		for nme in goOver.get_children():
-			nme.get_node("AudioStreamPlayer2D").volume_db = sfx * 5 - 5
+			nme.get_node("AudioStreamPlayer2D").volume_db = value
 	elif (get_node_or_null("/root/Node2D/BattleEssentials") != null):
 		var goOver = panel.get_node("../../TurnHandler")
 		for nme in goOver.get_children():
 			if (nme is not BPlayer):
-				nme.get_node("AudioStreamPlayer2D").volume_db = sfx * 5 - 5
+				nme.get_node("AudioStreamPlayer2D").volume_db = value
 			else:
-				nme.get_node("AudioStreamPlayer").volume_db = sfx * 5 - 5
+				nme.get_node("AudioStreamPlayer").volume_db = value
 	elif (get_node("/root/Node2D") is Home):
 		var goOver = $"/root/Node2D"
 		for nme in goOver.get_children():
 			if (nme is Provider):
-				nme.get_node("AudioStreamPlayer2D").volume_db = sfx * 5 - 5
+				nme.get_node("AudioStreamPlayer2D").volume_db = value
 func _on_ressource_added():
 	$"/root/Node2D/Essentials/CanvasLayer2/Control"._ressources_added(wood, rock, iron)
 

@@ -7,6 +7,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="BattleEssentials" parent="." instance=ExtResource("1_bfvgu")]
+levelID = 5
 
 [node name="Zombie" parent="BattleEssentials/TurnHandler" index="1" instance=ExtResource("2_veuvp")]
 position = Vector2(-416, -96)

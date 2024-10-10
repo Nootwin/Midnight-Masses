@@ -18,7 +18,7 @@ func _ready() -> void:
 	wantedpos = global_position
 	steps = maxsteps
 	_summon_animation()
-	get_parent().astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(global_position)), true)
+	get_parent().astar.call_deferred("set_point_solid", tilemap.local_to_map(tilemap.to_local(global_position)), true)
 	print(tilemap.local_to_map(tilemap.to_local(global_position)))
 	
 	pass # Replace with function body.
@@ -94,6 +94,7 @@ func _physics_process(delta: float) -> void:
 func die():
 	get_parent().turnOrder.erase(self)
 	get_parent().check_if_done()
+	get_parent().astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(global_position)), false)
 	queue_free()
 
 

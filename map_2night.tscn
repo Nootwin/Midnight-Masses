@@ -13,6 +13,7 @@
 texts = Array[String](["Skeletons have showed up this time", "They can attack from afar", "Be Careful"])
 
 [node name="BattleEssentials" parent="." instance=ExtResource("1_hvcxi")]
+levelID = 1
 
 [node name="Zombie" parent="BattleEssentials/TurnHandler" index="1" instance=ExtResource("2_y1lj4")]
 position = Vector2(-224, 608)

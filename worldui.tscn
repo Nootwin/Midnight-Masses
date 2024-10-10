@@ -234,7 +234,7 @@ offset_right = 518.0
 offset_bottom = 59.0
 theme_override_fonts/font = ExtResource("2_e5bs1")
 theme_override_font_sizes/font_size = 16
-text = "Available Points: "
+text = "<null>"
 script = ExtResource("4_ctlsf")
 
 [node name="Button" type="Button" parent="Panel2"]
@@ -288,6 +288,7 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 2
 script = ExtResource("5_djtyn")
+stat = "Strength"
 
 [node name="int" type="Label" parent="Panel2"]
 layout_mode = 0
@@ -300,6 +301,7 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 2
 script = ExtResource("5_djtyn")
+stat = "Intelligence"
 
 [node name="dex" type="Label" parent="Panel2"]
 layout_mode = 0
@@ -312,6 +314,7 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 2
 script = ExtResource("5_djtyn")
+stat = "Dexterity"
 
 [node name="vit" type="Label" parent="Panel2"]
 layout_mode = 0
@@ -324,6 +327,7 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 2
 script = ExtResource("5_djtyn")
+stat = "Vitality"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Panel2/Button" to="Panel2/str" method="_on_button_pressed"]
