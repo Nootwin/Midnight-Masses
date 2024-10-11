@@ -98,7 +98,11 @@ func newday(rootnode):
 	lastwood = wood
 	lastrock = rock
 	lastiron = iron
+	for card in deck:
+		if (card is DamageCard):
+			deck.erase(card)
 	lastdeck = deckdup(deck)
+	
 	
 func restore():
 	wood = lastwood

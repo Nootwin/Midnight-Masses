@@ -31,7 +31,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	if (stat == "intelligence" and $"/root/Inventory".availPoints > 0):
+	if (stat == "Intelligence" and $"/root/Inventory".availPoints > 0):
 		$"/root/Inventory".availPoints -= 1
 		$"/root/Inventory".inte += 1
 		text = str($"/root/Inventory".inte)
@@ -44,7 +44,7 @@ func _on_button_3_pressed() -> void:
 		$"/root/Inventory".availPoints -= 1
 		$"/root/Inventory".dex += 1
 		text = str($"/root/Inventory".dex)
-		$"../Label10".text = "Available Points: " + ($"/root/Inventory".availPoints)
+		$"../Label10".text = "Available Points: " + str($"/root/Inventory".availPoints)
 	pass # Replace with function body.
 
 
