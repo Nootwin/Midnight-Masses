@@ -22,7 +22,8 @@ func _process(delta: float) -> void:
 	pass
 
 func load_card(card : CardBattle):
-	DMG.text = "DMG: \n" + str(card.dmglow) + "-" + str(card.dmghigh)
-	RNG.text = "RANGE: \n" + str(card.range)
-	DUR.text = "DURA: \n" + str(card.dura)
+	if (card is WeaponCardBattle):
+		DMG.text = "DMG: \n" + str(card.dmglow) + "-" + str(card.dmghigh)
+		RNG.text = "RANGE: \n" + str(card.range)
+		DUR.text = "DURA: \n" + str(card.dura)
 	
