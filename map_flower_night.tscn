@@ -41,24 +41,28 @@ health = 8
 
 [node name="Skeleton" parent="BattleEssentials/TurnHandler" index="7" instance=ExtResource("3_gc1bk")]
 position = Vector2(-160, 480)
+maxsteps = 2
 dmg = 2
 range = 3
 health = 4
 
 [node name="Skeleton2" parent="BattleEssentials/TurnHandler" index="8" instance=ExtResource("3_gc1bk")]
 position = Vector2(288, -480)
+maxsteps = 2
 dmg = 2
 range = 3
 health = 4
 
 [node name="Skeleton3" parent="BattleEssentials/TurnHandler" index="9" instance=ExtResource("3_gc1bk")]
 position = Vector2(608, 1056)
+maxsteps = 2
 dmg = 2
 range = 3
 health = 4
 
 [node name="Skeleton4" parent="BattleEssentials/TurnHandler" index="10" instance=ExtResource("3_gc1bk")]
 position = Vector2(-928, -416)
+maxsteps = 2
 dmg = 2
 range = 3
 health = 4

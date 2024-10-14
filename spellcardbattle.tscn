@@ -6,8 +6,10 @@
 [node name="Spell" type="Sprite2D"]
 texture = ExtResource("1_2fewg")
 script = ExtResource("2_d3vkx")
+dura = 3
 
 [node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -48.0
 offset_top = -64.0
 offset_right = 48.0

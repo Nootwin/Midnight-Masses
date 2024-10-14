@@ -16,9 +16,9 @@ var str : int =  0
 var inte : int =  0
 var dex : int =  0
 var vit : int = 0
-var levelcomp = [true, true, false, false, false, false, false, false, false]
+var levelcomp = [true, true, true, true, false, true, true, false, false]
 var cantGetHit : bool = false
-var availPoints : int = 0
+var availPoints : int = 5
 
 var music = 1.0
 var sfx = 1.0
@@ -94,7 +94,7 @@ func damage(amount : int):
 			add_to_deck_insert(damageCard.duplicate(5), randi_range(0, deck.size()))
 			
 	
-func newday(rootnode):
+func newday():
 	lastwood = wood
 	lastrock = rock
 	lastiron = iron
@@ -102,6 +102,7 @@ func newday(rootnode):
 		if (card is DamageCard):
 			deck.erase(card)
 	lastdeck = deckdup(deck)
+	enviroment = $"/root/Node2D/enviroment"
 	
 	
 func restore():

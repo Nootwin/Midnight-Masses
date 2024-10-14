@@ -17,30 +17,37 @@ health = 12
 
 [node name="Zombie2" parent="BattleEssentials/TurnHandler" index="2" instance=ExtResource("2_kmgs7")]
 position = Vector2(416, 160)
+maxsteps = 4
 dmg = 5
 
 [node name="Zombie3" parent="BattleEssentials/TurnHandler" index="3" instance=ExtResource("2_kmgs7")]
 position = Vector2(416, -32)
+maxsteps = 4
 dmg = 5
 
 [node name="Zombie4" parent="BattleEssentials/TurnHandler" index="4" instance=ExtResource("2_kmgs7")]
 position = Vector2(416, -224)
+maxsteps = 4
 dmg = 5
 
 [node name="Zombie5" parent="BattleEssentials/TurnHandler" index="5" instance=ExtResource("2_kmgs7")]
 position = Vector2(-352, 352)
+maxsteps = 4
 dmg = 5
 
 [node name="Zombie6" parent="BattleEssentials/TurnHandler" index="6" instance=ExtResource("2_kmgs7")]
 position = Vector2(-352, 160)
+maxsteps = 4
 dmg = 5
 
 [node name="Zombie7" parent="BattleEssentials/TurnHandler" index="7" instance=ExtResource("2_kmgs7")]
 position = Vector2(-352, -32)
+maxsteps = 4
 dmg = 5
 
 [node name="Zombie8" parent="BattleEssentials/TurnHandler" index="8" instance=ExtResource("2_kmgs7")]
 position = Vector2(-352, -224)
+maxsteps = 4
 dmg = 5
 
 [node name="Skeleton" parent="BattleEssentials/TurnHandler" index="9" instance=ExtResource("3_c25jl")]

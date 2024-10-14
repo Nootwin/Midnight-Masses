@@ -1,8 +1,8 @@
 class_name CardBattle extends Sprite2D
 var dragging = false
 var ofset : Vector2
-@onready var crosshiar = $"/root/Node2D/BattleEssentials/TurnHandler/Bplayer/Boxes"
-@onready var ui = $"../../BattleUI"
+var crosshiar
+var ui
 @onready var halfdim = get_viewport_rect().size / 2
 
 
@@ -14,13 +14,13 @@ var ofset : Vector2
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+func _enter_tree() -> void:
+	ui = $"../../BattleUI"
+	crosshiar = $"/root/Node2D/BattleEssentials/TurnHandler/Bplayer/Boxes"	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
-func _enter_tree() -> void:
-	ui = $"../../BattleUI"
 
 func _physics_process(delta: float) -> void:
 	if (dragging):

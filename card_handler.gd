@@ -3,11 +3,20 @@ extends Node2D
 @onready var scsizey = get_viewport_rect().size.y
 var maxDamage : bool = false
 var handLimit : int
+var fistCard : WeaponCardBattle
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	handLimit = 4 + $"/root/Inventory".inte
 	$"/root/Inventory".deck.shuffle()
+	fistCard = load("res://cardbattle.tscn").instantiate()
+	fistCard.dmghigh = 2
+	fistCard.dmglow = 1
+	fistCard.dura = 1
+	fistCard.range = 1
+	fistCard.pattern = [false, false, false, false, false, false, false, true, false, false, false, false, false, false, false,false, false, false, false, false,false, false, false, false, false,]
+	fistCard.scale = Vector2(4, 4)
+	fistCard.texture = load("res://art/cards/fist.png")
 	pass # Replace with function body.
 
 
@@ -27,20 +36,21 @@ func _physics_process(delta: float) -> void:
 			card.global_position = Vector2(scsizex + ((offset + i) * 96), scsizey - 64)
 		
 func draw_cards():
-	if ($"/root/Inventory".deck.size() > 0):
-		pass
 	if (get_child_count() < handLimit):
-		while (get_real_children() < 4 and $"/root/Inventory".deck.size() > 0):
+		while (get_real_children() < handLimit):
 			draw_card()
 			await get_tree().create_timer(0.3).timeout
 	else:
-		if ($"/root/Inventory".deck.size() > 0):
-			draw_card()
+		draw_card()
 			
 func draw_card():
 	var card
+	
 	$"../AudioStreamPlayer2".play()
-	card = $"/root/Inventory".deck.pop_front()
+	if ($"/root/Inventory".deck.size() > 0):
+		card = $"/root/Inventory".deck.pop_front()
+	else:
+		card = fistCard.duplicate(5)
 	add_child(card)
 	card.visible = true
 

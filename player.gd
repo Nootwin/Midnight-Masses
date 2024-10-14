@@ -22,7 +22,6 @@ func _ready() -> void:
 	posinMap = global_position / 64
 	moving = false
 	
-	$"/root/Inventory".newday($"/root/Node2D")
 	pass # Replace with function body.
 
 

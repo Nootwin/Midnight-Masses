@@ -41,4 +41,3 @@ stream = ExtResource("2_44qxc")
 visible = false
 texture = ExtResource("4_jkd5l")
 script = SubResource("GDScript_25b0k")
-dura = 1

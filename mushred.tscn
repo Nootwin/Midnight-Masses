@@ -41,7 +41,5 @@ stream = ExtResource("2_n66hi")
 
 [node name="Spell" parent="." instance=ExtResource("3_wdorx")]
 visible = false
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_poc6r")
 script = SubResource("GDScript_y636j")
-dura = 3

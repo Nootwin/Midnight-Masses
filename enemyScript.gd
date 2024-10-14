@@ -48,7 +48,8 @@ func _physics_process(delta: float) -> void:
 		if (wantedpos == global_position):
 			steps -= 1
 			if (path.size() <= range):
-				_attack()
+				if (!$"/root/Inventory".cantGetHit):
+					_attack()
 				get_parent().astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(global_position)), true)
 				pass_after_one()
 			elif (not path.is_empty()):

@@ -3,13 +3,7 @@ class_name DamageCard extends CardBattle
 var viewport
 var movement
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func _physics_process(delta: float) -> void:
 	if (global_position == viewport):
@@ -20,6 +14,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 func _enter_tree() -> void:
+	super._enter_tree()
 	viewport =  get_viewport_rect().size/2
 	movement = Vector2(viewport.x / 48, viewport.y / 48)
 	global_position = viewport * 2

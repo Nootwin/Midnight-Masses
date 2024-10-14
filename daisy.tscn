@@ -19,7 +19,6 @@ script/source = "extends SpellCardBattle
 
 func _spell_use():
 	get_parent().draw_card()
-	await get_tree().create_timer(0.3).timeout
 	get_parent().draw_card()
 "
 
@@ -42,4 +41,3 @@ stream = ExtResource("2_w4iah")
 visible = false
 texture = ExtResource("5_rcale")
 script = SubResource("GDScript_fpa2j")
-dura = 1

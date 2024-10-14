@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4x6for2ag01u"]
+[gd_scene load_steps=10 format=3 uid="uid://b4x6for2ag01u"]
 
 [ext_resource type="PackedScene" uid="uid://cnekkrhc2o8id" path="res://essentials.tscn" id="1_4hts5"]
 [ext_resource type="PackedScene" uid="uid://b0xf234jbemqt" path="res://tree.tscn" id="2_efvcq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cy83mhbdpgut1" path="res://allium.tscn" id="5_d4qja"]
 [ext_resource type="PackedScene" uid="uid://cs3t5h4b1v518" path="res://daisy.tscn" id="6_gyahi"]
 [ext_resource type="PackedScene" uid="uid://q0aihjsvcbme" path="res://rose.tscn" id="7_nm4bx"]
+[ext_resource type="PackedScene" uid="uid://olg62q2vqpvd" path="res://tut_text.tscn" id="9_xpk50"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -156,3 +157,8 @@ position = Vector2(-192, -896)
 
 [node name="Rocks10" parent="enviroment" instance=ExtResource("3_7d3kr")]
 position = Vector2(-1280, -448)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("9_xpk50")]
+texts = Array[String](["Things like mushrooms or flowers give you Utility Cards", "These cards do things other than damage", "and do not take a Action Point to use", "Try to build a strategy around these Utility Cards"])

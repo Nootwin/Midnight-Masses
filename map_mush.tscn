@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://buf0ko2dfvu5a"]
+[gd_scene load_steps=10 format=3 uid="uid://buf0ko2dfvu5a"]
 
 [ext_resource type="PackedScene" uid="uid://cnekkrhc2o8id" path="res://essentials.tscn" id="1_pb5k0"]
 [ext_resource type="PackedScene" uid="uid://b0xf234jbemqt" path="res://tree.tscn" id="2_i6evp"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dn0wvg0c20ii0" path="res://bluemush.tscn" id="5_y8o0l"]
 [ext_resource type="PackedScene" uid="uid://i80t4k08h1le" path="res://yellowmush.tscn" id="6_kswx3"]
 [ext_resource type="PackedScene" uid="uid://dx4d7dlq8cs12" path="res://greymush.tscn" id="7_85o2d"]
+[ext_resource type="PackedScene" uid="uid://olg62q2vqpvd" path="res://tut_text.tscn" id="9_fb20y"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -142,3 +143,8 @@ position = Vector2(-224, 1120)
 
 [node name="GreyMushroom5" parent="enviroment" instance=ExtResource("7_85o2d")]
 position = Vector2(-1312, 32)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("9_fb20y")]
+texts = Array[String](["Things like mushrooms or flowers give you Utility Cards", "These cards do things other than damage", "and do not take a Action Point to use", "Try to build a strategy around these Utility Cards"])

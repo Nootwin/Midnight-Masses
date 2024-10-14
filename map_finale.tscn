@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmaffi5t1ocus"]
+[gd_scene load_steps=13 format=3 uid="uid://bmaffi5t1ocus"]
 
 [ext_resource type="PackedScene" uid="uid://cnekkrhc2o8id" path="res://essentials.tscn" id="1_yavdi"]
 [ext_resource type="PackedScene" uid="uid://dcwqut57but4i" path="res://rocks.tscn" id="2_2wq7m"]
+[ext_resource type="PackedScene" uid="uid://c3req6b4kxrej" path="res://map_finale_final.tscn" id="2_e6rcd"]
 [ext_resource type="PackedScene" uid="uid://dtlfkpj2o3b1w" path="res://iron.tscn" id="3_5byr2"]
 [ext_resource type="PackedScene" uid="uid://b0xf234jbemqt" path="res://tree.tscn" id="4_o6kni"]
 [ext_resource type="PackedScene" uid="uid://ce3n5ec63awva" path="res://mushred.tscn" id="5_062v7"]
@@ -15,6 +16,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Essentials" parent="." instance=ExtResource("1_yavdi")]
+next_scene = ExtResource("2_e6rcd")
 
 [node name="enviroment" type="Node2D" parent="."]
 
