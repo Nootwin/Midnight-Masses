@@ -23,9 +23,7 @@ func increase(val) -> void:
 	mod.color.b = where / 62
 	light.energy = -0.0004 * (where-20)**2 + 0.6
 	if (where > 61):
-		var env = $"../../../../../enviroment"
-		env.get_parent().remove_child(env)
-		$"/root/Inventory".enviroment = env
+		$"/root/Inventory".enviroment.get_parent().remove_child($"/root/Inventory".enviroment)
 		get_tree().change_scene_to_packed($"/root/Node2D/Essentials".next_scene)
 	elif (where > 31):
 		mod.color.g = -0.022 * (where-31) + 1

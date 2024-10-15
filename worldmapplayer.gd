@@ -7,7 +7,7 @@ var destination : Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	reparent(get_node("../" + str($"/root/Inventory".lastBeatDay)))
+	reparent(get_node("../../" + str($"/root/Inventory".lastBeatDay)))
 	pass # Replace with function body.
 
 

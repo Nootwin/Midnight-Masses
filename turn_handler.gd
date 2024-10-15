@@ -47,7 +47,10 @@ func _on_env_entered():
 	var size
 	for child in env.get_children():
 		size = child.get_node("CollisionShape2D").shape.size.x / 2
-		astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(child.global_position + Vector2(size, size))))
-		astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(child.global_position + Vector2(-size, size))))
-		astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(child.global_position + Vector2(size, -size))))
-		astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(child.global_position + Vector2(-size, -size))))
+		if (size > 8):
+			astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(child.global_position + Vector2(size, size))))
+			astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(child.global_position + Vector2(-size, size))))
+			astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(child.global_position + Vector2(size, -size))))
+			astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(child.global_position + Vector2(-size, -size))))
+		else:
+			astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(child.global_position)))

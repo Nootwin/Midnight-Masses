@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://vii8rb36xvmq"]
+[gd_scene load_steps=14 format=3 uid="uid://vii8rb36xvmq"]
 
 [ext_resource type="PackedScene" uid="uid://cnekkrhc2o8id" path="res://essentials.tscn" id="1_26aj1"]
+[ext_resource type="PackedScene" uid="uid://siu6q1it0jdl" path="res://map_extra_night.tscn" id="2_iwvuj"]
 [ext_resource type="PackedScene" uid="uid://b0xf234jbemqt" path="res://tree.tscn" id="2_ufecw"]
 [ext_resource type="PackedScene" uid="uid://dcwqut57but4i" path="res://rocks.tscn" id="3_xrxom"]
 [ext_resource type="PackedScene" uid="uid://dtlfkpj2o3b1w" path="res://iron.tscn" id="4_xoaf2"]
@@ -16,6 +17,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Essentials" parent="." instance=ExtResource("1_26aj1")]
+next_scene = ExtResource("2_iwvuj")
 
 [node name="enviroment" type="Node2D" parent="."]
 

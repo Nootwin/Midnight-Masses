@@ -15,4 +15,5 @@ func _process(delta: float) -> void:
 	
 func _input(event: InputEvent) -> void:
 	if (event is InputEventKey and event.keycode == KEY_3):
+		$"/root/Inventory".enviroment.get_parent().remove_child($"/root/Inventory".enviroment)
 		get_tree().change_scene_to_packed(next_scene)
