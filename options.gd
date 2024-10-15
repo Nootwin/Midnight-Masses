@@ -5,6 +5,8 @@ extends Panel
 func _ready() -> void:
 	$HScrollBar.value = $"/root/Inventory".music
 	$HScrollBar2.value = $"/root/Inventory".sfx
+	$"/root/Inventory".changed_music(self)
+	$"/root/Inventory".changed_sfx(self)
 	pass # Replace with function body.
 
 

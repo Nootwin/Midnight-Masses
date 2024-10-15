@@ -25,7 +25,7 @@ var sfx = 1.0
 
 func changed_music(panel):
 	if (music > 0):
-		panel.get_node("../../AudioStreamPlayer").volume_db = 10 * music - 10
+		panel.get_node("../../AudioStreamPlayer").volume_db = 15 * music - 20
 	else:
 		panel.get_node("../../AudioStreamPlayer").volume_db = -80
 	
@@ -33,7 +33,7 @@ func changed_music(panel):
 func changed_sfx(panel):
 	var value
 	if (sfx > 0):
-		value = sfx * 5 - 5
+		value = sfx * 10 - 10
 	else:
 		value = -80
 	if (get_node_or_null("/root/Node2D/Essentials") != null):

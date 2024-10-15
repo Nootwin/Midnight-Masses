@@ -19,7 +19,7 @@ func _on_button_button_down() -> void:
 
 
 func _on_button_button_up() -> void:
-	if (global_position.y > get_viewport_rect().size.y - 128 or crosshiar.get_parent().ap < 1):
+	if (global_position.y > get_viewport_rect().size.y - 128):
 		dragging = false
 		ofset = Vector2(0, 0)
 		modulate.a = 1

@@ -19,7 +19,6 @@ func _ready() -> void:
 	steps = maxsteps
 	_summon_animation()
 	get_parent().astar.call_deferred("set_point_solid", tilemap.local_to_map(tilemap.to_local(global_position)), true)
-	print(tilemap.local_to_map(tilemap.to_local(global_position)))
 	
 	pass # Replace with function body.
 
@@ -47,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	if (isturn):
 		if (wantedpos == global_position):
 			steps -= 1
-			if (path.size() <= range):
+			if (path.size() <= range || (range == 0 and path.size() <= 1)):
 				if (!$"/root/Inventory".cantGetHit):
 					_attack()
 				get_parent().astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(global_position)), true)
