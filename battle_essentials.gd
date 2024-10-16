@@ -1,6 +1,6 @@
 extends Node2D
 
-var next_scene : String = "res://worldmap.tscn"
+@export var next_scene : String = "res://worldmap.tscn"
 @export var levelID : int
 @export var pointsGiven : int
 

@@ -17,6 +17,8 @@ texts = Array[String](["Poor, Poor Fool", "Walking into my Sanctum...", "You thi
 theme_override_colors/default_color = Color(0.836677, 0.000659776, 0.85571, 1)
 
 [node name="BattleEssentials" parent="." instance=ExtResource("1_pvbgw")]
+next_scene = "res://credits.tscn"
+levelID = 8
 
 [node name="Zombie" parent="BattleEssentials/TurnHandler" index="1" instance=ExtResource("3_q0r7x")]
 position = Vector2(32, 736)

@@ -37,7 +37,7 @@ func _input(event: InputEvent) -> void:
 			get_parent().move("forward")
 		elif (event.keycode == KEY_A):
 			get_parent().move("back")
-		elif (event.keycode == KEY_SPACE):
+		elif (event.keycode == KEY_SPACE and !get_parent().completed):
 			light.start(get_parent().level)
 	
 func jump_to(path : Path2D, spot : float):

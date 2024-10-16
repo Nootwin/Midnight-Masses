@@ -38,7 +38,6 @@ func next():
 
 		turnOrder.push_back(nex)
 		nex.start_turn()
-		print(nex.name)
 		cam.reparent(nex, false)
 		cam.mouse_change = Vector2(0, 0)
 	

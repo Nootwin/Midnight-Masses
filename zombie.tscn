@@ -166,7 +166,7 @@ shape = SubResource("RectangleShape2D_i1aix")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_bghkb")
-animation = &"down_idle"
+animation = &"up_idle"
 speed_scale = 1.1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

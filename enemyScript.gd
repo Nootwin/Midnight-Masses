@@ -81,6 +81,7 @@ func _physics_process(delta: float) -> void:
 				get_parent().astar.set_point_solid(tilemap.local_to_map(tilemap.to_local(global_position)), true)
 				pass_after_one()
 				wantedpos = global_position
+				$Sprite2D.play(dirani + "_idle")
 			
 		elif (wantedpos.x != global_position.x):
 			velocity.y = 0

@@ -16,9 +16,9 @@ var str : int =  0
 var inte : int =  0
 var dex : int =  0
 var vit : int = 0
-var levelcomp = [true, true, true, true, false, true, true, false, false]
+var levelcomp = [false, false, false, false, false, false, false, false, false]
 var cantGetHit : bool = false
-var availPoints : int = 5
+var availPoints : int = 0
 
 var music = 1.0
 var sfx = 1.0

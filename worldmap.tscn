@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://oohhxx1ofnih"]
+[gd_scene load_steps=55 format=4 uid="uid://oohhxx1ofnih"]
 
 [ext_resource type="Texture2D" uid="uid://34wwok56jjen" path="res://art/worldmap.png" id="1_y5qbd"]
 [ext_resource type="Script" path="res://worldpath.gd" id="2_4j3le"]
@@ -32,7 +32,6 @@
 [ext_resource type="Texture2D" uid="uid://lsbrei481cbp" path="res://art/cards/axei.png" id="26_yp6lq"]
 [ext_resource type="Texture2D" uid="uid://cs6xo4o5gtpy1" path="res://art/cards/sling.png" id="27_r27sn"]
 [ext_resource type="PackedScene" uid="uid://bmaffi5t1ocus" path="res://map_finale.tscn" id="30_g2ydv"]
-[ext_resource type="Texture2D" uid="uid://c10ghx2vbpr63" path="res://art/cards/damage.png" id="31_7s0p3"]
 [ext_resource type="PackedScene" uid="uid://dky31n5a33eti" path="res://options.tscn" id="34_3b2sk"]
 [ext_resource type="FontFile" uid="uid://1e460hymjugv" path="res://PublicPixel-E447g.ttf" id="34_13npa"]
 
@@ -381,7 +380,6 @@ up = NodePath("../../Paths/6-8")
 upstart = 1
 back = NodePath("../../Paths/5-8")
 level = ExtResource("30_g2ydv")
-card1 = ExtResource("31_7s0p3")
 stringname = "Sapharol's Sanctum"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
